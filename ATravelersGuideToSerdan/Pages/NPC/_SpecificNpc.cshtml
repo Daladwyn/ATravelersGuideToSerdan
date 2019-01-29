@@ -1,0 +1,138 @@
+﻿@model ATravelersGuideToSerdan.Models.ViewModels.NpcGeneralViewModel
+@*@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+<h2>@Model.NpcName</h2>
+<hr />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-4">
+            @Html.LabelFor(n => Model.NpcEvenKnownAs): @Model.NpcEvenKnownAs
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-4">
+            @Html.LabelFor(n => Model.NpcAlias): @Model.NpcAlias
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-4">
+            @Html.LabelFor(n => Model.NpcDescriptivePhrase): @Model.NpcDescriptivePhrase
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-4">
+            @Html.LabelFor(n => Model.NpcLooks): @Model.NpcLooks
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-4">
+            @Html.LabelFor(n => Model.NpcDescription): @Model.NpcDescription
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-4">
+            @Html.LabelFor(n => Model.NpcCurrentResidence): @Model.NpcCurrentResidence
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-4">
+            @Html.LabelFor(n => Model.NpcFamily): @Model.NpcFamily
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-4">
+            @Html.LabelFor(n => Model.NpcArchetyp): @Model.NpcArchetyp
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-4">
+            @Html.LabelFor(n => Model.NpcKilledBy): @Model.NpcKilledBy
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+    <hr />
+    <ul class="nav navbar-nav">
+
+        @*<li>
+            @using (Ajax.BeginForm("GetStats", "NPC", new { Id = Model.NpcId }, new AjaxOptions
+            {
+                UpdateTargetId = "NpcDetails",
+                InsertionMode = InsertionMode.Replace
+            }))
+            {
+                <input type="submit" value="Stats" />
+
+            }
+        </li>
+        <li>
+            @using (Ajax.BeginForm("GetApperance", "NPC", new { Id = Model.NpcId }, new AjaxOptions
+            {
+                UpdateTargetId = "NpcDetails",
+                InsertionMode = InsertionMode.Replace
+            }))
+            {
+                <input type="submit" value="Uppträdande" />
+            }
+        </li>
+        <li>
+            @using (Ajax.BeginForm("GetRelatives", "NPC", new { Id = Model.NpcId }, new AjaxOptions
+            {
+                UpdateTargetId = "NpcDetails",
+                InsertionMode = InsertionMode.Replace
+            }))
+            {
+                <input type="submit" value="Släktingar" />
+            }
+        </li>
+        <li>
+            @using (Ajax.BeginForm("GetOthers", "NPC", new { Id = Model.NpcId }, new AjaxOptions
+            {
+                UpdateTargetId = "NpcDetails",
+                InsertionMode = InsertionMode.Replace
+            }))
+            {
+                <input type="submit" value="Andra" />
+            }
+        </li>
+        <li>
+            @using (Ajax.BeginForm("GetDiverse", "NPC", new { Id = Model.NpcId }, new AjaxOptions
+            {
+                UpdateTargetId = "NpcDetails",
+                InsertionMode = InsertionMode.InsertBefore
+            }))
+            {
+                <input type="submit" value="Övrigt" />
+            }
+        </li>*@
+
+    </ul>
+    <p>here comes the stats</p>
+    <div id="NpcDetails"></div>
+
+</div>
+

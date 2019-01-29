@@ -1,0 +1,29 @@
+﻿@model ATravelersGuideToSerdan.Models.ViewModels.NpcApperanceViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<div class="row">
+    <div class="col-md-3">
+        @Html.LabelFor(i=>i.NpcBehaviour)
+        @Model.NpcBehaviour
+
+    </div>
+    <div class="col-md-3">
+        @Html.LabelFor(i=>i.NpcAsAParent)
+        @Model.NpcAsAParent
+
+    </div>
+    <div class="col-md-3">
+        @Html.LabelFor(i=>i.NpcGoal)
+        @Model.NpcGoal
+
+    </div>
+    <div class="col-md-3">
+        @Html.LabelFor(i=>i.NpcInBattle)
+        @Model.NpcInBattle
+
+    </div>
+</div>
+
+

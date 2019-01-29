@@ -1,0 +1,26 @@
+﻿@model ATravelersGuideToSerdan.Models.ViewModels.NpcRelativesViewModel
+
+<div class="container-fluid">
+    <div class="col-md-4">
+        <div class="row">
+            @Html.LabelFor(n => n.NpcsMother): @Model.NpcsMother
+        </div>
+        <div class="row">
+            @Html.LabelFor(n => n.NpcsFather): @Model.NpcsFather
+        </div>
+    </div>
+    <div class="col-md-4">
+        @Html.LabelFor(n => n.NpcsRegularChildren)
+        @foreach (var child in Model.NpcsRegularChildren)
+        {
+            @Html.ActionLink(child.NpcName, "GetNpc", "NPC", new { Id = child.NpcId })
+        }
+    </div>
+    <div class="col-md-4">
+        @Html.LabelFor(n => n.NpcsSerdanEdlosiChildren)
+        @foreach (var child in Model.NpcsSerdanEdlosiChildren)
+        {
+            @Html.ActionLink(child.NpcName, "GetNpc", "NPC", new { Id = child.NpcId })
+        }
+    </div>
+</div>
