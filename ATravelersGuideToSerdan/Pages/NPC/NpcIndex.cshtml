@@ -1,8 +1,8 @@
-﻿
-@{
-    ViewBag.Title = "NpcIndex";
-}
-
+﻿@page
+@model ATravelersGuideToSerdan.Pages.NPC.NPCIndexModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
 <h2>NpcIndex</h2>
 <div>
     <div>
@@ -22,23 +22,3 @@
     </div>
 
 </div>
-@*<div>
-    @Ajax.ActionLink("Serdan", "GetNpcs", "NPC", new { race = "Serdan" },
-    new AjaxOptions{UpdateTargetId = "ContentBody",InsertionMode = InsertionMode.Replace})
-
-</div>
-<div>
-
-    @Ajax.ActionLink("Edlosi", "GetNpcs", "NPC", new { race = "Edlosi" }, 
-    new AjaxOptions { UpdateTargetId="ContentBody",InsertionMode=InsertionMode.Replace})
-
-</div>
-<div>
-    @Ajax.ActionLink("Andra", "GetNpcs", "NPC", new { race = "other" },
-    new AjaxOptions {UpdateTargetId="ContentBody",InsertionMode=InsertionMode.Replace })
-</div>
-
-<div>
-    @Ajax.ActionLink("Spelare", "GetNpcs", "NPC", new { race = "player" },
-    new AjaxOptions { UpdateTargetId="ContentBody",InsertionMode=InsertionMode.Replace})
-</div>*@

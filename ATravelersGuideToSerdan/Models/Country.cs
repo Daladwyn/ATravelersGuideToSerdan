@@ -13,15 +13,15 @@ namespace ATravelersGuideToSerdan.Models
         public int PlanetId { get; set; }
 
         [Required]
-       // [Display(Name ="Lands namn")]
+        [Display(Name ="Lands namn")]
         [MaxLength(40)]
         public string CountryName { get; set; }
 
         [MaxLength(40)]
-        //[Display(Name ="Statsskick")]
+        [Display(Name ="Statsskick")]
         public string Government { get; set; }
 
-        //[Display(Name = "Statshuvud")]
+        [Display(Name = "Statshuvud")]
         public int HeadOfStateId { get; set; }
 
         public int CapitalId { get; set; }
@@ -35,7 +35,7 @@ namespace ATravelersGuideToSerdan.Models
         [Range(0,50000000)]
         public int CountryPopulation { get; set; }
 
-        public List<int> ReligionId { get; set; }
+        //public List<int> ReligionId { get; set; }
 
         [MaxLength(200)]
         public string CountryClimat { get; set; }

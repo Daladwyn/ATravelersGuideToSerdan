@@ -77,7 +77,7 @@ namespace ATravelersGuideToSerdan.Models
         public int NpcsFather { get; set; }
 
         [Display(Name = "Serdan/Edlosi barn")]
-        public List<int> NpcsSerdanEdlosiChildren { get; set; }
+        public IEnumerable<int> NpcsSerdanEdlosiChildren { get; set; }
 
         [Display(Name = "Vanliga Barn")]
         public List<int> NpcsRegularChildren { get; set; }

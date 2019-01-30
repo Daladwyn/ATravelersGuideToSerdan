@@ -7,7 +7,7 @@ namespace ATravelersGuideToSerdan.Models.ViewModels
         [Required]
         public int NpcId { get; set; }
 
-        [Required]
+       [Required]
         public string NpcName { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace ATravelersGuideToSerdan.Models
         [Range(0,20000000)]
         public int CityPopulation { get; set; }
 
-        public List<int> PlacesOfInterests { get; set; }
+        //public List<int> PlacesOfInterests { get; set; }
 
 
     }
