@@ -5,16 +5,23 @@ namespace ATravelersGuideToSerdan.Services
 {
     public interface ISerdan
     {
-        NPC GetNPC(int Id);
+        NPC GetNPC(int id);
+        NPC AddNPC(NPC NonPlayerCharacter);
         List<NPC> GetMultipleNPCs(string race);
-        NpcMagic GetNPCMagic(int Id);
-        NpcPower GetNpcPower(int Id);
-        NpcStat GetNpcStat(int Id);
-        Planet GetPlanet(int Id);
-        List<Planet> GetMultiplePlanets(int Id);
-        Country GetCountry(int Id);
+        NpcMagic GetNPCMagic(int id);
+        NpcMagic AddNPCMagic(NpcMagic npcMagic);
+        NpcMagic UpdateNPCMagic(int id, NpcMagic npcMagic);
+        NpcPower GetNpcPower(int id);
+        NpcPower AddNPCPower(NpcPower npcPower);
+        NpcPower UpdateNPCPower(int id, NpcPower npcPower);
+        NpcStat GetNpcStat(int id);
+        NpcStat AddNPCStat(NpcStat npcStat);
+        NpcStat UpdateNPCStat(int id, NpcStat npcStat);
+        Planet GetPlanet(int id);
+        List<Planet> GetAllPlanets();
+        Country GetCountry(int id);
         List<Country> GetMultipleCountries(int PlanetId);
-        Place GetPlace(int Id);
+        Place GetPlace(int id);
         List<Place> GetMultiplePlaces(int CountryId);
     }
 }
