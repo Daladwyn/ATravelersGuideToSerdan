@@ -6,19 +6,47 @@
 <h2>NpcIndex</h2>
 <div>
     <div>
-        Serdan
+        <a asp-page="GetCharacters" asp-page-handler="OnGet" asp-route-race="serdan">
+            Serdan
+
+        </a>
     </div>
     <div>
-        Edlosi
+        <a asp-page="GetCharacters" asp-page-handler="OnGet" asp-route-race="edlosi">
+            Edlosi
+        </a>
     </div>
     <div>
-        Drakar
+        <a asp-page="GetCharacters" asp-page-handler="OnGet" asp-route-race="drakar">
+
+            Drakar
+        </a>
     </div>
     <div>
-        Gripar
+        <a asp-page="GetCharacters" asp-page-handler="OnGet" asp-route-race="gripar">
+            Gripar
+        </a>
     </div>
     <div>
-        Människor
+        <a asp-page="GetCharacters" asp-page-handler="OnGet" asp-route-race="människor">
+            Människor
+        </a>
+
+
     </div>
 
 </div>
+
+@*asp-page = action
+
+    asp-page-handler="delete, put get post...
+
+    asp-route-id
+
+
+    <form asp-page-handler="post" asp-route-race="serdan">
+
+
+        [BindProperty]
+
+        <input asp-for="NPC.Name" />*@
