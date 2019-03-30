@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ATravelersGuideToSerdan.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace ATravelersGuideToSerdan.ViewModels
 {
