@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace ATravelersGuideToSerdan.Models.ViewModels
+namespace ATravelersGuideToSerdan.ViewModels
 {
 
     public class NpcRelativesViewModel

@@ -1,4 +1,4 @@
-﻿namespace ATravelersGuideToSerdan.Models.ViewModels
+﻿namespace ATravelersGuideToSerdan.ViewModels
 {
     public class CountryViewModel
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ATravelersGuideToSerdan.Services;
 using ATravelersGuideToSerdan.Models;
-using ATravelersGuideToSerdan.Models.ViewModels;
 using System.Collections.Generic;
+using ATravelersGuideToSerdan.ViewModels;
 
 namespace ATravelersGuideToSerdan.Controllers
 {

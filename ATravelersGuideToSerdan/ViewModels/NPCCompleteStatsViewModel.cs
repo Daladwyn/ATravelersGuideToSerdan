@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace ATravelersGuideToSerdan.Models.ViewModels
+namespace ATravelersGuideToSerdan.ViewModels
 {
     public class NPCCompleteStatsViewModel
     {

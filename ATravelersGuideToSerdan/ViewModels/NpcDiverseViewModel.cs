@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ATravelersGuideToSerdan.Models;
+using System.ComponentModel.DataAnnotations;
 
-namespace ATravelersGuideToSerdan.Models.ViewModels
+namespace ATravelersGuideToSerdan.ViewModels
 {
     public class NpcDiverseViewModel
     {
