@@ -17,7 +17,12 @@ namespace ATravelersGuideToSerdan.Pages.NPC
             _Db = Db;
         }
 
-        public IActionResult OnGet(string race)
+        public void OnGet()
+        {
+            
+        }
+
+        public IActionResult OnPostSelectedRace(string race)
         {
             if (race == null)
             {

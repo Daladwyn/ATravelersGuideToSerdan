@@ -6,35 +6,33 @@
 <h2>NpcIndex</h2>
 <div>
     <div>
-        <a asp-page="GetCharacters" asp-page-handler="OnGet" asp-route-race="serdan">
-            Serdan
-
-        </a>
+        <form asp-page-handler="SelectedRace" method="Post" asp-route-race="serdan">
+            <input type="submit" value="Serdan" class="btn btn-info" />
+        </form>
     </div>
     <div>
-        <a asp-page="GetCharacters" asp-page-handler="OnGet" asp-route-race="edlosi">
-            Edlosi
-        </a>
+        <form asp-page-handler="SelectedRace" method="Post" asp-route-race="drakar">
+            <input type="submit" value="Drakar" class="btn btn-info" />
+        </form>
     </div>
     <div>
-        <a asp-page="GetCharacters" asp-page-handler="OnGet" asp-route-race="drakar">
-
-            Drakar
-        </a>
+        <form asp-page-handler="SelectedRace" method="Post" asp-route-race="edlosi">
+            <input type="submit" value="Edlosi" class="btn btn-danger" />
+        </form>
     </div>
     <div>
-        <a asp-page="GetCharacters" asp-page-handler="OnGet" asp-route-race="gripar">
-            Gripar
-        </a>
+        <form asp-page-handler="SelectedRace" method="Post" asp-route-race="gripar">
+            <input type="submit" value="Gripar" class="btn btn-danger" />
+        </form>
     </div>
     <div>
-        <a asp-page="GetCharacters" asp-page-handler="OnGet" asp-route-race="människor">
-            Människor
-        </a>
-
-
+        <form asp-page-handler="SelectedRace" method="Post" asp-route-race="människor">
+            <input type="submit" value="Människor" class="btn btn-success" />
+        </form>
     </div>
-
+    <div>
+         <a asp-page="CreateNPCstep1" class="btn btn-dark" >Create/Add a character</a>
+    </div>
 </div>
 
 @*asp-page = action

@@ -1,0 +1,62 @@
+﻿@page
+@model ATravelersGuideToSerdan.Pages.NPC.CreateNPCstep1Model
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<h1>This is a guide to create/add a new NPC into the Travellers guide to Serdan.</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="NpcName"></label>
+        <input asp-for="NpcName" />
+        <span asp-validation-for="NpcName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NpcEvenKnownAs"></label>
+        <input asp-for="NpcEvenKnownAs" />
+        <span asp-validation-for="NpcEvenKnownAs"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NpcAlias"></label>
+        <input asp-for="NpcAlias" />
+        <span asp-validation-for="NpcAlias"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NpcDescriptivePhrase"></label>
+        <input asp-for="NpcDescriptivePhrase" />
+        <span asp-validation-for="NpcDescriptivePhrase"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NpcLooks"></label>
+        <input asp-for="NpcLooks" />
+        <span asp-validation-for="NpcLooks"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NpcDescription"></label>
+        <input asp-for="NpcDescription" />
+        <span asp-validation-for="NpcDescription"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NpcCurrentResidence"></label>
+        <input asp-for="NpcCurrentResidence" />
+        <span asp-validation-for="NpcCurrentResidence"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NpcFamily"></label>
+        <input asp-for="NpcFamily" />
+        <span asp-validation-for="NpcFamily"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NpcArchetyp"></label>
+        <input asp-for="NpcArchetyp" />
+        <span asp-validation-for="NpcArchetyp"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NpcKilledBy"></label>
+        <input asp-for="NpcKilledBy" />
+        <span asp-validation-for="NpcKilledBy"></span>
+    </div>
+    @*<a asp-action="postAsync" class="btn btn-dark">Next</a>*@
+    <a asp-action="postAsync" class="btn btn-dark">Next</a>
+
+</form>

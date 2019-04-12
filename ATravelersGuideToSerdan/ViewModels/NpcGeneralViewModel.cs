@@ -40,7 +40,7 @@ namespace ATravelersGuideToSerdan.ViewModels
         public string NpcFamily { get; set; }
 
         [Display(Name = "Urtyp")]
-        public int NpcArchetyp { get; set; }
+        public int NpcArchetype { get; set; }
 
         [Display(Name = "Dödad av")]
         public int NpcKilledBy { get; set; }
