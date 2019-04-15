@@ -5,7 +5,7 @@
 *@
 
 <h1>This is a guide to create/add a new NPC into the Travellers guide to Serdan.</h1>
-<form method="post">
+<form method="post" >
     <div class="form-group">
         <label asp-for="NpcName"></label>
         <input asp-for="NpcName" />
@@ -57,6 +57,10 @@
         <span asp-validation-for="NpcKilledBy"></span>
     </div>
     @*<a asp-action="postAsync" class="btn btn-dark">Next</a>*@
-    <a asp-action="postAsync" class="btn btn-dark">Next</a>
+    @if (true)
+    {
+    <button type="submit" class="btn btn-dark">Next</button>
+
+    }
 
 </form>

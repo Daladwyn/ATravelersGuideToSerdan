@@ -69,10 +69,10 @@ namespace ATravelersGuideToSerdan.Pages.NPC
         //public async Task<IActionResult> OnPostAsync()
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
             //convert data from CreateNPCstep1 to NPCgeneralviewmodel
             //Save to database part1 of the data
             //try
@@ -85,7 +85,7 @@ namespace ATravelersGuideToSerdan.Pages.NPC
 
             //    throw;
             //}
-            return RedirectToPage("CreateNPCStep2");
+            return RedirectToPage("CreateNPCstep2");
         }
     }
 }
