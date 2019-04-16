@@ -7,16 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\NPC\_ANpc.cshtml" />
-    <Content Remove="Pages\NPC\_GetApperance.cshtml" />
-    <Content Remove="Pages\NPC\_GetNpcListView.cshtml" />
-    <Content Remove="Pages\NPC\_GetRelatives.cshtml" />
-    <Content Remove="Pages\NPC\_GetStats.cshtml" />
-    <Content Remove="Pages\NPC\_SpecificNpc.cshtml" />
+    <Content Remove="Pages\NPCPage\_ANpc.cshtml" />
+    <Content Remove="Pages\NPCPage\_GetApperance.cshtml" />
+    <Content Remove="Pages\NPCPage\_GetNpcListView.cshtml" />
+    <Content Remove="Pages\NPCPage\_GetRelatives.cshtml" />
+    <Content Remove="Pages\NPCPage\_GetStats.cshtml" />
+    <Content Remove="Pages\NPCPage\_SpecificNpc.cshtml" />
   </ItemGroup>
 
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />

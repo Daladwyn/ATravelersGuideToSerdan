@@ -8,9 +8,9 @@ namespace ATravelersGuideToSerdan.Controllers
 {
     public class NPCController : Controller
     {
-        private ISerdan _Db;
+        private _DB _Db;
 
-        public NPCController(ISerdan Db)
+        public NPCController(_DB Db)
         {
             _Db = Db;
         }

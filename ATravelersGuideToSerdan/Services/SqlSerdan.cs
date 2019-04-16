@@ -7,7 +7,7 @@ using ATravelersGuideToSerdan.Models;
 
 namespace ATravelersGuideToSerdan.Services
 {
-    public class SqlSerdan : ISerdan
+    public class SqlSerdan : _DB
     {
         private ApplicationDbContext _context;
 

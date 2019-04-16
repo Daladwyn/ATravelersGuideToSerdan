@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ATravelersGuideToSerdan.Services
 {
-    public interface ISerdan
+    public interface _DB
     {
         NPC GetNPC(int id);
         NPC AddNPC(NPC NonPlayerCharacter);
@@ -17,6 +17,7 @@ namespace ATravelersGuideToSerdan.Services
         NpcStat GetNpcStat(int id);
         NpcStat AddNPCStat(NpcStat npcStat);
         NpcStat UpdateNPCStat(int id, NpcStat npcStat);
+
         Planet GetPlanet(int id);
         List<Planet> GetAllPlanets();
         Country GetCountry(int id);

@@ -6,13 +6,13 @@ using ATravelersGuideToSerdan.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ATravelersGuideToSerdan.Pages.NPC
+namespace ATravelersGuideToSerdan.Pages.NPCPage
 {
     public class NPCIndexModel : PageModel
     {
-        private ISerdan _Db;
+        private _DB _Db;
 
-        public NPCIndexModel(ISerdan Db)
+        public NPCIndexModel(_DB Db)
         {
             _Db = Db;
         }

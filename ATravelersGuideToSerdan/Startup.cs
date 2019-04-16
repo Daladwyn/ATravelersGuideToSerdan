@@ -15,6 +15,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ATravelersGuideToSerdan.Services;
 using Microsoft.AspNetCore.Routing;
+using AutoMapper;
+using ATravelersGuideToSerdan.Pages.NPCPage;
+using ATravelersGuideToSerdan.Models;
 
 namespace ATravelersGuideToSerdan
 {
@@ -45,7 +48,12 @@ namespace ATravelersGuideToSerdan
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddTransient<ISerdan, SqlSerdan>();
+            services.AddTransient<_DB, SqlSerdan>();
+
+            services.AddAutoMapper();
+            //services.AddAutoMapper(NPC, NpcMagic, NpcPower, NpcStat, 
+            //    CreateNPCstep1Model, CreateNPCstep2Model, 
+            //    CreateNPCstep3Model, CreateNPCstep4Model);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
