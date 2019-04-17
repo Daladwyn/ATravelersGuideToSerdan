@@ -1,66 +1,189 @@
 ﻿@page
 @model ATravelersGuideToSerdan.Models.NPC
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
 
-<h1>This is a guide to create/add a new NPC into the Travellers guide to Serdan.</h1>
-<form method="post" >
-    <div class="form-group">
-        <label asp-for="NpcName"></label>
-        <input asp-for="NpcName" />
+<h1>Skapa/lägg till en ny Npc.</h1>
+<div>Denna guide skapar/lägger till en ny Npc till En resandes guide till Serdan. Guiden har 4 steg, steg 1 är generel info, steg 2 är grundegenskaper, steg 3 är krafter och steg 4 är magi.</div>
+@*<h1>Create/add a new NPC.</h1>
+    <div>This creates/adds a new Npc to the Travelers Guide To Serdan. This is a wizard of 4 steps. Step 1 is general data. Step 2 is Npc stats. Step 3 is about Powers</div>*@
+<hr />
+<form method="post">
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcName"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcName" />
         <span asp-validation-for="NpcName"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="NpcEvenKnownAs"></label>
-        <input asp-for="NpcEvenKnownAs" />
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcEvenKnownAs"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcEvenKnownAs" />
         <span asp-validation-for="NpcEvenKnownAs"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="NpcAlias"></label>
-        <input asp-for="NpcAlias" />
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcAlias"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcAlias" />
         <span asp-validation-for="NpcAlias"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="NpcDescriptivePhrase"></label>
-        <input asp-for="NpcDescriptivePhrase" />
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcDescriptivePhrase"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcDescriptivePhrase" />
         <span asp-validation-for="NpcDescriptivePhrase"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="NpcLooks"></label>
-        <input asp-for="NpcLooks" />
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcLooks"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcLooks" />
         <span asp-validation-for="NpcLooks"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="NpcDescription"></label>
-        <input asp-for="NpcDescription" />
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcDescription"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcDescription" />
         <span asp-validation-for="NpcDescription"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="NpcCurrentResidence"></label>
-        <input asp-for="NpcCurrentResidence" />
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcCurrentResidence"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcCurrentResidence" />
         <span asp-validation-for="NpcCurrentResidence"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="NpcFamily"></label>
-        <input asp-for="NpcFamily" />
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRace"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj ras</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcRace" />
+        <span asp-validation-for="NpcRace"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcFamily"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcFamily" />
         <span asp-validation-for="NpcFamily"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="NpcArchetyp"></label>
-        <input asp-for="NpcArchetyp" />
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcArchetyp"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Urtyp</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcArchetyp" />
         <span asp-validation-for="NpcArchetyp"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="NpcKilledBy"></label>
-        <input asp-for="NpcKilledBy" />
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcKilledBy"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj person</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcKilledBy" />
         <span asp-validation-for="NpcKilledBy"></span>
     </div>
-    @*<a asp-action="postAsync" class="btn btn-dark">Next</a>*@
-    @if (true)
-    {
-    <button type="submit" class="btn btn-dark">Next</button>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcBehaviour"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcBehaviour" />
+        <span asp-validation-for="NpcBehaviour"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcAsAParent"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcAsAParent" />
+        <span asp-validation-for="NpcAsAParent"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcGoal"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcGoal" />
+        <span asp-validation-for="NpcGoal"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcInBattle"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcInBattle" />
+        <span asp-validation-for="NpcInBattle"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcsMother"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Moder</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcsMother" />
+        <span asp-validation-for="NpcsMother"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcsFather"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Fader</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcsFather" />
+        <span asp-validation-for="NpcsFather"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcsSerdanEdlosiChildren"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Barn</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcsSerdanEdlosiChildren" />
+        <span asp-validation-for="NpcsSerdanEdlosiChildren"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcsRegularChildren"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Barn</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcsRegularChildren" />
+        <span asp-validation-for="NpcsRegularChildren"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRegardingAets"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcRegardingAets" />
+        <span asp-validation-for="NpcRegardingAets"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRegardingDemons"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcRegardingDemons" />
+        <span asp-validation-for="NpcRegardingDemons"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRegardingDragons"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcRegardingDragons" />
+        <span asp-validation-for="NpcRegardingDragons"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRegardingGrips"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcRegardingGrips" />
+        <span asp-validation-for="NpcRegardingGrips"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRegardingOthers"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcRegardingOthers" />
+        <span asp-validation-for="NpcRegardingOthers"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcFriends"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Vän</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcFriends" />
+        <span asp-validation-for="NpcFriends"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcAllies"></label>
+        <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"><button class="btn btn-sm btn-dark">Välj Allierad</button></div>
+        <input class="col-md-8 col-8 col-xl-8 col-lg-8 col-sm-8" asp-for="NpcAllies" />
+        <span asp-validation-for="NpcAllies"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRivals"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Rival</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcRivals" />
+        <span asp-validation-for="NpcRivals"></span>
+    </div>
 
-    }
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcEnemies"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Fiende</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcEnemies" />
+        <span asp-validation-for="NpcEnemies"></span>
+    </div>
+   
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcOtherResideces"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcOtherResideces" />
+        <span asp-validation-for="NpcOtherResideces"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcInTheHistory"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcInTheHistory" />
+        <span asp-validation-for="NpcInTheHistory"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcSecrets"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcSecrets" />
+        <span asp-validation-for="NpcSecrets"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcAssets"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcAssets" />
+        <span asp-validation-for="NpcAssets"></span>
+    </div>
+    @*<a asp-action="postAsync" class="btn btn-dark">Next</a>*@
+
+    <button type="submit" class="btn btn-dark">Till steg 2</button>
+
+
 
 </form>

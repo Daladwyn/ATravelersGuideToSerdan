@@ -29,7 +29,7 @@ namespace ATravelersGuideToSerdan.Pages.NPCPage
 
         public int nPCId { get; set; }
 
-       
+
 
         public void OnGet()
         {
@@ -38,6 +38,7 @@ namespace ATravelersGuideToSerdan.Pages.NPCPage
 
         //public async Task<IActionResult> OnPostAsync()
         public IActionResult OnPost(NPC npcToAdd)
+       // public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
@@ -45,19 +46,20 @@ namespace ATravelersGuideToSerdan.Pages.NPCPage
             }
             //convert data from CreateNPCstep1 to NPCgeneralviewmodel
             //Save to database part1 of the data
-            try
-            {
-                // _mapper.Map(npcToAdd, npcToAddToDb);
-                npcToAdd = _Db.AddNPC(npcToAdd);
-                //_mapper.Map(npcToAddToDb, npcToAdd);
-            }
-            catch (Exception)
-            {
-                messageToUser = "Ops, something happend!! Either was your data not convertible or not savable.";
-                return Page();
-            }
-            nPCId = npcToAdd.NpcId;
-            return RedirectToPage("CreateNPCstep2",nPCId);
+            //try
+            //{
+            //    // _mapper.Map(npcToAdd, npcToAddToDb);
+            //    npcToAdd = _Db.AddNPC(npcToAdd);
+            //    //_mapper.Map(npcToAddToDb, npcToAdd);
+            //}
+            //catch (Exception)
+            //{
+            //    messageToUser = "Ops, something happend!! Either was your data not convertible or not savable.";
+            //    return Page();
+            //}
+            //nPCId = npcToAdd.NpcId;
+            //return RedirectToPage("CreateNPCstep2",nPCId);
+            return RedirectToPage("CreateNPCstep2");
         }
     }
 }
