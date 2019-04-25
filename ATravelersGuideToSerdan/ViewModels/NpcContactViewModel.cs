@@ -2,7 +2,7 @@
 
 namespace ATravelersGuideToSerdan.ViewModels
 {
-    public class NpcContact
+    public class NpcContactViewModel
     {
         [Range(0, 3)]
         [Display(Name = "Drakekontakt 3p")]

@@ -1,0 +1,62 @@
+﻿@page
+@*@model ATravelersGuideToSerdan.Pages.Character.Create.Step3Model*@
+@model ATravelersGuideToSerdan.ViewModels.CreateNpc3ViewModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<h1>Step3</h1>
+<hr />
+<form method="post">
+
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRegardingAets"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcRegardingAets" />
+        <span asp-validation-for="NpcRegardingAets"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRegardingDemons"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcRegardingDemons" />
+        <span asp-validation-for="NpcRegardingDemons"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRegardingDragons"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcRegardingDragons" />
+        <span asp-validation-for="NpcRegardingDragons"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRegardingGrips"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcRegardingGrips" />
+        <span asp-validation-for="NpcRegardingGrips"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRegardingOthers"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcRegardingOthers" />
+        <span asp-validation-for="NpcRegardingOthers"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcFriends"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Vän</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcFriends" />
+        <span asp-validation-for="NpcFriends"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcAllies"></label>
+        <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"><button class="btn btn-sm btn-dark">Välj Allierad</button></div>
+        <input class="col-md-8 col-8 col-xl-8 col-lg-8 col-sm-8" asp-for="NpcAllies" />
+        <span asp-validation-for="NpcAllies"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRivals"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Rival</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcRivals" />
+        <span asp-validation-for="NpcRivals"></span>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcEnemies"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Fiende</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcEnemies" />
+        <span asp-validation-for="NpcEnemies"></span>
+    </div>
+    <button type="submit" class="btn btn-dark">go to step4</button>
+</form>

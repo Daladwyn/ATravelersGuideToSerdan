@@ -1,0 +1,35 @@
+﻿@page
+@*@model ATravelersGuideToSerdan.Pages.Character.Create.Step2Model*@
+@model ATravelersGuideToSerdan.ViewModels.CreateNpc2ViewModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<h1>Step2</h1>
+<hr />
+<form method="post">
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcsMother"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Moder</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcsMother" />
+        <span asp-validation-for="NpcsMother"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcsFather"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Fader</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcsFather" />
+        <span asp-validation-for="NpcsFather"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcsSerdanEdlosiChildren"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Barn</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcsSerdanEdlosiChildren" />
+        <span asp-validation-for="NpcsSerdanEdlosiChildren"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcsRegularChildren"></label>
+        <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Barn</button></div>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcsRegularChildren" />
+        <span asp-validation-for="NpcsRegularChildren"></span>
+    </div>
+    <button type="submit" class="btn btn-dark">go to step3</button>
+</form>

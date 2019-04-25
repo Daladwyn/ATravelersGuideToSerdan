@@ -23,11 +23,11 @@ namespace ATravelersGuideToSerdan.Pages.NPCPage
         }
 
         [BindProperty]
-        public NpcStat npcToAdd { get; set; }
+        public NpcStat NpcToAdd { get; set; }
         [TempData]
-        public string messageToUser { get; set; }
+        public string MessageToUser { get; set; }
 
-        public int nPCId { get; set; }
+        public int NPCId { get; set; }
 
 
         

@@ -2,7 +2,7 @@
 
 namespace ATravelersGuideToSerdan.ViewModels
 {
-    public class NpcGeneralViewModel
+    public class CreateNpc1ViewModel
     {
         [Required]
         public int NpcId { get; set; }
@@ -41,6 +41,11 @@ namespace ATravelersGuideToSerdan.ViewModels
 
         [Display(Name = "Urtyp")]
         public int NpcArchetyp { get; set; }
+
+
+        [Display(Name = "Ras")]
+        [MaxLength(20)]
+        public string NpcRace { get; set; }
 
         [Display(Name = "Dödad av")]
         public int NpcKilledBy { get; set; }

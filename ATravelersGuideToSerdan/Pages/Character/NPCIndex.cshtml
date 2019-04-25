@@ -1,0 +1,50 @@
+﻿@page
+@model ATravelersGuideToSerdan.Pages.Character.NPCIndexModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<h2>NpcIndex</h2>
+<div>
+    <div>
+        <form asp-page-handler="SelectedRace" method="Post" asp-route-race="serdan">
+            <input type="submit" value="Serdan" class="btn btn-info" />
+        </form>
+    </div>
+    <div>
+        <form asp-page-handler="SelectedRace" method="Post" asp-route-race="drakar">
+            <input type="submit" value="Drakar" class="btn btn-info" />
+        </form>
+    </div>
+    <div>
+        <form asp-page-handler="SelectedRace" method="Post" asp-route-race="edlosi">
+            <input type="submit" value="Edlosi" class="btn btn-danger" />
+        </form>
+    </div>
+    <div>
+        <form asp-page-handler="SelectedRace" method="Post" asp-route-race="gripar">
+            <input type="submit" value="Gripar" class="btn btn-danger" />
+        </form>
+    </div>
+    <div>
+        <form asp-page-handler="SelectedRace" method="Post" asp-route-race="människor">
+            <input type="submit" value="Människor" class="btn btn-success" />
+        </form>
+    </div>
+    <div>
+        <a asp-page="Create/Step1" class="btn btn-dark">Create/Add a character</a>
+    </div>
+</div>
+
+@*asp-page = action
+
+    asp-page-handler="delete, put get post...
+
+    asp-route-id
+
+
+    <form asp-page-handler="post" asp-route-race="serdan">
+
+
+        [BindProperty]
+
+        <input asp-for="NPC.Name" />*@

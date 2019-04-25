@@ -1,10 +1,15 @@
 ﻿@page
+@namespace ATravelersGuideToSerdan.Pages.NPCPage
 @model ATravelersGuideToSerdan.Models.NPC
 
 <h1>Skapa/lägg till en ny Npc.</h1>
 <div>Denna guide skapar/lägger till en ny Npc till En resandes guide till Serdan. Guiden har 4 steg, steg 1 är generel info, steg 2 är grundegenskaper, steg 3 är krafter och steg 4 är magi.</div>
 @*<h1>Create/add a new NPC.</h1>
     <div>This creates/adds a new Npc to the Travelers Guide To Serdan. This is a wizard of 4 steps. Step 1 is general data. Step 2 is Npc stats. Step 3 is about Powers</div>*@
+@*@if (MessageToUser != "")
+    {
+
+    }*@
 <hr />
 <form method="post">
     <div class="form-group row">
@@ -159,7 +164,7 @@
         <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcEnemies" />
         <span asp-validation-for="NpcEnemies"></span>
     </div>
-   
+
     <div class="form-group row">
         <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcOtherResideces"></label>
         <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcOtherResideces" />
@@ -181,9 +186,5 @@
         <span asp-validation-for="NpcAssets"></span>
     </div>
     @*<a asp-action="postAsync" class="btn btn-dark">Next</a>*@
-
     <button type="submit" class="btn btn-dark">Till steg 2</button>
-
-
-
 </form>
