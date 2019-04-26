@@ -1,69 +1,69 @@
 ﻿@page
-@*model ATravelersGuideToSerdan.Pages.Character.Create.Step1Model*@
-@model ATravelersGuideToSerdan.ViewModels.CreateNpc1ViewModel
+@model ATravelersGuideToSerdan.Pages.Character.Create.Step1Model
+@*@model ATravelersGuideToSerdan.ViewModels.CreateNpc1ViewModel*@
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-<h1>Step1</h1>
+<h1>@Model.Message</h1>
 <hr />
 <form method="post">
     <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcName"></label>
-        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcName" />
-        <span asp-validation-for="NpcName"></span>
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcName"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcName" />
+        <span asp-validation-for="@Model.Npc.NpcName"></span>
     </div>
     <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcEvenKnownAs"></label>
-        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcEvenKnownAs" />
-        <span asp-validation-for="NpcEvenKnownAs"></span>
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcEvenKnownAs"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcEvenKnownAs" />
+        <span asp-validation-for="@Model.Npc.NpcEvenKnownAs"></span>
     </div>
     <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcAlias"></label>
-        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcAlias" />
-        <span asp-validation-for="NpcAlias"></span>
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcAlias"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcAlias" />
+        <span asp-validation-for="@Model.Npc.NpcAlias"></span>
     </div>
     <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcDescriptivePhrase"></label>
-        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcDescriptivePhrase" />
-        <span asp-validation-for="NpcDescriptivePhrase"></span>
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcDescriptivePhrase"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcDescriptivePhrase" />
+        <span asp-validation-for="@Model.Npc.NpcDescriptivePhrase"></span>
     </div>
     <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcLooks"></label>
-        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcLooks" />
-        <span asp-validation-for="NpcLooks"></span>
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcLooks"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcLooks" />
+        <span asp-validation-for="@Model.Npc.NpcLooks"></span>
     </div>
     <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcDescription"></label>
-        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcDescription" />
-        <span asp-validation-for="NpcDescription"></span>
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcDescription"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcDescription" />
+        <span asp-validation-for="@Model.Npc.NpcDescription"></span>
     </div>
     <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcCurrentResidence"></label>
-        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcCurrentResidence" />
-        <span asp-validation-for="NpcCurrentResidence"></span>
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcCurrentResidence"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcCurrentResidence" />
+        <span asp-validation-for="@Model.Npc.NpcCurrentResidence"></span>
     </div>
     <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcRace"></label>
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcRace"></label>
         <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj ras</button></div>
-        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcRace" />
-        <span asp-validation-for="NpcRace"></span>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="@Model.Npc.NpcRace" />
+        <span asp-validation-for="@Model.Npc.NpcRace"></span>
     </div>
     <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcFamily"></label>
-        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="NpcFamily" />
-        <span asp-validation-for="NpcFamily"></span>
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcFamily"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcFamily" />
+        <span asp-validation-for="@Model.Npc.NpcFamily"></span>
     </div>
     <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcArchetyp"></label>
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcArchetyp"></label>
         <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj Urtyp</button></div>
-        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcArchetyp" />
-        <span asp-validation-for="NpcArchetyp"></span>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="@Model.Npc.NpcArchetyp" />
+        <span asp-validation-for="@Model.Npc.NpcArchetyp"></span>
     </div>
     <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcKilledBy"></label>
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcKilledBy"></label>
         <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1"><button class="btn btn-sm btn-dark">Välj person</button></div>
-        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="NpcKilledBy" />
-        <span asp-validation-for="NpcKilledBy"></span>
+        <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="@Model.Npc.NpcKilledBy" />
+        <span asp-validation-for="@Model.Npc.NpcKilledBy"></span>
     </div>
     @*<div class="form-group row">
         <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="NpcBehaviour"></label>
