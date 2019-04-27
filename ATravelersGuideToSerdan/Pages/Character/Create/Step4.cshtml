@@ -1,19 +1,36 @@
 ﻿@page
-@*@model ATravelersGuideToSerdan.Pages.Character.Create.Step4Model*@
-@model ATravelersGuideToSerdan.ViewModels.CreateNpc4ViewModel
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+@model ATravelersGuideToSerdan.Pages.Character.Create.Step4Model
+@*@model ATravelersGuideToSerdan.ViewModels.CreateNpc4ViewModel*@
+
 <h1>Step4 - Stats</h1>
-        @ViewBag.ErrorMessage
+@ViewBag.ErrorMessage
 <hr />
 <form method="post">
     <div class="container-fluid table-bordered">
+        <div class="row">
+            <div class="col-md-1">Egenskap</div>
+            <div class="col-md-1">Tot./Uts.</div>
+            <div class="col-md-1">Förmåga</div>
+            <div class="col-md-1">Värd.</div>
+            <div class="col-md-1">TP.</div>
+            <div class="col-md-1">ExP</div>
+            <div class="col-md-2">Talanger</div>
+            <div class="col-md-1">TTp</div>
+            <div class="col-md-2">Färdigheter</div>
+            <div class="col-md-1"></div>
+
+        </div>
+
         <div class="row  ">
-            <label asp-for="KoordinationMotorikTot"></label>
-            <div  class="col-md-2  ">@Html.LabelFor(i => i.KoordinationMotorikTot)</div>
-            <div class="col-md-2 ">Tot:@Model.KoordinationMotorikTot</div>
-            <div class="col-md-2 ">Uts:@Model.KoordinationMotorikUts</div>
+            <div>
+                <label asp-for="@Model.Npc.KoordinationMotorikUts"></label>
+                <label asp-for="@Model.Npc.KoordinationMotorikTot"></label>
+
+
+            </div>
+            <label class="col-md-2" asp-for="@Model.Npc.KoordinationMotorikTot"></label>
+            <div class="col-md-2">Tot:@Model.Npc.KoordinationMotorikTot</div>
+            <div class="col-md-2">Uts:@Model.Npc.KoordinationMotorikUts</div>
             <div class="col-md-2">
                 <button>Modify</button>
             </div>
@@ -47,83 +64,84 @@
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.WeaponValue)
+                <label asp-for="@Model.Npc.WeaponValue"></label>)
             </div>
             <div class="col-md-1">
-                @Model.WeaponValue
+                @Model.Npc.WeaponValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.WeaponTp
+                @Model.Npc.WeaponTp
             </div>
             <div class="col-md-1">
-                @Model.WeaponExp
+                @Model.Npc.WeaponExp
             </div>
 
             <div class="col-md-3">
-                @Model.WeaponTalang
+                @Model.Npc.WeaponTalang
             </div>
             <div class="col-md-1">
-                @Model.WeaponTTp
+                @Model.Npc.WeaponTTp
             </div>
             <div class="col-md-3">
-                @Model.WeaponSkills
+                @Model.Npc.WeaponSkills
             </div>
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.BalisticValue)
+                <label asp-for="@Model.Npc.BalisticValue"></label>
             </div>
             <div class="col-md-1">
-                @Model.BalisticValue
+                @Model.Npc.BalisticValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.BalisticTp
+                @Model.Npc.BalisticTp
             </div>
             <div class="col-md-1">
-                @Model.BalisticExp
+                @Model.Npc.BalisticExp
             </div>
 
             <div class="col-md-3">
-                @Model.BalisticTalang
+                @Model.Npc.BalisticTalang
             </div>
             <div class="col-md-1">
-                @Model.BalisticTTp
+                @Model.Npc.BalisticTTp
             </div>
             <div class="col-md-3">
-                @Model.BalisticSkills
+                @Model.Npc.BalisticSkills
             </div>
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.FineMotorValue)
+                <label asp-for="@Model.Npc.FineMotorValue"></label>
+               
             </div>
             <div class="col-md-1">
-                @Model.FineMotorValue
+                @Model.Npc.FineMotorValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.FineMotorTp
+                @Model.Npc.FineMotorTp
             </div>
             <div class="col-md-1">
-                @Model.FineMotorExp
+                @Model.Npc.FineMotorExp
             </div>
 
             <div class="col-md-3">
-                @Model.FineMotorTalang
+                @Model.Npc.FineMotorTalang
             </div>
             <div class="col-md-1">
-                @Model.FineMotorTTp
+                @Model.Npc.FineMotorTTp
             </div>
             <div class="col-md-3">
-                @Model.FineMotorSkills
+                @Model.Npc.FineMotorSkills
             </div>
         </div>
     </div>
@@ -132,9 +150,10 @@
 
     <div class="container-fluid table-bordered">
         <div class="row ">
-            <div class="col-md-2">@Html.LabelFor(i => i.PhysiqueTot)</div>
-            <div class="col-md-2 ">Tot:@Model.PhysiqueTot</div>
-            <div class="col-md-2 ">Uts:@Model.PhysiqueUts</div>
+            <label class="col-md-2" asp-for="@Model.Npc.PhysiqueTot"></label>
+            
+            <div class="col-md-2 ">Tot:@Model.Npc.PhysiqueTot</div>
+            <div class="col-md-2 ">Uts:@Model.Npc.PhysiqueUts</div>
             <div class="col-md-2">
                 <button>Modify</button>
             </div>
@@ -168,83 +187,86 @@
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.PhysicsValue)
+                <label class="col-md-2" asp-for="@Model.Npc.PhysicsValue"></label>
+                
             </div>
             <div class="col-md-1">
-                @Model.PhysicsValue
+                @Model.Npc.PhysicsValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.PhysicsTp
+                @Model.Npc.PhysicsTp
             </div>
             <div class="col-md-1">
-                @Model.PhysicsExp
+                @Model.Npc.PhysicsExp
             </div>
 
             <div class="col-md-3">
-                @Model.PhysicsTalang
+                @Model.Npc.PhysicsTalang
             </div>
             <div class="col-md-1">
-                @Model.PhysicsTTp
+                @Model.Npc.PhysicsTTp
             </div>
             <div class="col-md-3">
-                @Model.PhysicsSkills
+                @Model.Npc.PhysicsSkills
             </div>
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.StrenghtValue)
+                <label asp-for="@Model.Npc.StrenghtValue"></label>
+                
             </div>
             <div class="col-md-1">
-                @Model.StrenghtValue
+                @Model.Npc.StrenghtValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.StrenghtTp
+                @Model.Npc.StrenghtTp
             </div>
             <div class="col-md-1">
-                @Model.StrenghtExp
+                @Model.Npc.StrenghtExp
             </div>
 
             <div class="col-md-3">
-                @Model.StrenghtTalang
+                @Model.Npc.StrenghtTalang
             </div>
             <div class="col-md-1">
-                @Model.StrenghtTTp
+                @Model.Npc.StrenghtTTp
             </div>
             <div class="col-md-3">
-                @Model.StrenghtSkills
+                @Model.Npc.StrenghtSkills
             </div>
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.MobilityValue)
+                <label asp-for="@Model.Npc.MobilityValue"></label>
+                
             </div>
             <div class="col-md-1">
-                @Model.MobilityValue
+                @Model.Npc.MobilityValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.MobilityTp
+                @Model.Npc.MobilityTp
             </div>
             <div class="col-md-1">
-                @Model.MobilityExp
+                @Model.Npc.MobilityExp
             </div>
 
             <div class="col-md-3">
-                @Model.MobilityTalang
+                @Model.Npc.MobilityTalang
             </div>
             <div class="col-md-1">
-                @Model.MobilityTTp
+                @Model.Npc.MobilityTTp
             </div>
             <div class="col-md-3">
-                @Model.MobilitySkills
+                @Model.Npc.MobilitySkills
             </div>
         </div>
     </div>
@@ -252,9 +274,10 @@
 
     <div class="container-fluid  table-bordered">
         <div class="row ">
-            <div class="col-md-2 ">@Html.LabelFor(i => i.PsykeTot)</div>
-            <div class="col-md-2 ">Tot:@Model.PsykeTot</div>
-            <div class="col-md-2 ">Uts:@Model.PsykeUts</div>
+            <label class="col-md-2" asp-for="@Model.Npc.PsykeTot"></label>
+            
+            <div class="col-md-2 ">Tot:@Model.Npc.PsykeTot</div>
+            <div class="col-md-2 ">Uts:@Model.Npc.PsykeUts</div>
             <div class="col-md-2">
                 <button>Modify</button>
             </div>
@@ -288,83 +311,86 @@
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.WillValue)
+                <label asp-for="@Model.Npc.WillValue"></label>
+                
             </div>
             <div class="col-md-1">
-                @Model.WillValue
+                @Model.Npc.WillValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.WillTp
+                @Model.Npc.WillTp
             </div>
             <div class="col-md-1">
-                @Model.WillExp
+                @Model.Npc.WillExp
             </div>
 
             <div class="col-md-3">
-                @Model.WillTalang
+                @Model.Npc.WillTalang
             </div>
             <div class="col-md-1">
-                @Model.WillTTp
+                @Model.Npc.WillTTp
             </div>
             <div class="col-md-3">
-                @Model.WillSkills
+                @Model.Npc.WillSkills
             </div>
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.CreativityValue)
+                <label asp-for="@Model.Npc.CreativityValue"></label>
+                
             </div>
             <div class="col-md-1">
-                @Model.CreativityValue
+                @Model.Npc.CreativityValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.CreativityTp
+                @Model.Npc.CreativityTp
             </div>
             <div class="col-md-1">
-                @Model.CreativityExp
+                @Model.Npc.CreativityExp
             </div>
 
             <div class="col-md-3">
-                @Model.CreativityTalang
+                @Model.Npc.CreativityTalang
             </div>
             <div class="col-md-1">
-                @Model.CreativityTTp
+                @Model.Npc.CreativityTTp
             </div>
             <div class="col-md-3">
-                @Model.CreativitySkills
+                @Model.Npc.CreativitySkills
             </div>
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.EducationValue)
+                <label class="col-md-1" asp-for="@Model.Npc.EducationValue"></label>
+                
             </div>
             <div class="col-md-1">
-                @Model.EducationValue
+                @Model.Npc.EducationValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.EducationTp
+                @Model.Npc.EducationTp
             </div>
             <div class="col-md-1">
-                @Model.EducationExp
+                @Model.Npc.EducationExp
             </div>
 
             <div class="col-md-3">
-                @Model.EducationTalang
+                @Model.Npc.EducationTalang
             </div>
             <div class="col-md-1">
-                @Model.EducationTTp
+                @Model.Npc.EducationTTp
             </div>
             <div class="col-md-3">
-                @Model.EducationSkills
+                @Model.Npc.EducationSkills
             </div>
         </div>
     </div>
@@ -372,9 +398,10 @@
 
     <div class="container-fluid  table-bordered">
         <div class="row ">
-            <div class="col-md-2 ">@Html.LabelFor(i => i.PerceptionTot)</div>
-            <div class="col-md-2 ">Tot:@Model.PerceptionTot</div>
-            <div class="col-md-2 ">Uts:@Model.PerceptionUts</div>
+            <label class="col-md-2" asp-for="@Model.Npc.PerceptionTot"></label>
+            
+            <div class="col-md-2 ">Tot:@Model.Npc.PerceptionTot</div>
+            <div class="col-md-2 ">Uts:@Model.Npc.PerceptionUts</div>
             <div class="col-md-2">
                 <button>Modify</button>
             </div>
@@ -408,92 +435,96 @@
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.IntuitionValue)
+                <label class="col-md-2" asp-for="@Model.Npc.IntuitionValue"></label>
+                
             </div>
             <div class="col-md-1">
-                @Model.IntuitionValue
+                @Model.Npc.IntuitionValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.IntuitionTp
+                @Model.Npc.IntuitionTp
             </div>
             <div class="col-md-1">
-                @Model.IntuitionExp
+                @Model.Npc.IntuitionExp
             </div>
 
             <div class="col-md-3">
-                @Model.IntuitionTalang
+                @Model.Npc.IntuitionTalang
             </div>
             <div class="col-md-1">
-                @Model.IntuitionTTp
+                @Model.Npc.IntuitionTTp
             </div>
             <div class="col-md-3">
-                @Model.IntuitionSkills
+                @Model.Npc.IntuitionSkills
             </div>
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.MagicVisionValue)
+                <label class="col-md-2" asp-for="@Model.Npc.MagicVisionValue"></label>
+                
             </div>
             <div class="col-md-1">
-                @Model.MagicVisionValue
+                @Model.Npc.MagicVisionValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.MagicVisionTp
+                @Model.Npc.MagicVisionTp
             </div>
             <div class="col-md-1">
-                @Model.MagicVisionExp
+                @Model.Npc.MagicVisionExp
             </div>
 
             <div class="col-md-3">
-                @Model.MagicVisionTalang
+                @Model.Npc.MagicVisionTalang
             </div>
             <div class="col-md-1">
-                @Model.MagicVisionTTp
+                @Model.Npc.MagicVisionTTp
             </div>
             <div class="col-md-3">
-                @Model.MagicVisionSkills
+                @Model.Npc.MagicVisionSkills
             </div>
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.AttentionValue)
+
+                <label class="col-md-2" asp-for="@Model.Npc.AttentionValue"></label>
+                
             </div>
             <div class="col-md-1">
-                @Model.AttentionValue
+                @Model.Npc.AttentionValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.AttentionTp
+                @Model.Npc.AttentionTp
             </div>
             <div class="col-md-1">
-                @Model.AttentionExp
+                @Model.Npc.AttentionExp
             </div>
 
             <div class="col-md-3">
-                @Model.AttentionTalang
+                @Model.Npc.AttentionTalang
             </div>
-            <div class="col-md-1">
-                @Model.AttentionTTp
+            0<div class="col-md-1">
+                @Model.Npc.AttentionTTp
             </div>
             <div class="col-md-3">
-                @Model.AttentionSkills
+                @Model.Npc.AttentionSkills
             </div>
         </div>
     </div>
 
     <div class="container-fluid table-bordered">
         <div class="row ">
-            <div class="col-md-2 ">@Html.LabelFor(i => i.SocialTot)</div>
-            <div class="col-md-2 ">Tot:@Model.SocialTot</div>
-            <div class="col-md-2">Uts:@Model.SocialUts</div>
+            <label class="col-md-2" asp-for="@Model.Npc.SocialTot"></label>
+            <div class="col-md-2 ">Tot:@Model.Npc.SocialTot</div>
+            <div class="col-md-2">Uts:@Model.Npc.SocialUts</div>
             <div class="col-md-2">
                 <button>Modify</button>
             </div>
@@ -527,83 +558,86 @@
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.CharismaValue)
+                <label asp-for="@Model.Npc.CharismaValue"></label>
+
             </div>
             <div class="col-md-1">
-                @Model.CharismaValue
+                @Model.Npc.CharismaValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.CharismaTp
+                @Model.Npc.CharismaTp
             </div>
             <div class="col-md-1">
-                @Model.CharismaExp
+                @Model.Npc.CharismaExp
             </div>
 
             <div class="col-md-3">
-                @Model.CharismaTalang
+                @Model.Npc.CharismaTalang
             </div>
             <div class="col-md-1">
-                @Model.CharismaTTp
+                @Model.Npc.CharismaTTp
             </div>
             <div class="col-md-3">
-                @Model.CharismaSkills
+                @Model.Npc.CharismaSkills
             </div>
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.InsightValue)
+                <label asp-for="@Model.Npc.InsightValue"></label>
+
             </div>
             <div class="col-md-1">
-                @Model.InsightValue
+                @Model.Npc.InsightValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.InsightTp
+                @Model.Npc.InsightTp
             </div>
             <div class="col-md-1">
-                @Model.InsightExp
+                @Model.Npc.InsightExp
             </div>
 
             <div class="col-md-3">
-                @Model.InsightTalang
+                @Model.Npc.InsightTalang
             </div>
             <div class="col-md-1">
-                @Model.InsightTTp
+                @Model.Npc.InsightTTp
             </div>
             <div class="col-md-3">
-                @Model.InsightSkills
+                @Model.Npc.InsightSkills
             </div>
         </div>
         <div class="row ">
             <div class="col-md-1">
-                @Html.LabelFor(i => i.ResistanceValue)
+                <label asp-for="@Model.Npc.ResistanceValue"></label>
+
             </div>
             <div class="col-md-1">
-                @Model.ResistanceValue
+                @Model.Npc.ResistanceValue
             </div>
             <div class="col-md-1">
                 <button>Modify</button>
             </div>
             <div class="col-md-1">
-                @Model.ResistanceTp
+                @Model.Npc.ResistanceTp
             </div>
             <div class="col-md-1">
-                @Model.ResistanceExp
+                @Model.Npc.ResistanceExp
             </div>
 
             <div class="col-md-3">
-                @Model.ResistanceTalang
+                @Model.Npc.ResistanceTalang
             </div>
             <div class="col-md-1">
-                @Model.ResistanceTTp
+                @Model.Npc.ResistanceTTp
             </div>
             <div class="col-md-3">
-                @Model.ResistanceSkills
+                @Model.Npc.ResistanceSkills
             </div>
         </div>
 

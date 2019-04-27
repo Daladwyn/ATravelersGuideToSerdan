@@ -1,4 +1,5 @@
-﻿using ATravelersGuideToSerdan.ViewModels;
+﻿using ATravelersGuideToSerdan.Models;
+using ATravelersGuideToSerdan.ViewModels;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -27,7 +28,62 @@ namespace ATravelersGuideToSerdan.ViewModels
         [Display(Name = "Vanliga Barn")]
         public List<NpcListViewModel> NpcsRegularChildren { get; set; }
 
+        [Display(Name = "Uppträdande")]
+        [MaxLength(200)]
+        public string NpcBehaviour { get; set; }
 
+        [Display(Name = "Som förälder")]
+        [MaxLength(200)]
+        public string NpcAsAParent { get; set; }
+
+        [Display(Name = "Mål")]
+        [MaxLength(200)]
+        public string NpcGoal { get; set; }
+
+        [Display(Name = "Strid")]
+        [MaxLength(200)]
+        public string NpcInBattle { get; set; }
+
+        [Display(Name = "Andra bostäder/platser av betydelse")]
+        [MaxLength(200)]
+        public string NpcOtherResideces { get; set; }
+
+        [Display(Name = "Historia")]
+        [MaxLength(300)]
+        public string NpcInTheHistory { get; set; }
+
+        [Display(Name = "Hemligheter")]
+        [MaxLength(300)]
+        public string NpcSecrets { get; set; }
+
+        [Display(Name = "Tillgångar")]
+        [MaxLength(200)]
+        public string NpcAssets { get; set; }
+
+        internal static NpcDiverseViewModel AssignDiverseData(NPC NpcToAssign)
+        {
+            NpcDiverseViewModel FilteredNpc = new NpcDiverseViewModel
+            {
+                NpcId = NpcToAssign.NpcId,
+                NpcOtherResideces = NpcToAssign.NpcOtherResideces,
+                NpcInTheHistory = NpcToAssign.NpcInTheHistory,
+                NpcSecrets = NpcToAssign.NpcSecrets,
+                NpcAssets = NpcToAssign.NpcAssets
+            };
+            return FilteredNpc;
+        }
+        internal static NpcApperanceViewModel AssignApperanceData(NPC NpcToAssign)
+        {
+            NpcApperanceViewModel FilteredNpc = new NpcApperanceViewModel
+            {
+                NpcId = NpcToAssign.NpcId,
+                NpcAsAParent = NpcToAssign.NpcAsAParent,
+                NpcBehaviour = NpcToAssign.NpcBehaviour,
+                NpcGoal = NpcToAssign.NpcGoal,
+                NpcInBattle = NpcToAssign.NpcInBattle
+            };
+            return FilteredNpc;
+        }
         //internal static NpcRelativesViewModel AssignRelativesData(NPC NpcToAssign)
         //{
         //    SerdanDb Db = new SerdanDb();

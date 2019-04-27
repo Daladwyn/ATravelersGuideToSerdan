@@ -31,5 +31,46 @@
         <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="@Model.Npc.NpcsRegularChildren" />
         <span asp-validation-for="@Model.Npc.NpcsRegularChildren"></span>
     </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcBehaviour"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcBehaviour" />
+        <span asp-validation-for="@Model.Npc.NpcBehaviour"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"asp-for="@Model.Npc.NpcAsAParent"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2"asp-for="@Model.Npc.NpcAsAParent" />
+        <span asp-validation-for="@Model.Npc.NpcAsAParent"></span>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"asp-for="@Model.Npc.NpcGoal"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcGoal" />
+        <span asp-validation-for="@Model.Npc.NpcGoal"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcInBattle"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcInBattle" />
+        <span asp-validation-for="@Model.Npc.NpcInBattle"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcOtherResideces"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcOtherResideces" />
+        <span asp-validation-for="@Model.Npc.NpcOtherResideces"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcInTheHistory"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcInTheHistory" />
+        <span asp-validation-for="@Model.Npc.NpcInTheHistory"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcSecrets"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcSecrets" />
+        <span asp-validation-for="@Model.Npc.NpcSecrets"></span>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcAssets"></label>
+        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcAssets" />
+        <span asp-validation-for="@Model.Npc.NpcAssets"></span>
+    </div>
     <button type="submit" class="btn btn-dark">go to step3</button>
 </form>
