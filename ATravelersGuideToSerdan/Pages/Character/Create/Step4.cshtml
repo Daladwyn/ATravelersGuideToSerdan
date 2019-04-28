@@ -2,644 +2,357 @@
 @model ATravelersGuideToSerdan.Pages.Character.Create.Step4Model
 @*@model ATravelersGuideToSerdan.ViewModels.CreateNpc4ViewModel*@
 
-<h1>Step4 - Stats</h1>
+<h1>Steg 4 - Egenskaper</h1>
+<p>
+    I detta steget fördelar du egenskapspoäng. I nästa steg kommer du kunna välja färdigheter och talanger.
+</p>
+
 @ViewBag.ErrorMessage
 <hr />
 <form method="post">
     <div class="container-fluid table-bordered">
         <div class="row">
-            <div class="col-md-1">Egenskap</div>
+            <div class="col-md-3">Egenskap</div>
             <div class="col-md-1">Tot./Uts.</div>
-            <div class="col-md-1">Förmåga</div>
-            <div class="col-md-1">Värd.</div>
-            <div class="col-md-1">TP.</div>
-            <div class="col-md-1">ExP</div>
+            <div class="col-md-1">@*knappar*@</div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Förmåga</div>
+                    <div class="col-md-2">Värde</div>
+                    <div class="col-md-2">UtsättsPoäng</div>
+                    <div class="col-md-3">@*knappar*@</div>
+                    <div class="col-md-1">TP.</div>
+                </div>
+            </div>
+            @*<div class="col-md-1">ExP</div>
             <div class="col-md-2">Talanger</div>
             <div class="col-md-1">TTp</div>
             <div class="col-md-2">Färdigheter</div>
-            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>*@
 
         </div>
 
-        <div class="row  ">
-            <div>
-                <label asp-for="@Model.Npc.KoordinationMotorikUts"></label>
+        <div class="row">
+            <div class="col-md-3">
                 <label asp-for="@Model.Npc.KoordinationMotorikTot"></label>
-
-
             </div>
-            <label class="col-md-2" asp-for="@Model.Npc.KoordinationMotorikTot"></label>
-            <div class="col-md-2">Tot:@Model.Npc.KoordinationMotorikTot</div>
-            <div class="col-md-2">Uts:@Model.Npc.KoordinationMotorikUts</div>
-            <div class="col-md-2">
-                <button>Modify</button>
+            <div class="col-md-1">25/25</div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-success">Öka</button>
+                <button type="submit" class="btn btn-danger">Minska</button>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.WeaponValue"></label>
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.BalisticValue"></label>
+
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.FineMotorValue"></label>
+
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-md-1">
-                Förmåga
-            </div>
-            <div class="col-md-1">
-                Värde
-            </div>
-            <div class="col-md-1">
 
-            </div>
-            <div class="col-md-1">
-                Tp.
-            </div>
-            <div class="col-md-1">
-                Exp
-            </div>
 
+        <div class="row">
             <div class="col-md-3">
-                Talang
+                <label asp-for="@Model.Npc.PhysiqueTot"></label>
             </div>
+            <div class="col-md-1">25/25</div>
             <div class="col-md-1">
-                TTp
+                <button type="submit" class="btn btn-success">Öka</button>
+                <button type="submit" class="btn btn-danger">Minska</button>
             </div>
-            <div class="col-md-3">
-                Färdigheter
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.PhysicsValue"></label>
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.StrenghtValue"></label>
+
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.MobilityValue"></label>
+
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label asp-for="@Model.Npc.WeaponValue"></label>)
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.WeaponValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.WeaponTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.WeaponExp
-            </div>
 
+        <div class="row">
             <div class="col-md-3">
-                @Model.Npc.WeaponTalang
+                <label asp-for="@Model.Npc.PsykeTot"></label>
             </div>
+            <div class="col-md-1">25/25</div>
             <div class="col-md-1">
-                @Model.Npc.WeaponTTp
+                <button type="submit" class="btn btn-success">Öka</button>
+                <button type="submit" class="btn btn-danger">Minska</button>
             </div>
-            <div class="col-md-3">
-                @Model.Npc.WeaponSkills
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.WillValue"></label>
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.CreativityValue"></label>
+
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.EducationValue"></label>
+
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label asp-for="@Model.Npc.BalisticValue"></label>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.BalisticValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.BalisticTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.BalisticExp
-            </div>
 
+        <div class="row">
             <div class="col-md-3">
-                @Model.Npc.BalisticTalang
+                <label asp-for="@Model.Npc.PerceptionTot"></label>
             </div>
+            <div class="col-md-1">25/25</div>
             <div class="col-md-1">
-                @Model.Npc.BalisticTTp
+                <button type="submit" class="btn btn-success">Öka</button>
+                <button type="submit" class="btn btn-danger">Minska</button>
             </div>
-            <div class="col-md-3">
-                @Model.Npc.BalisticSkills
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.IntuitionValue"></label>
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.MagicVisionValue"></label>
+
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.AttentionValue"></label>
+
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label asp-for="@Model.Npc.FineMotorValue"></label>
-               
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.FineMotorValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.FineMotorTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.FineMotorExp
-            </div>
 
+        <div class="row">
             <div class="col-md-3">
-                @Model.Npc.FineMotorTalang
+                <label asp-for="@Model.Npc.SocialTot"></label>
             </div>
+            <div class="col-md-1">25/25</div>
             <div class="col-md-1">
-                @Model.Npc.FineMotorTTp
+                <button type="submit" class="btn btn-success">Öka</button>
+                <button type="submit" class="btn btn-danger">Minska</button>
             </div>
-            <div class="col-md-3">
-                @Model.Npc.FineMotorSkills
-            </div>
-        </div>
-    </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.CharismaValue"></label>
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
 
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.InsightValue"></label>
 
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="@Model.Npc.ResistanceValue"></label>
 
-    <div class="container-fluid table-bordered">
-        <div class="row ">
-            <label class="col-md-2" asp-for="@Model.Npc.PhysiqueTot"></label>
-            
-            <div class="col-md-2 ">Tot:@Model.Npc.PhysiqueTot</div>
-            <div class="col-md-2 ">Uts:@Model.Npc.PhysiqueUts</div>
-            <div class="col-md-2">
-                <button>Modify</button>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                Förmåga
-            </div>
-            <div class="col-md-1">
-                Värde
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-                Tp.
-            </div>
-            <div class="col-md-1">
-                Exp
-            </div>
-
-            <div class="col-md-3">
-                Talang
-            </div>
-            <div class="col-md-1">
-                TTp
-            </div>
-            <div class="col-md-3">
-                Färdigheter
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label class="col-md-2" asp-for="@Model.Npc.PhysicsValue"></label>
-                
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.PhysicsValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.PhysicsTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.PhysicsExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.PhysicsTalang
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.PhysicsTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.PhysicsSkills
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label asp-for="@Model.Npc.StrenghtValue"></label>
-                
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.StrenghtValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.StrenghtTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.StrenghtExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.StrenghtTalang
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.StrenghtTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.StrenghtSkills
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label asp-for="@Model.Npc.MobilityValue"></label>
-                
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.MobilityValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.MobilityTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.MobilityExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.MobilityTalang
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.MobilityTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.MobilitySkills
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container-fluid  table-bordered">
-        <div class="row ">
-            <label class="col-md-2" asp-for="@Model.Npc.PsykeTot"></label>
-            
-            <div class="col-md-2 ">Tot:@Model.Npc.PsykeTot</div>
-            <div class="col-md-2 ">Uts:@Model.Npc.PsykeUts</div>
-            <div class="col-md-2">
-                <button>Modify</button>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                Förmåga
-            </div>
-            <div class="col-md-1">
-                Värde
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-                Tp.
-            </div>
-            <div class="col-md-1">
-                Exp
-            </div>
-
-            <div class="col-md-3">
-                Talang
-            </div>
-            <div class="col-md-1">
-                TTp
-            </div>
-            <div class="col-md-3">
-                Färdigheter
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label asp-for="@Model.Npc.WillValue"></label>
-                
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.WillValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.WillTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.WillExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.WillTalang
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.WillTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.WillSkills
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label asp-for="@Model.Npc.CreativityValue"></label>
-                
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.CreativityValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.CreativityTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.CreativityExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.CreativityTalang
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.CreativityTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.CreativitySkills
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label class="col-md-1" asp-for="@Model.Npc.EducationValue"></label>
-                
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.EducationValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.EducationTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.EducationExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.EducationTalang
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.EducationTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.EducationSkills
+                    </div>
+                    <div class="col-md-2">
+                        0
+                    </div>
+                    <div class="col-md-2">50</div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Öka</button>
+                        <button type="submit" class="btn btn-danger">Minska</button>
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-
-    <div class="container-fluid  table-bordered">
-        <div class="row ">
-            <label class="col-md-2" asp-for="@Model.Npc.PerceptionTot"></label>
-            
-            <div class="col-md-2 ">Tot:@Model.Npc.PerceptionTot</div>
-            <div class="col-md-2 ">Uts:@Model.Npc.PerceptionUts</div>
-            <div class="col-md-2">
-                <button>Modify</button>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                Förmåga
-            </div>
-            <div class="col-md-1">
-                Värde
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-                Tp.
-            </div>
-            <div class="col-md-1">
-                Exp
-            </div>
-
-            <div class="col-md-3">
-                Talang
-            </div>
-            <div class="col-md-1">
-                TTp
-            </div>
-            <div class="col-md-3">
-                Färdigheter
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label class="col-md-2" asp-for="@Model.Npc.IntuitionValue"></label>
-                
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.IntuitionValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.IntuitionTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.IntuitionExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.IntuitionTalang
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.IntuitionTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.IntuitionSkills
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label class="col-md-2" asp-for="@Model.Npc.MagicVisionValue"></label>
-                
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.MagicVisionValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.MagicVisionTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.MagicVisionExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.MagicVisionTalang
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.MagicVisionTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.MagicVisionSkills
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-
-                <label class="col-md-2" asp-for="@Model.Npc.AttentionValue"></label>
-                
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.AttentionValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.AttentionTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.AttentionExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.AttentionTalang
-            </div>
-            0<div class="col-md-1">
-                @Model.Npc.AttentionTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.AttentionSkills
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid table-bordered">
-        <div class="row ">
-            <label class="col-md-2" asp-for="@Model.Npc.SocialTot"></label>
-            <div class="col-md-2 ">Tot:@Model.Npc.SocialTot</div>
-            <div class="col-md-2">Uts:@Model.Npc.SocialUts</div>
-            <div class="col-md-2">
-                <button>Modify</button>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                Förmåga
-            </div>
-            <div class="col-md-1">
-                Värde
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-                Tp.
-            </div>
-            <div class="col-md-1">
-                Exp
-            </div>
-
-            <div class="col-md-3">
-                Talang
-            </div>
-            <div class="col-md-1">
-                TTp
-            </div>
-            <div class="col-md-3">
-                Färdigheter
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label asp-for="@Model.Npc.CharismaValue"></label>
-
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.CharismaValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.CharismaTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.CharismaExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.CharismaTalang
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.CharismaTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.CharismaSkills
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label asp-for="@Model.Npc.InsightValue"></label>
-
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.InsightValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.InsightTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.InsightExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.InsightTalang
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.InsightTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.InsightSkills
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-1">
-                <label asp-for="@Model.Npc.ResistanceValue"></label>
-
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.ResistanceValue
-            </div>
-            <div class="col-md-1">
-                <button>Modify</button>
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.ResistanceTp
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.ResistanceExp
-            </div>
-
-            <div class="col-md-3">
-                @Model.Npc.ResistanceTalang
-            </div>
-            <div class="col-md-1">
-                @Model.Npc.ResistanceTTp
-            </div>
-            <div class="col-md-3">
-                @Model.Npc.ResistanceSkills
-            </div>
-        </div>
-
-        <button type="submit" class="btn btn-dark">Finalize Character</button>
+          <button type="submit" class="btn btn-dark">Nästa - Färdigheter och Talanger</button> 
 </form>
