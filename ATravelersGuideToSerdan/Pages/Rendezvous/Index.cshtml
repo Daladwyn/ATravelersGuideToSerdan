@@ -1,0 +1,40 @@
+﻿@page
+@model ATravelersGuideToSerdan.Pages.Rendezvous.IndexModel
+
+<h1>Här kan man notera möten mellan slp.</h1>
+<p>Minst 2 karaktärer krävs för att ett möte skall kunna inträffa</p>
+<hr />
+<form method="post">
+    <div class="text-dark">Karaktär1:</div>
+    <select>
+        @foreach (var slp in Model.Npc1)
+        {
+            <option class="alert-primary" id="@slp.NpcId">@slp.NpcName</option>
+        }
+    </select>
+    <br />
+    <div class="text-dark">Karaktär2:</div>
+    <select>
+        @foreach (var slp in Model.Npc2)
+        {
+            <option class="alert-primary" id="@slp.NpcId">@slp.NpcName</option>
+        }
+    </select>
+    <br />
+    <div class="text-dark">Planet:</div>
+    <select>
+        @foreach (var planet in Model.Planet)
+        {
+            <option class="dropdown" id=""></option>
+        }
+    </select>
+    <br />
+    <div class="text-dark">Plats:</div>
+    <input type="text" value="@Model.Place" />
+    <br />
+    <div class="text-dark">Mötesdetaljer:</div>
+    <input type="text" class="" value="@Model.MeetingDetails" />
+    <br />
+    <input type="submit" class="btn btn-dark" value="Notera" />
+
+</form>
