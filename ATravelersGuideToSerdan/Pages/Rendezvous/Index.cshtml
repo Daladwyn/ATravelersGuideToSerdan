@@ -7,26 +7,39 @@
 <form method="post">
     <div class="text-dark">Karaktär1:</div>
     <select>
-        @foreach (var slp in Model.Npc1)
-        {
-            <option class="alert-primary" id="@slp.NpcId">@slp.NpcName</option>
-        }
+        <option>Välj en SLP</option>
+        <option>Lucas</option>
+        <option>Merlin</option>
+        <option>Julian</option>
+        @*foreach (var slp in Model.Npc1)
+            {
+                <option class="alert-primary" id="@slp.NpcId">@slp.NpcName</option>
+            }*@
     </select>
     <br />
     <div class="text-dark">Karaktär2:</div>
     <select>
-        @foreach (var slp in Model.Npc2)
-        {
-            <option class="alert-primary" id="@slp.NpcId">@slp.NpcName</option>
-        }
+        <option>Välj en SLP</option>
+        <option>Dhara</option>
+        <option>Norris</option>
+        <option>LenRewtu</option>
+        <option>Xaxin</option>
+        @*foreach (var slp in Model.Npc2)
+            {
+                <option class="alert-primary" id="@slp.NpcId">@slp.NpcName</option>
+            }*@
     </select>
     <br />
     <div class="text-dark">Planet:</div>
     <select>
-        @foreach (var planet in Model.Planet)
-        {
-            <option class="dropdown" id=""></option>
-        }
+        <option>Välj en planet</option>
+        <option>Galo</option>
+        <option>Balinc</option>
+        <option>Krimur</option>
+        @*foreach (var planet in Model.Planet)
+            {
+                <option class="dropdown" id=""></option>
+            }*@
     </select>
     <br />
     <div class="text-dark">Plats:</div>

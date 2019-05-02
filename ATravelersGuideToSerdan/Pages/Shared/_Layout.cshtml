@@ -19,7 +19,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-expand-md navbar-expand-lg navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">ATravelersGuideToSerdan</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -30,7 +30,7 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Karaktärer/planeter/städer/platser</a>
+                            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">SLP/planeter/städer/platser</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item text-dark" asp-area="" asp-page="/Character/NPCIndex">Karaktärer</a>
                                 <a class="dropdown-item text-dark" asp-area="" asp-page="/Planets/Index">Planeter</a>
@@ -44,7 +44,15 @@
                         <li class="nav-item">
                             <form method="post">
                                 <span class="text-success">Jag letar efter </span>
-
+                                <Select>
+                                    <option>Välj en av följande</option>
+                                    <option>Kraften</option>
+                                    <option>Magin</option>
+                                    <option>Slp</option>
+                                    <option>Planeten</option>
+                                    <option>Alla slp med kraften</option>
+                                    <option>Alla slp med Magin</option>
+                                </Select>
                                 <input type="text" />
                                 <input type="submit" class="btn btn-info" value="Sök" />
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Search/Index"></a>
