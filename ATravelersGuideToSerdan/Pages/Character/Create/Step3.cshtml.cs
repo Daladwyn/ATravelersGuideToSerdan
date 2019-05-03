@@ -22,13 +22,19 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
             _Db = Db;
         }
 
+        public string Headline { get; set; }
+        public string Message { get; set; }
+
         public void OnGet()
         {
-
+            Headline = "Steg 3.";
+            Message = "Här anger du karaktärens inställning till andra personer och varelser.";
         }
 
         public IActionResult OnPost()
         {
+            Headline = "Steg 3.";
+            Message = "Här anger du karaktärens inställning till andra personer och varelser.";
             return RedirectToPage("Step4");
         }
     }

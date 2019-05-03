@@ -21,6 +21,7 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
             _Db = Db;
         }
 
+        public string Headline { get; set; }
         public string Message { get; set; }
 
         // [BindProperties]
@@ -29,12 +30,14 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
 
         public void OnGet()
         {
-            Message = "Step1 in adding a new Npc";
+            Headline = "Steg1.";
+            Message = "Här anger du din karaktärs namn och grunddata.";
         }
 
         public IActionResult OnPost(CreateNpc1ViewModel newNpc)
         {
-            Message = "Step1 in adding a new Npc2";
+            Headline = "Steg1.";
+            Message = "Här anger du din karaktärs namn och grunddata.";
             return RedirectToPage("Step2");
         }
     }

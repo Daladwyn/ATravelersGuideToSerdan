@@ -22,12 +22,14 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
             _Db = Db;
         }
 
+        public string Headline { get; set; }
         public string Message { get; set; }
 
 
         public void OnGet()
         {
-            Message = "Step 2 in character creation";
+            Headline = "Steg2";
+            Message = "Här anger du karaktärens släktband";
         }
 
         // @Model.NewNpc.
@@ -36,6 +38,8 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
 
         public IActionResult OnPost(CreateNpc2ViewModel newNpc)
         {
+            Headline = "Steg2";
+            Message = "Här anger du karaktärens släktband";
             return RedirectToPage("Step3");
         }
     }

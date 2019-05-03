@@ -2,10 +2,10 @@
 @model ATravelersGuideToSerdan.Pages.Character.Create.Step4Model
 @*@model ATravelersGuideToSerdan.ViewModels.CreateNpc4ViewModel*@
 
-<h1>Steg 4 - Egenskaper</h1>
-<p>
-    I detta steget fördelar du egenskapspoäng. I nästa steg kommer du kunna välja färdigheter och talanger.
-</p>
+<h1>@Model.Headline</h1>
+<p>@Model.Message</p>
+<hr />
+
 
 @ViewBag.ErrorMessage
 <hr />
@@ -25,10 +25,10 @@
                 </div>
             </div>
             @*<div class="col-md-1">ExP</div>
-            <div class="col-md-2">Talanger</div>
-            <div class="col-md-1">TTp</div>
-            <div class="col-md-2">Färdigheter</div>
-            <div class="col-md-1"></div>*@
+                <div class="col-md-2">Talanger</div>
+                <div class="col-md-1">TTp</div>
+                <div class="col-md-2">Färdigheter</div>
+                <div class="col-md-1"></div>*@
 
         </div>
 
@@ -354,5 +354,5 @@
             </div>
         </div>
     </div>
-          <button type="submit" class="btn btn-dark">Nästa - Färdigheter och Talanger</button> 
+    <button type="submit" class="btn btn-dark">Nästa - Färdigheter och Talanger</button>
 </form>

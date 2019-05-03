@@ -10,13 +10,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ATravelersGuideToSerdan.Pages.Character.Create
 {
-    public class Step7Model : PageModel
+    public class Step9Model : PageModel
     {
         private IMapper _mapper;
         private _DB _Db;
-        public CreateNpc7ViewModel Npc { get; set; }
+        public CreateNpc9ViewModel Npc { get; set; }
 
-        public Step7Model(IMapper mapper, _DB Db)
+        public Step9Model(IMapper mapper, _DB Db)
         {
             _mapper = mapper;
             _Db = Db;
@@ -25,18 +25,10 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
         public string Headline { get; set; }
         public string Message { get; set; }
 
+
         public void OnGet()
         {
-            Headline = "Steg 7";
-            Message = "Här kan du välja eventuella kontakter karaktären känner.";
-        }
 
-        public IActionResult OnPost()
-        {
-            Headline = "Steg 7";
-            Message = "Här kan du välja eventuella kontakter karaktären känner.";
-            return RedirectToPage("Step8");
         }
-
     }
 }

@@ -22,14 +22,20 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
             _Db = Db;
         }
 
+        public string Headline { get; set; }
+        public string Message { get; set; }
+
         public void OnGet()
         {
-
+            Headline = "Steg 4.";
+            Message = "I detta steget fördelar du egenskapspoäng.";
         }
 
 
         public IActionResult OnPost()
         {
+            Headline = "Steg 4.";
+            Message = "I detta steget fördelar du egenskapspoäng.";
             return RedirectToPage("Step5");
         }
 
