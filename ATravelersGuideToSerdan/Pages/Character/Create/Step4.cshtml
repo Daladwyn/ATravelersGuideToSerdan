@@ -12,16 +12,18 @@
 <form method="post">
     <div class="container-fluid table-bordered">
         <div class="row">
-            <div class="col-md-3">Egenskap</div>
+            <div class="col-md-2">Egenskap</div>
             <div class="col-md-1">Tot./Uts.</div>
             <div class="col-md-1">@*knappar*@</div>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <div class="row">
-                    <div class="col-md-4">Förmåga</div>
+                    <div class="col-md-2">Förmåga</div>
                     <div class="col-md-2">Värde</div>
                     <div class="col-md-2">UtsättsPoäng</div>
                     <div class="col-md-3">@*knappar*@</div>
                     <div class="col-md-1">TP.</div>
+                    <div class="col-md-1">xTP.</div>
+                    <div class="col-md-1">TTP.</div>
                 </div>
             </div>
             @*<div class="col-md-1">ExP</div>
@@ -33,7 +35,7 @@
         </div>
 
         <div class="row table-bordered">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <label asp-for="@Model.Npc.KoordinationMotorikTot"></label>
             </div>
             <div class="col-md-1">25/25</div>
@@ -41,9 +43,9 @@
                 <button type="submit" class="btn btn-success">Öka</button>
                 <button type="submit" class="btn btn-danger">Minska</button>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.WeaponValue"></label>
                     </div>
                     <div class="col-md-2">
@@ -57,10 +59,16 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
 
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.BalisticValue"></label>
 
                     </div>
@@ -75,9 +83,15 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.FineMotorValue"></label>
 
                     </div>
@@ -92,13 +106,19 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
                 </div>
             </div>
         </div>
 
 
         <div class="row table-bordered">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <label asp-for="@Model.Npc.PhysiqueTot"></label>
             </div>
             <div class="col-md-1">25/25</div>
@@ -106,9 +126,9 @@
                 <button type="submit" class="btn btn-success">Öka</button>
                 <button type="submit" class="btn btn-danger">Minska</button>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.PhysicsValue"></label>
                     </div>
                     <div class="col-md-2">
@@ -122,10 +142,16 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
 
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.StrenghtValue"></label>
 
                     </div>
@@ -140,10 +166,16 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
                 </div>
 
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.MobilityValue"></label>
 
                     </div>
@@ -158,12 +190,18 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="row table-bordered">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <label asp-for="@Model.Npc.PsykeTot"></label>
             </div>
             <div class="col-md-1">25/25</div>
@@ -171,9 +209,9 @@
                 <button type="submit" class="btn btn-success">Öka</button>
                 <button type="submit" class="btn btn-danger">Minska</button>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.WillValue"></label>
                     </div>
                     <div class="col-md-2">
@@ -187,10 +225,16 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
 
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.CreativityValue"></label>
 
                     </div>
@@ -205,9 +249,15 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.EducationValue"></label>
 
                     </div>
@@ -222,12 +272,18 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="row table-bordered">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <label asp-for="@Model.Npc.PerceptionTot"></label>
             </div>
             <div class="col-md-1">25/25</div>
@@ -235,9 +291,9 @@
                 <button type="submit" class="btn btn-success">Öka</button>
                 <button type="submit" class="btn btn-danger">Minska</button>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.IntuitionValue"></label>
                     </div>
                     <div class="col-md-2">
@@ -251,10 +307,16 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
 
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.MagicVisionValue"></label>
 
                     </div>
@@ -269,9 +331,15 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.AttentionValue"></label>
 
                     </div>
@@ -286,12 +354,18 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="row table-bordered">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <label asp-for="@Model.Npc.SocialTot"></label>
             </div>
             <div class="col-md-1">25/25</div>
@@ -299,9 +373,9 @@
                 <button type="submit" class="btn btn-success">Öka</button>
                 <button type="submit" class="btn btn-danger">Minska</button>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.CharismaValue"></label>
                     </div>
                     <div class="col-md-2">
@@ -315,10 +389,16 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
 
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.InsightValue"></label>
 
                     </div>
@@ -333,9 +413,15 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label asp-for="@Model.Npc.ResistanceValue"></label>
 
                     </div>
@@ -350,9 +436,271 @@
                     <div class="col-md-1">
                         0
                     </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
+                    <div class="col-md-1">
+                        0
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-dark">Nästa - Färdigheter och Talanger</button>
+    
+    <div class="container-fluid table-bordered">
+        <div class="row">
+            <div class="col-md-1">
+                Förmåga
+            </div>
+            <div class="col-md-1">
+                TTP.
+            </div>
+            <div class="col-md-5">
+               Talanger
+            </div>
+            <div class="col-md-5">
+                Färdigheter
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.WeaponValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.BalisticValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.FineMotorValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.PhysicsValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.StrenghtValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.MobilityValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.WillValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.CreativityValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.EducationValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.IntuitionValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.MagicVisionValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.AttentionValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.CharismaValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.InsightValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label asp-for="@Model.Npc.ResistanceValue"></label>
+            </div>
+            <div class="col-md-1">
+                0
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="col-md-5 table-bordered">
+                <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+                <div class="col-md-10"></div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-dark">Nästa - Färdigheter och Talanger</button>
 </form>
