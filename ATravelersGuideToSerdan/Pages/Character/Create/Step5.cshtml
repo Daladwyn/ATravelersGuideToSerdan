@@ -9,9 +9,688 @@
 <p>@Model.Message</p>
 <hr />
 <form method="post">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    Krafter
+                </div>
+                <div class="col-md-3 table-bordered">
+                    Novis
+                </div>
+                <div class="col-md-3 table-bordered">
+                    Elev
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    Lärare
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    Mästare
+                </div>
+                <div class="col-md-3 table-bordered">
+                    Exalterad
+                </div>
+                <div class="col-md-3 table-bordered">
+                    Extrem
+                </div>
+                <div class="col-md-3 table-bordered">
+                    S/E
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerDragon"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />60p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />250p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    S
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerUnicorn"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />60p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />250p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    S
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerHealer"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    S
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerGriffon"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />60p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />250p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    E
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerManticore"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />60p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />250p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    E
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerBody"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    E
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerSymbol"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />250p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerMind"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />250p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerNature"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerWater"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerEarth"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerLight"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    S
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerElectricity"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerFire"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerWind"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerDarkness"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    E
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerSword"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerMateria"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />100p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />200p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerDoor"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />60p
+
+                </div>
+                <div class="col-md-3 table-bordered">
+                    
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />150p
+                </div>
+                <div class="col-md-3 table-bordered">
+                    
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerElementa"></label>
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />25p
+                </div>
+                <div class="col-md-3 table-bordered">
 
 
+                </div>
+                <div class="col-md-3 table-bordered">
 
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
 
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    <label asp-for="@Model.Npc.PowerAnimal"></label>
+                </div>
+                <div class="col-md-6 table-bordered">
+                    MetaMorfos
+                </div>
+                
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />50p
+                </div>
+            </div>
+            <div class="col-md-6 row">
+                <div class="col-md-3 table-bordered">
+                    Varbest
+                </div>
+                <div class="col-md-3 table-bordered">
+                    <input type="radio" />80p
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+                <div class="col-md-3 table-bordered">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
     <button type="submit" class="btn btn-dark">To Step6</button>
 </form>

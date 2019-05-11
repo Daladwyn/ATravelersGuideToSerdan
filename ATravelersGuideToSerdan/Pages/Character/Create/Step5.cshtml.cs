@@ -14,7 +14,7 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
     {
         private IMapper _mapper;
         private _DB _Db;
-        public CreateNpc4ViewModel Npc { get; set; }
+        public CreateNpc5ViewModel Npc { get; set; }
 
         public Step5Model(IMapper mapper, _DB Db)
         {
@@ -29,14 +29,14 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
         {
 
             Headline = "Steg 5";
-            Message = "I detta steget  kommer du kunna välja färdigheter och talanger.";
+            Message = "I detta steget kommer du kunna välja Krafter och magi.";
 
         }
 
         public IActionResult OnPost()
         {
             Headline = "Steg 5";
-            Message = "I detta steget  kommer du kunna välja färdigheter och talanger.";
+            Message = "I detta steget kommer du kunna välja krafter och magi.";
             return RedirectToPage("Step6");
         }
     }
