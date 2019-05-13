@@ -28,14 +28,14 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
         public void OnGet()
         {
             Headline = "Steg6";
-            Message = "Här kan du välja de krafter du vill ha på din karaktär.";
+            Message = "Här kan du välja magi till din karaktär.";
 
         }
 
         public IActionResult OnPost()
         {
             Headline = "Steg6";
-            Message = "Här kan du välja de krafter du vill ha på din karaktär.";
+            Message = "Här kan du välja magi till din karaktär.";
             return RedirectToPage("Step7");
         }
     }
