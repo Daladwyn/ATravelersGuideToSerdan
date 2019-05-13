@@ -29,15 +29,16 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
         {
 
             Headline = "Steg 5";
-            Message = "I detta steget kommer du kunna välja Krafter och magi.";
+            Message = "I detta steget kommer du kunna välja krafter.";
 
         }
 
         public IActionResult OnPost()
         {
             Headline = "Steg 5";
-            Message = "I detta steget kommer du kunna välja krafter och magi.";
+            Message = "I detta steget kommer du kunna välja krafter.";
             return RedirectToPage("Step6");
         }
+       
     }
 }

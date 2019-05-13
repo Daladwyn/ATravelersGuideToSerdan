@@ -4,11 +4,14 @@
 
 <h1>@Model.Headline</h1>
 <p>@Model.Message</p>
-<hr />
 
 
-@ViewBag.ErrorMessage
+
+<p>@ViewBag.ErrorMessage</p>
 <hr />
+<form method="get">
+    <button asp-page="Step3" class="btn btn-dark">Föregående steg</button>
+</form>
 <form method="post">
     <div class="container-fluid table-bordered">
         <div class="row">
@@ -702,5 +705,5 @@
                 <div class="col-md-10"></div>
             </div>
         </div>
-        <button type="submit" class="btn btn-dark">Nästa - Färdigheter och Talanger</button>
+        <button type="submit" class="btn btn-dark">Gå till karaktärens krafter</button>
 </form>

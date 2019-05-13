@@ -6,7 +6,11 @@
 <h1>@Model.Headline</h1>
 <p>@Model.Message</p>
 <hr />
+<form method="get">
+    <button asp-page="Step5" class="btn btn-dark">Föregående steg</button>
+</form>
 <form method="post">
+    <button type="submit" class="btn btn-dark">Gå till karaktärens kontakter</button>
     <div class="container-fluid">
         <div class="row">
             Magi (Uttryck * Dimension* Nivå * Aspekt = Kostnad magi)
@@ -97,13 +101,13 @@
         </div>
         <div class="row">
             <div class="col-md-3 table-bordered">
-                
+
             </div>
             <div class="col-md-3 table-bordered">
                 <input type="radio" />Slöjan
             </div>
             <div class="col-md-3 table-bordered">
-                
+
             </div>
             <div class="col-md-3 table-bordered">
                 <input type="radio" />(Själ)
@@ -111,34 +115,34 @@
         </div>
         <div class="row">
             <div class="col-md-3 table-bordered">
-                
+
             </div>
             <div class="col-md-3 table-bordered">
-                ((<input type="radio" value="Parallellium"/>Parallellium))
+                ((<input type="radio" value="Parallellium" />Parallellium))
             </div>
             <div class="col-md-3 table-bordered">
-                
+
             </div>
             <div class="col-md-3 table-bordered">
-                <input type="radio" value="((Tid))"/>((Tid))
+                <input type="radio" value="((Tid))" />((Tid))
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 table-bordered">
-                
+
             </div>
             <div class="col-md-3 table-bordered">
-                ((<input type="radio" value="Elementa" placeholder="Elementia"/>Elementa))
+                ((<input type="radio" value="Elementa" placeholder="Elementia" />Elementa))
             </div>
             <div class="col-md-3 table-bordered">
-             
+
             </div>
             <div class="col-md-3 table-bordered">
-             
+
             </div>
         </div>
 
 
     </div>
-    <button type="submit" class="btn btn-dark">To Step7</button>
+
 </form>

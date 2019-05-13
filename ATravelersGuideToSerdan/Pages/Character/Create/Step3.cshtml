@@ -7,6 +7,9 @@
 <h1>@Model.Headline</h1>
 <p>@Model.Message</p>
 <hr />
+<form method="get">
+    <button asp-page="Step2" class="btn btn-dark">Föregående steg</button>
+</form>
 <form method="post">
 
     <div class="form-group row">
@@ -59,5 +62,5 @@
         <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="@Model.Npc.NpcEnemies" />
         <span asp-validation-for="@Model.Npc.NpcEnemies"></span>
     </div>
-    <button type="submit" class="btn btn-dark">go to step4</button>
+    <button type="submit" class="btn btn-dark">Gå till karaktärens egenskaper och färdigheter</button>
 </form>

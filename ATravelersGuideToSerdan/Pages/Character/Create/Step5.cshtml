@@ -8,7 +8,11 @@
 <h1>@Model.Headline</h1>
 <p>@Model.Message</p>
 <hr />
+<form method="get" >
+    <button asp-page="Step4" class="btn btn-dark">Föregående steg</button>
+</form>
 <form method="post">
+    <button type="submit" class="btn btn-dark">Gå till karaktärens magi</button>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 row">
@@ -606,14 +610,14 @@
                     <label asp-for="@Model.Npc.PowerDoor"></label>
                 </div>
                 <div class="col-md-3 table-bordered">
-                    
+
                 </div>
                 <div class="col-md-3 table-bordered">
                     <input type="radio" />60p
 
                 </div>
                 <div class="col-md-3 table-bordered">
-                    
+
                 </div>
             </div>
             <div class="col-md-6 row">
@@ -621,7 +625,7 @@
                     <input type="radio" />150p
                 </div>
                 <div class="col-md-3 table-bordered">
-                    
+
                 </div>
                 <div class="col-md-3 table-bordered">
 
@@ -670,7 +674,7 @@
                 <div class="col-md-6 table-bordered">
                     MetaMorfos
                 </div>
-                
+
                 <div class="col-md-3 table-bordered">
                     <input type="radio" />50p
                 </div>
@@ -692,5 +696,5 @@
         </div>
 
     </div>
-    <button type="submit" class="btn btn-dark">To Step6</button>
+
 </form>

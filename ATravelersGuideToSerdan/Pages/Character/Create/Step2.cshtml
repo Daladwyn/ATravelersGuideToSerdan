@@ -1,12 +1,13 @@
 ﻿@page
 @model ATravelersGuideToSerdan.Pages.Character.Create.Step2Model
 @*@model ATravelersGuideToSerdan.ViewModels.CreateNpc2ViewModel*@
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+
 <h1>@Model.Headline</h1>
 <p>@Model.Message</p>
 <hr />
+<form method="get">
+    <button asp-page="Step1" class="btn btn-dark">Föregående steg</button>
+</form>
 <form method="post">
     <div class="form-group row">
         <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcsMother"></label>
@@ -73,5 +74,5 @@
         <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcAssets" />
         <span asp-validation-for="@Model.Npc.NpcAssets"></span>
     </div>
-    <button type="submit" class="btn btn-dark">Gå till steg 3.</button>
+    <button type="submit" class="btn btn-dark">Gå till karaktärens inställning till andra</button>
 </form>
