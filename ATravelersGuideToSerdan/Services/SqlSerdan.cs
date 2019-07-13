@@ -53,6 +53,12 @@ namespace ATravelersGuideToSerdan.Services
             throw new NotImplementedException();
         }
 
+        public PlayingCharacter AddPlayingCharacter(PlayingCharacter NewCharacter)
+        {
+           
+            throw new NotImplementedException();
+        }
+
         public List<Planet> GetAllPlanets()
         {
             List<Planet> AllPlanets = _context.Planets.ToList();

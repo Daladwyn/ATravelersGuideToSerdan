@@ -6,6 +6,7 @@
 <p>@Model.Message</p>
 <hr />
 <form method="post">
+    <button type="submit" class="btn btn-dark">Gå till karaktärens släktband</button>
     <div class="form-group row">
         <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcName"></label>
         <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcName" />
@@ -64,6 +65,6 @@
         <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="@Model.Npc.NpcKilledBy" />
         <span asp-validation-for="@Model.Npc.NpcKilledBy"></span>
     </div>
-   
-    <button type="submit" class="btn btn-dark">Gå till karaktärens släktband</button>
+
+
 </form>

@@ -14,7 +14,7 @@ namespace ATravelersGuideToSerdan.Models
 
         public int PlanetRulerId { get; set; }
 
-        public List<int> PlanetsCountries { get; set; }
+        public List<Country> PlanetsCountries { get; set; }
 
         [MaxLength(100)]
         public string DistanceToGalo { get; set; }

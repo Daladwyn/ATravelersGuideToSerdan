@@ -30,7 +30,7 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Objektlista</a>
+                            <a class="nav-link dropdown-toggle text-dark" id="navbardrop" data-toggle="dropdown">SL Objekt</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item text-dark" asp-area="" asp-page="/Character/NPCIndex">Karaktärer</a>
                                 <a class="dropdown-item text-dark" asp-area="" asp-page="/Planets/Index">Planeter</a>
@@ -42,9 +42,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Rendezvous/Index">Möten</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item dropdown">
                             <form method="post">
-                                <span class="text-success">Jag letar efter </span>
+                                <span class="nav-link text-dark">Jag letar efter:</span>
                                 <Select>
                                     <option>Välj en av följande</option>
                                     <option>Kraften</option>
@@ -54,11 +54,19 @@
                                     <option>Alla slp med kraften</option>
                                     <option>Alla slp med Magin</option>
                                 </Select>
-                                <input type="text" />
-                                <input type="submit" class="btn btn-info" value="Sök" />
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Search/Index"></a>
 
                             </form>
+
+                        </li>
+                        <li class="nav-item">
+                            <span class="nav-link text-dark">Snabbsök:</span>
+                            <input type="text" />
+                            <input type="submit" class="btn btn-info" value="Sök" />
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Search/Index"></a>
+
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Character/CreatePlayer/CreatePlayerStep1">Skapa Spelare</a>
                         </li>
                     </ul>
                 </div>

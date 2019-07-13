@@ -41,22 +41,22 @@ namespace ATravelersGuideToSerdan.ViewModels
         [Display(Name = "Fiender")]
         public List<int> NpcEnemies { get; set; }
 
-        internal static NpcOthersViewModel AssignOthersData(NPC NpcToAssign)
-        {
-            NpcOthersViewModel FilteredNpc = new NpcOthersViewModel
-            {
-                NpcId = NpcToAssign.NpcId,
-                NpcAllies = NpcToAssign.NpcAllies,
-                NpcEnemies = NpcToAssign.NpcEnemies,
-                NpcFriends = NpcToAssign.NpcFriends,
-                NpcRegardingAets = NpcToAssign.NpcRegardingAets,
-                NpcRegardingDemons = NpcToAssign.NpcRegardingDemons,
-                NpcRegardingDragons = NpcToAssign.NpcRegardingDragons,
-                NpcRegardingGrips = NpcToAssign.NpcRegardingGrips,
-                NpcRegardingOthers = NpcToAssign.NpcRegardingOthers,
-                NpcRivals = NpcToAssign.NpcRivals,
-            };
-            return FilteredNpc;
-        }
+        //internal static NpcOthersViewModel AssignOthersData(NPC NpcToAssign)
+        //{
+        //    NpcOthersViewModel FilteredNpc = new NpcOthersViewModel
+        //    {
+        //        NpcId = NpcToAssign.NpcId,
+        //        NpcAllies = NpcToAssign.NpcAllies,
+        //        NpcEnemies = NpcToAssign.NpcEnemies,
+        //        NpcFriends = NpcToAssign.NpcFriends,
+        //        NpcRegardingAets = NpcToAssign.NpcRegardingAets,
+        //        NpcRegardingDemons = NpcToAssign.NpcRegardingDemons,
+        //        NpcRegardingDragons = NpcToAssign.NpcRegardingDragons,
+        //        NpcRegardingGrips = NpcToAssign.NpcRegardingGrips,
+        //        NpcRegardingOthers = NpcToAssign.NpcRegardingOthers,
+        //        NpcRivals = NpcToAssign.NpcRivals,
+        //    };
+        //    return FilteredNpc;
+        //}
     }
 }

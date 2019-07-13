@@ -30,33 +30,33 @@ namespace ATravelersGuideToSerdan.ViewModels
         public string NpcRegardingOthers { get; set; }
 
         [Display(Name = "Vänner")]
-        public List<int> NpcFriends { get; set; }
+        public List<NpcFriend> NpcFriends { get; set; }
 
         [Display(Name = "Allierade")]
-        public List<int> NpcAllies { get; set; }
+        public List<NpcAlly> NpcAllies { get; set; }
 
         [Display(Name = "Rivaler")]
-        public List<int> NpcRivals { get; set; }
+        public List<NpcRival> NpcRivals { get; set; }
 
         [Display(Name = "Fiender")]
-        public List<int> NpcEnemies { get; set; }
+        public List<NpcEnemy> NpcEnemies { get; set; }
 
-        internal static NpcOthersViewModel AssignOthersData(NPC NpcToAssign)
-        {
-            NpcOthersViewModel FilteredNpc = new NpcOthersViewModel
-            {
-                NpcId = NpcToAssign.NpcId,
-                NpcAllies = NpcToAssign.NpcAllies,
-                NpcEnemies = NpcToAssign.NpcEnemies,
-                NpcFriends = NpcToAssign.NpcFriends,
-                NpcRegardingAets = NpcToAssign.NpcRegardingAets,
-                NpcRegardingDemons = NpcToAssign.NpcRegardingDemons,
-                NpcRegardingDragons = NpcToAssign.NpcRegardingDragons,
-                NpcRegardingGrips = NpcToAssign.NpcRegardingGrips,
-                NpcRegardingOthers = NpcToAssign.NpcRegardingOthers,
-                NpcRivals = NpcToAssign.NpcRivals,
-            };
-            return FilteredNpc;
-        }
+        //internal static NpcOthersViewModel AssignOthersData(NPC NpcToAssign)
+        //{
+        //    NpcOthersViewModel FilteredNpc = new NpcOthersViewModel
+        //    {
+        //        NpcId = NpcToAssign.NpcId,
+        //        NpcAllies = NpcToAssign.NpcAllies,
+        //        NpcEnemies = NpcToAssign.NpcEnemies,
+        //        NpcFriends = NpcToAssign.NpcFriends,
+        //        NpcRegardingAets = NpcToAssign.NpcRegardingAets,
+        //        NpcRegardingDemons = NpcToAssign.NpcRegardingDemons,
+        //        NpcRegardingDragons = NpcToAssign.NpcRegardingDragons,
+        //        NpcRegardingGrips = NpcToAssign.NpcRegardingGrips,
+        //        NpcRegardingOthers = NpcToAssign.NpcRegardingOthers,
+        //        NpcRivals = NpcToAssign.NpcRivals,
+        //    };
+        //    return FilteredNpc;
+        //}
     }
 }

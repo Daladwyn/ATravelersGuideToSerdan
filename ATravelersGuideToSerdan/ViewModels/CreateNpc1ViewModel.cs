@@ -2,7 +2,7 @@
 
 namespace ATravelersGuideToSerdan.ViewModels
 {
-    public class CreateNpc1ViewModel
+    public class CreatePLayer1ViewModel
     {
         [Required]
         public int NpcId { get; set; }

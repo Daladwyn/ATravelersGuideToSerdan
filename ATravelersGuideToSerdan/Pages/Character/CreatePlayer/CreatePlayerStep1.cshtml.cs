@@ -8,14 +8,14 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ATravelersGuideToSerdan.Pages.Character.Create
+namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
 {
-    public class Step1Model : PageModel
+    public class CreatePlayerStep1Model : PageModel
     {
         private IMapper _mapper;
         private _DB _Db;
 
-        public Step1Model(IMapper mapper, _DB Db)
+        public CreatePlayerStep1Model(IMapper mapper, _DB Db)
         {
             _mapper = mapper;
             _Db = Db;
@@ -25,20 +25,15 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
         public string Message { get; set; }
 
         // [BindProperties]
-        public CreateNpc1ViewModel Npc { get; set; }
-        //CreateNpc1ViewModel NewNpc = new CreateNpc1ViewModel();
-
+        public CreatePlayer1ViewModel PlayingCharacter { get; set; }
         public void OnGet()
         {
-            Headline = "Steg1.";
-            Message = "Här anger du din karaktärs namn och grunddata.";
+            Headline = "Karaktärsskapandets första steg.";
+            Message = "Du behöver ange namn, beskrivning och ditt namn. Sedan har du 100 poäng att sätta ut på bl.a. grundegenskaper och krafter. ";
         }
-
-        public IActionResult OnPost(CreateNpc1ViewModel newNpc)
+        public void OnPost(CreatePlayerStep1Model NewCharacterStep1)
         {
-            Headline = "Steg1.";
-            Message = "Här anger du din karaktärs namn och grunddata.";
-            return RedirectToPage("Step2");
+
         }
     }
 }

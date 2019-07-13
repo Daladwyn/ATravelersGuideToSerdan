@@ -11,7 +11,7 @@
     <button asp-page="Step2" class="btn btn-dark">Föregående steg</button>
 </form>
 <form method="post">
-
+    <button type="submit" class="btn btn-dark">Gå till karaktärens egenskaper och färdigheter</button>
     <div class="form-group row">
         <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.Npc.NpcRegardingAets"></label>
         <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.Npc.NpcRegardingAets" />
@@ -62,5 +62,5 @@
         <input class="col-md-9 col-9 col-xl-9 col-lg-9 col-sm-9" asp-for="@Model.Npc.NpcEnemies" />
         <span asp-validation-for="@Model.Npc.NpcEnemies"></span>
     </div>
-    <button type="submit" class="btn btn-dark">Gå till karaktärens egenskaper och färdigheter</button>
+    
 </form>

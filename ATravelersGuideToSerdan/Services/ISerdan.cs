@@ -24,5 +24,6 @@ namespace ATravelersGuideToSerdan.Services
         List<Country> GetMultipleCountries(int PlanetId);
         Place GetPlace(int id);
         List<Place> GetMultiplePlaces(int CountryId);
+        PlayingCharacter AddPlayingCharacter(PlayingCharacter NewCharacter);
     }
 }

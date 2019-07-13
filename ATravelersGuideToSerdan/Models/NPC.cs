@@ -77,10 +77,10 @@ namespace ATravelersGuideToSerdan.Models
         public int NpcsFather { get; set; }
 
         [Display(Name = "Serdan/Edlosi barn")]
-        public IEnumerable<int> NpcsSerdanEdlosiChildren { get; set; }
+        public List<NpcsSerdanEdlosiChild> NpcsSerdanEdlosiChildren { get; set; }
 
         [Display(Name = "Vanliga Barn")]
-        public List<int> NpcsRegularChildren { get; set; }
+        public List<NpcsRegularChild> NpcsRegularChildren { get; set; }
 
         [Display(Name = "Inställning till Aeter")]
         [MaxLength(100)]
@@ -103,16 +103,16 @@ namespace ATravelersGuideToSerdan.Models
         public string NpcRegardingOthers { get; set; }
 
         [Display(Name = "Vänner")]
-        public List<int> NpcFriends { get; set; }
+        public List<NpcFriend> NpcFriends { get; set; }
 
         [Display(Name = "Allierade")]
-        public List<int> NpcAllies { get; set; }
+        public List<NpcAlly> NpcAllies { get; set; }
 
         [Display(Name = "Rivaler")]
-        public List<int> NpcRivals { get; set; }
+        public List<NpcRival> NpcRivals { get; set; }
 
         [Display(Name = "Fiender")]
-        public List<int> NpcEnemies { get; set; }
+        public List<NpcEnemy> NpcEnemies { get; set; }
 
         [Display(Name = "Andra bostäder/platser av betydelse")]
         [MaxLength(200)]
