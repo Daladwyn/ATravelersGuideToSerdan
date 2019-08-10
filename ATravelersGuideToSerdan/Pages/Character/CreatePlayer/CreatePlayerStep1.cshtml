@@ -5,28 +5,32 @@
 *@
 <h1>@Model.Headline</h1>
 <p>@Model.Message</p>
-<p>@ViewBag.ErrorMessage</p>
+<p>@Model.ErrorMessage</p>
 <hr />
 <form method="post">
-    <button type="submit" class="btn btn-dark">Gå till karaktärens släktband</button>
-    <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.PlayingCharacter.CharacterName"></label>
-        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.PlayingCharacter.CharacterName" />
-        <span asp-validation-for="@Model.PlayingCharacter.CharacterName"></span>
-    </div>
-    <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.PlayingCharacter.PlayerName"></label>
-        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.PlayingCharacter.PlayerName" />
-        <span asp-validation-for="@Model.PlayingCharacter.PlayerName"></span>
-    </div>
-    <div class="form-group row">
-        <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.PlayingCharacter.CharacterDescription"></label>
-        <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.PlayingCharacter.CharacterDescription" />
-        <span asp-validation-for="@Model.PlayingCharacter.CharacterDescription"></span>
+    <div class="container-fluid table-bordered">
+        <div class="form-group row">
+            <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="PlayingCharacter.CharacterName"></label>
+            <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2 form-control" asp-for="PlayingCharacter.CharacterName"  />
+            <span asp-validation-for="@Model.PlayingCharacter.CharacterName"></span>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.PlayingCharacter.PlayerName"></label>
+            <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.PlayingCharacter.PlayerName" />
+            <span asp-validation-for="@Model.PlayingCharacter.PlayerName"></span>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.PlayingCharacter.CharacterDescription"></label>
+            <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.PlayingCharacter.CharacterDescription" />
+            <span asp-validation-for="@Model.PlayingCharacter.CharacterDescription"></span>
+        </div>
     </div>
 
-    <button type="submit" class="btn btn-dark">Gå till karaktärens krafter</button>
+
     <div class="container-fluid table-bordered">
+        <div class="row">
+            <h2>Egenskaper</h2>
+        </div>
         <div class="row">
             <div class="col-md-2">Egenskap</div>
             <div class="col-md-1">Tot./Uts.</div>
@@ -43,10 +47,10 @@
                 </div>
             </div>
             @*<div class="col-md-1">ExP</div>
-            <div class="col-md-2">Talanger</div>
-            <div class="col-md-1">TTp</div>
-            <div class="col-md-2">Färdigheter</div>
-            <div class="col-md-1"></div>*@
+                <div class="col-md-2">Talanger</div>
+                <div class="col-md-1">TTp</div>
+                <div class="col-md-2">Färdigheter</div>
+                <div class="col-md-1"></div>*@
 
         </div>
 
@@ -54,7 +58,7 @@
             <div class="col-md-2">
                 <label asp-for="@Model.PlayingCharacter.KoordinationMotorikTot"></label>
             </div>
-            <div class="col-md-1">25/25</div>
+            <div class="col-md-1"><span>@Model.PlayingCharacter.KoordinationMotorikTot</span>/<span>@Model.PlayingCharacter.KoordinationMotorikUts</span></div>
             <div class="col-md-1">
                 <button type="submit" class="btn btn-success">Öka</button>
                 <button type="submit" class="btn btn-danger">Minska</button>
@@ -137,7 +141,7 @@
             <div class="col-md-2">
                 <label asp-for="@Model.PlayingCharacter.PhysiqueTot"></label>
             </div>
-            <div class="col-md-1">25/25</div>
+            <div class="col-md-1">@Model.PlayingCharacter.PhysiqueTot/@Model.PlayingCharacter.PhysiqueUts</div>
             <div class="col-md-1">
                 <button type="submit" class="btn btn-success">Öka</button>
                 <button type="submit" class="btn btn-danger">Minska</button>
@@ -220,7 +224,7 @@
             <div class="col-md-2">
                 <label asp-for="@Model.PlayingCharacter.PsykeTot"></label>
             </div>
-            <div class="col-md-1">25/25</div>
+            <div class="col-md-1">@Model.PlayingCharacter.PsykeTot/@Model.PlayingCharacter.PsykeUts</div>
             <div class="col-md-1">
                 <button type="submit" class="btn btn-success">Öka</button>
                 <button type="submit" class="btn btn-danger">Minska</button>
@@ -302,7 +306,7 @@
             <div class="col-md-2">
                 <label asp-for="@Model.PlayingCharacter.PerceptionTot"></label>
             </div>
-            <div class="col-md-1">25/25</div>
+            <div class="col-md-1">@Model.PlayingCharacter.PerceptionTot/@Model.PlayingCharacter.PerceptionUts</div>
             <div class="col-md-1">
                 <button type="submit" class="btn btn-success">Öka</button>
                 <button type="submit" class="btn btn-danger">Minska</button>
@@ -384,7 +388,7 @@
             <div class="col-md-2">
                 <label asp-for="@Model.PlayingCharacter.SocialTot"></label>
             </div>
-            <div class="col-md-1">25/25</div>
+            <div class="col-md-1">@Model.PlayingCharacter.SocialTot/@Model.PlayingCharacter.SocialUts</div>
             <div class="col-md-1">
                 <button type="submit" class="btn btn-success">Öka</button>
                 <button type="submit" class="btn btn-danger">Minska</button>
@@ -464,6 +468,9 @@
     </div>
 
     <div class="container-fluid table-bordered">
+        <div class="row">
+            <h2>Färdigheter och Talanger</h2>
+        </div>
         <div class="row">
             <div class="col-md-1">
                 Förmåga
@@ -719,5 +726,56 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid table-bordered">
+        <div class="row">
+            <h2>Krafter</h2>
+        </div>
+        <div class="row">
+            Här kan du välja krafter till din karaktär.
+        </div>
+        <div class="row">
+            <select>
+                <option id="1">Drakens</option>
+                <option id="2">Enhörningen</option>
+                <option id="3">Läkaren</option>
+                <option id="4">Gripen</option>
+                <option id="5">Mantikoran</option>
+                <option id="6">Kroppen</option>
+                <option id="7">Symbolen</option>
+            </select>
+            <select>
+                <option>Novis</option>
+                <option>Elev</option>
+                <option>Lärare</option>
+                <option>Mästare</option>
+                <option>Exalterad</option>
+                <option>Extrem</option>
+            </select>
+            <button class="btn btn-info">Lägg till en kraft till.</button>
+        </div>
+        <div class="row">
+
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid table-bordered">
+        <div class="row">
+            <h2>Magi</h2>
+        </div>
+    </div>
+    <div class="container-fluid table-bordered">
+        <div class="row">
+            <h2>Kontakter</h2>
+        </div>
+        <div class="row">
+            <select>
+                <option label="drakekontakt"></option>
+                @*<option label="@Model.PlayingCharacter.ContactDragon"></option>*@
+            </select>
+        </div>
+    </div>
+    <input type="submit" class="btn btn-danger" value="Skapa karaktär">
 </form>
 

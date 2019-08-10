@@ -22,5 +22,14 @@ namespace ATravelersGuideToSerdan.Data
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Place> Places { get; set; }
+        public DbSet<NpcAlly> NpcAllies { get; set; }
+        public DbSet<NpcEnemy> NpcEnemies { get; set; }
+        public DbSet<NpcFriend> NpcFriends { get; set; }
+        public DbSet<NpcRival> NpcRivals { get; set; }
+        public DbSet<NpcsSerdanEdlosiChild> NpcsSerdanEdlosiChldren { get; set; }
+        public DbSet<NpcsRegularChild> NpcsRegularChildren { get; set; }
+        public DbSet<PlayingCharacter> PlayingCharacter { get; set; }
+
+
     }
 }

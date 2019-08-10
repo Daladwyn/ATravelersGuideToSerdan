@@ -1,39 +1,64 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ATravelersGuideToSerdan.Services;
+﻿using ATravelersGuideToSerdan.Services;
 using ATravelersGuideToSerdan.ViewModels;
-using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+
 namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
 {
+
+    [BindProperties]
     public class CreatePlayerStep1Model : PageModel
     {
-        private IMapper _mapper;
         private _DB _Db;
-
-        public CreatePlayerStep1Model(IMapper mapper, _DB Db)
+        private IFileSerdan _FilAccess;
+        public CreatePlayerStep1Model(_DB Db, IFileSerdan filAccess)
         {
-            _mapper = mapper;
             _Db = Db;
+            _FilAccess = filAccess;
         }
 
-        public string Headline { get; set; }
-        public string Message { get; set; }
-
-        // [BindProperties]
+        [BindProperty]
         public CreatePlayer1ViewModel PlayingCharacter { get; set; }
-        public void OnGet()
+
+       
+
+        //public CreatePlayerStep1Model(IMapper mapper, _DB Db, IFileSerdan filAccess)
+        //public CreatePlayerStep1Model(_DB Db, IFileSerdan filAccess)
+        //{
+        //    // _mapper = mapper;
+        //    _Db = Db;
+        //    _filAccess = filAccess;
+        //}
+        [TempData]
+        public string Headline { get; set; }
+        [TempData]
+        public string Message { get; set; }
+        [TempData]
+        public string ErrorMessage { get; set; }
+
+
+        public IActionResult OnGet()
         {
+            PlayingCharacter = new CreatePlayer1ViewModel("ny");
             Headline = "Karaktärsskapandets första steg.";
             Message = "Du behöver ange namn, beskrivning och ditt namn. Sedan har du 100 poäng att sätta ut på bl.a. grundegenskaper och krafter. ";
+            return Page();
         }
-        public void OnPost(CreatePlayerStep1Model NewCharacterStep1)
+        public IActionResult OnPost(object sender, System.EventArgs e)
         {
+            var newplayer = PlayingCharacter;
+            if (ModelState.IsValid)
+            {
+               
+                _FilAccess.CreateCharacterSheet(newplayer, "c:/SerdanCharacter.docx");
+            }
+            else
+            {
+                return RedirectToPage("CreatePlayerStep1", newplayer);
+            }
 
+            return RedirectToPage("CharacterSaved");
         }
     }
 }

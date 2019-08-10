@@ -49,8 +49,9 @@ namespace ATravelersGuideToSerdan
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddTransient<_DB, SqlSerdan>();
+            services.AddTransient<IFileSerdan, FileSerdan>();
 
-            services.AddAutoMapper();
+            //services.AddAutoMapper();
             //services.AddAutoMapper(NPC, NpcMagic, NpcPower, NpcStat, 
             //    CreateNPCstep1Model, CreateNPCstep2Model, 
             //    CreateNPCstep3Model, CreateNPCstep4Model);

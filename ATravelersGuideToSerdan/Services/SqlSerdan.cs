@@ -55,8 +55,9 @@ namespace ATravelersGuideToSerdan.Services
 
         public PlayingCharacter AddPlayingCharacter(PlayingCharacter NewCharacter)
         {
-           
-            throw new NotImplementedException();
+            _context.PlayingCharacter.Add(NewCharacter);
+            _context.SaveChanges();
+            return NewCharacter;
         }
 
         public List<Planet> GetAllPlanets()
