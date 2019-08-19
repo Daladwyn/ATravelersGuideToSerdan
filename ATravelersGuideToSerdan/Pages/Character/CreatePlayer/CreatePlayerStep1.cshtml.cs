@@ -1,5 +1,6 @@
 ﻿using ATravelersGuideToSerdan.Services;
 using ATravelersGuideToSerdan.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -51,7 +52,14 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
             if (ModelState.IsValid)
             {
                
-                _FilAccess.CreateCharacterSheet(newplayer, "c:/SerdanCharacter.docx");
+               var characterSheet =  _FilAccess.CreateCharacterSheet(newplayer);
+
+                //Response.Clear();
+                //Response.ContentType = "text/xml";
+                //Response.Encoding = System.Text.Encoding.Unicode;
+                //Response.BinaryWrite(XmlByteArray);
+                //Response.Flush();
+                //Response.End();
             }
             else
             {

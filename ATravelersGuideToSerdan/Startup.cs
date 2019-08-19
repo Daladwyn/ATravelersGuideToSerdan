@@ -18,6 +18,8 @@ using Microsoft.AspNetCore.Routing;
 using AutoMapper;
 using ATravelersGuideToSerdan.Pages.NPCPage;
 using ATravelersGuideToSerdan.Models;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace ATravelersGuideToSerdan
 {
@@ -45,6 +47,8 @@ namespace ATravelersGuideToSerdan
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
