@@ -22,7 +22,7 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
         [BindProperty]
         public CreatePlayer1ViewModel PlayingCharacter { get; set; }
 
-       
+
 
         //public CreatePlayerStep1Model(IMapper mapper, _DB Db, IFileSerdan filAccess)
         //public CreatePlayerStep1Model(_DB Db, IFileSerdan filAccess)
@@ -46,20 +46,19 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
             Message = "Du behöver ange namn, beskrivning och ditt namn. Sedan har du 100 poäng att sätta ut på bl.a. grundegenskaper och krafter. ";
             return Page();
         }
-        public IActionResult OnPost(object sender, System.EventArgs e)
+        public IActionResult OnPost()
         {
             var newplayer = PlayingCharacter;
             if (ModelState.IsValid)
             {
-               
-               var characterSheet =  _FilAccess.CreateCharacterSheet(newplayer);
+                //create a page to download the stream 
 
-                //Response.Clear();
-                //Response.ContentType = "text/xml";
-                //Response.Encoding = System.Text.Encoding.Unicode;
-                //Response.BinaryWrite(XmlByteArray);
-                //Response.Flush();
-                //Response.End();
+                CharacterSavedModel savedCharacter = new CharacterSavedModel
+                {
+                    FileName = _FilAccess.CreateCharacterSheet(newplayer),
+                };
+                return RedirectToPage("CharacterSaved",savedCharacter);
+
             }
             else
             {

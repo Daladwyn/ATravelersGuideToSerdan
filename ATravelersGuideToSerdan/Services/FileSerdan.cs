@@ -1,54 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using ATravelersGuideToSerdan.ViewModels;
 using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.InkML;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Net;
-using System.Web;
 using Microsoft.AspNetCore.Mvc;
 using Table = DocumentFormat.OpenXml.Wordprocessing.Table;
+using Microsoft.AspNetCore.Http;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace ATravelersGuideToSerdan.Services
 {
     public class FileSerdan : IFileSerdan
     {
-        public string CreateCharacterSheet(CreatePlayer1ViewModel CharacterToPrint)
+        public string CreateCharacterSheet(CreatePlayer1ViewModel CharacterToPrint )
+        //public HttpResponseMessage CreateCharacterSheet(CreatePlayer1ViewModel CharacterToPrint)
         {
             //FileStream wordFinalDocument;
-            var filename = CharacterToPrint.CharacterName+".docx";
+            var filename = CharacterToPrint.CharacterName + ".docx";
             var path = Path.Combine(
                           Directory.GetCurrentDirectory(),
                           "wwwroot", filename);
 
             // Create Stream
-            using (MemoryStream mem = new MemoryStream())
-            {
-                // Create Document
-                using (WordprocessingDocument wordDocument =
-                    WordprocessingDocument.Create(mem, WordprocessingDocumentType.Document, true))
-                {
-                    // Add a main document part. 
-                    MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
+            //using (MemoryStream mem = new MemoryStream())
+            //{
+            //    // Create Document
+            //    using (WordprocessingDocument wordDocument =
+            //        WordprocessingDocument.Create(mem, WordprocessingDocumentType.Document, true))
+            //    {
+            //        // Add a main document part. 
+            //        MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
 
-                    // Create the document structure and add some text.
-                    mainPart.Document = new Document();
-                    Body docBody = new Body();
+            //        // Create the document structure and add some text.
+            //        mainPart.Document = new Document();
+            //        Body docBody = new Body();
 
-                    // Add your docx content here
-                }
+            //        // Add your docx content here
+            //    }
 
-               
-                
-                
-            }
+
+
+
+            //}
             //********************************************************************************************
 
-            
+
             //********************************************************************************************
 
             using (var wordDocument = WordprocessingDocument.Create(path, WordprocessingDocumentType.Document))
@@ -89,7 +89,7 @@ namespace ATravelersGuideToSerdan.Services
                 tc1.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
 
                 // Specify the table cell content.
-                tc1.Append(new Paragraph(new Run(new Text("Serdan"))));
+                tc1.Append(new Paragraph(new Run(new Text(CharacterToPrint.PlayerName))));
 
                 // Append the table cell to the table row.
                 tr.Append(tc1);
@@ -101,7 +101,7 @@ namespace ATravelersGuideToSerdan.Services
                 tc2.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
 
                 // Specify the table cell content.
-                tc2.Append(new Paragraph(new Run(new Text("Serdan"))));
+                tc2.Append(new Paragraph(new Run(new Text(CharacterToPrint.CharacterName))));
 
                 // Append the table cell to the table row.
                 tr.Append(tc2);
@@ -172,22 +172,22 @@ namespace ATravelersGuideToSerdan.Services
 
 
                 //byte[] byteArray = File.ReadAllBytes(wordDocument.ToString());
-                //using (FileStream fileStream = new FileStream(filepath, FileMode.CreateNew))
+                //using (FileStream fileStream = new FileStream(path, FileMode.CreateNew))
                 //{
                 //    fileStream.Write(byteArray, 0, (int)byteArray.Length);
 
                 //    // Save the file with the new name
-                //    //wordDocument.WriteTo(fileStream);
+                //    // wordDocument.WriteTo(fileStream);
                 //    // Insert other code here. 
-                //    wordFinalDocument = fileStream;
-                    
-                //    File.WriteAllText(filepath, wordFinalDocument.ToString());
+                //    //wordFinalDocument = fileStream;
+
+                //    File.WriteAllText("", fileStream.ToString());
                 //}
 
 
 
                 //test
-                
+
             }
             //return wordFinalDocument;
             //try
@@ -200,26 +200,99 @@ namespace ATravelersGuideToSerdan.Services
 
             //    throw;
             //}
-            WebClient webClient = new WebClient();
-            webClient.DownloadFile(path, filename);
-            return "Karaktär är sparad";
+            //WebClient webClient = new WebClient();
+            //webClient.DownloadFile(path, filename);
+
+            //return Download(filename);
+            return filename;
+            //return path;
+
+            //public FileResult DownloadFile(string filename)
+            //{
+            //    var path = Path.Combine(
+            //                      Directory.GetCurrentDirectory(),
+            //                      "wwwroot", filename);
+            //    var content = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
+            //    var response = File.(content, "application/octet-stream");//FileStreamResult
+            //    return response;
+            //}
+            //public FileStream DownloadFile(string filename)
+            //{
+            //    var path = Path.Combine(
+            //                   Directory.GetCurrentDirectory(),
+            //                   "wwwroot", filename);
+            //    return File.OpenRead(path); //, "application/octet-stream",
+            //   // "NewName34.csv");
+            //}
+            //public async Task<FileStreamResult> Download(string filename)
+            //{
+            //    //if (filename == null)
+            //    //    return Content("filename not present");
+
+            //    var path = Path.Combine(
+            //                   Directory.GetCurrentDirectory(),
+            //                   "wwwroot", filename);
+
+            //    //var memory = new MemoryStream();
+            //    //using (var stream = new FileStream(path, FileMode.Open))
+            //    //{
+            //    //    await stream.CopyToAsync(memory);
+            //    //}
+            //    //memory.Position = 0;
+            //    //var file = File.OpenRead(path);
+            //    //return file; //(memory, GetContentType(path), Path.GetFileName(path));
+
+            //    //return FileResult(path, "application/octet-stream", filename);
+            //}
+            //private string GetContentType(string path)
+            //{
+            //    var types = GetMimeTypes();
+            //    var ext = Path.GetExtension(path).ToLowerInvariant();
+            //    return types[ext];
+            //}
+
+            //private Dictionary<string, string> GetMimeTypes()
+            //{
+            //    return new Dictionary<string, string>
+            //    {
+            //        {".txt", "text/plain"},
+            //        {".pdf", "application/pdf"},
+            //        {".doc", "application/vnd.ms-word"},
+            //        {".docx", "application/vnd.ms-word"},
+            //        {".xls", "application/vnd.ms-excel"},
+            //        {".xlsx", "application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet"},
+            //        {".png", "image/png"},
+            //        {".jpg", "image/jpeg"},
+            //        {".jpeg", "image/jpeg"},
+            //        {".gif", "image/gif"},
+            //        {".csv", "text/csv"}
+            //    };
         }
-        //public async Task<FileStreamResult> Download(string filename)
-        //{
-        //    if (filename == null)
-        //        return Context("filename not present");
+        [HttpGet]
+        public HttpResponseMessage Download(string fileName)
+        {
+            var result = new HttpResponseMessage(HttpStatusCode.OK);
 
-        //    var path = Path.Combine(
-        //                   Directory.GetCurrentDirectory(),
-        //                   "wwwroot", filename);
+            var path = Path.Combine(
+                           Directory.GetCurrentDirectory(),
+                           "wwwroot", fileName);
+            var fileBytes = File.ReadAllBytes(path);
 
-        //    var memory = new MemoryStream();
-        //    using (var stream = new FileStream(path, FileMode.Open))
-        //    {
-        //        await stream.CopyToAsync(memory);
-        //    }
-        //    memory.Position = 0;
-        //    return File(memory, "application/vnd.ms-word", Path.GetFileName(path));
-        //}
+            var fileMemStream = new MemoryStream(fileBytes);
+
+            result.Content = new StreamContent(fileMemStream);
+
+            var headers = result.Content.Headers;
+
+            headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
+
+            headers.ContentDisposition.FileName = fileName;
+
+            headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+
+            headers.ContentLength = fileMemStream.Length;
+
+            return result;
+        }
     }
 }

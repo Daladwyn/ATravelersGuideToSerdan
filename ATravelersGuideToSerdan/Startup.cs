@@ -1,13 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ATravelersGuideToSerdan.Data;
@@ -15,11 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ATravelersGuideToSerdan.Services;
 using Microsoft.AspNetCore.Routing;
-using AutoMapper;
-using ATravelersGuideToSerdan.Pages.NPCPage;
-using ATravelersGuideToSerdan.Models;
-using Microsoft.Extensions.FileProviders;
-using System.IO;
 
 namespace ATravelersGuideToSerdan
 {
@@ -48,9 +36,10 @@ namespace ATravelersGuideToSerdan
 
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
+            //services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            
 
             services.AddTransient<_DB, SqlSerdan>();
             services.AddTransient<IFileSerdan, FileSerdan>();
@@ -80,7 +69,7 @@ namespace ATravelersGuideToSerdan
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             //app.UseCookiePolicy();
-
+            
             app.UseAuthentication();
 
             //app.UseMvc();
