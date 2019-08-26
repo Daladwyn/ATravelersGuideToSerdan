@@ -26,6 +26,9 @@ namespace ATravelersGuideToSerdan.ViewModels
         [Display(Name = "Beskrivning")]
         public string CharacterDescription { get; set; }
 
+        [Required]
+        public int RemainingPoints { get; set; }
+
         [Display(Name = "Koordination /Motorik")]
         public int KoordinationMotorikTot { get; set; }
 
@@ -495,15 +498,16 @@ namespace ATravelersGuideToSerdan.ViewModels
         public CreatePlayer1ViewModel(string sträng)
         {
             KoordinationMotorikTot = 25;
-            KoordinationMotorikUts = 25;
+            KoordinationMotorikUts = 0;
             PhysiqueTot = 25;
-            PhysiqueUts = 25;
+            PhysiqueUts = 0;
             PsykeTot = 25;
-            PsykeUts = 25;
+            PsykeUts = 0;
             PerceptionTot = 25;
-            PerceptionUts = 25;
+            PerceptionUts = 0;
             SocialTot = 25;
-            SocialUts = 25;
+            SocialUts = 0;
+            RemainingPoints = 100;
         }
     }
 

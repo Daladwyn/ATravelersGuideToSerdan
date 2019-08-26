@@ -16,7 +16,7 @@ namespace ATravelersGuideToSerdan.Services
 {
     public class FileSerdan : IFileSerdan
     {
-        public string CreateCharacterSheet(CreatePlayer1ViewModel CharacterToPrint )
+        public string CreateCharacterSheet(CreatePlayer1ViewModel CharacterToPrint)
         //public HttpResponseMessage CreateCharacterSheet(CreatePlayer1ViewModel CharacterToPrint)
         {
             //FileStream wordFinalDocument;
@@ -24,32 +24,6 @@ namespace ATravelersGuideToSerdan.Services
             var path = Path.Combine(
                           Directory.GetCurrentDirectory(),
                           "wwwroot", filename);
-
-            // Create Stream
-            //using (MemoryStream mem = new MemoryStream())
-            //{
-            //    // Create Document
-            //    using (WordprocessingDocument wordDocument =
-            //        WordprocessingDocument.Create(mem, WordprocessingDocumentType.Document, true))
-            //    {
-            //        // Add a main document part. 
-            //        MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
-
-            //        // Create the document structure and add some text.
-            //        mainPart.Document = new Document();
-            //        Body docBody = new Body();
-
-            //        // Add your docx content here
-            //    }
-
-
-
-
-            //}
-            //********************************************************************************************
-
-
-            //********************************************************************************************
 
             using (var wordDocument = WordprocessingDocument.Create(path, WordprocessingDocumentType.Document))
             {
@@ -60,7 +34,6 @@ namespace ATravelersGuideToSerdan.Services
                 Paragraph para = body.AppendChild(new Paragraph());
                 Run run = para.AppendChild(new Run());
                 run.AppendChild(new Text("Create text in body - CreateWordprocessingDocument"));
-
 
                 // Create an empty table.
                 Table table = new Table();
@@ -171,102 +144,35 @@ namespace ATravelersGuideToSerdan.Services
                 wordDocument.MainDocumentPart.Document.Save();
 
 
-                //byte[] byteArray = File.ReadAllBytes(wordDocument.ToString());
-                //using (FileStream fileStream = new FileStream(path, FileMode.CreateNew))
+                return filename;
+                //    var path = Path.Combine(
+                //                      Directory.GetCurrentDirectory(),
+                //                      "wwwroot", filename);
+
+                //private string GetContentType(string path)
                 //{
-                //    fileStream.Write(byteArray, 0, (int)byteArray.Length);
-
-                //    // Save the file with the new name
-                //    // wordDocument.WriteTo(fileStream);
-                //    // Insert other code here. 
-                //    //wordFinalDocument = fileStream;
-
-                //    File.WriteAllText("", fileStream.ToString());
+                //    var types = GetMimeTypes();
+                //    var ext = Path.GetExtension(path).ToLowerInvariant();
+                //    return types[ext];
                 //}
 
-
-
-                //test
-
+                //private Dictionary<string, string> GetMimeTypes()
+                //{
+                //    return new Dictionary<string, string>
+                //    {
+                //        {".txt", "text/plain"},
+                //        {".pdf", "application/pdf"},
+                //        {".doc", "application/vnd.ms-word"},
+                //        {".docx", "application/vnd.ms-word"},
+                //        {".xls", "application/vnd.ms-excel"},
+                //        {".xlsx", "application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet"},
+                //        {".png", "image/png"},
+                //        {".jpg", "image/jpeg"},
+                //        {".jpeg", "image/jpeg"},
+                //        {".gif", "image/gif"},
+                //        {".csv", "text/csv"}
+                //    };
             }
-            //return wordFinalDocument;
-            //try
-            //{
-            //    File.WriteAllText("c:/SerdanCharacter.docx", wordFinalDocument);
-            //    //File.WriteAllText(filepath, wordFinalDocument);
-            //}
-            //catch (Exception)
-            //{
-
-            //    throw;
-            //}
-            //WebClient webClient = new WebClient();
-            //webClient.DownloadFile(path, filename);
-
-            //return Download(filename);
-            return filename;
-            //return path;
-
-            //public FileResult DownloadFile(string filename)
-            //{
-            //    var path = Path.Combine(
-            //                      Directory.GetCurrentDirectory(),
-            //                      "wwwroot", filename);
-            //    var content = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
-            //    var response = File.(content, "application/octet-stream");//FileStreamResult
-            //    return response;
-            //}
-            //public FileStream DownloadFile(string filename)
-            //{
-            //    var path = Path.Combine(
-            //                   Directory.GetCurrentDirectory(),
-            //                   "wwwroot", filename);
-            //    return File.OpenRead(path); //, "application/octet-stream",
-            //   // "NewName34.csv");
-            //}
-            //public async Task<FileStreamResult> Download(string filename)
-            //{
-            //    //if (filename == null)
-            //    //    return Content("filename not present");
-
-            //    var path = Path.Combine(
-            //                   Directory.GetCurrentDirectory(),
-            //                   "wwwroot", filename);
-
-            //    //var memory = new MemoryStream();
-            //    //using (var stream = new FileStream(path, FileMode.Open))
-            //    //{
-            //    //    await stream.CopyToAsync(memory);
-            //    //}
-            //    //memory.Position = 0;
-            //    //var file = File.OpenRead(path);
-            //    //return file; //(memory, GetContentType(path), Path.GetFileName(path));
-
-            //    //return FileResult(path, "application/octet-stream", filename);
-            //}
-            //private string GetContentType(string path)
-            //{
-            //    var types = GetMimeTypes();
-            //    var ext = Path.GetExtension(path).ToLowerInvariant();
-            //    return types[ext];
-            //}
-
-            //private Dictionary<string, string> GetMimeTypes()
-            //{
-            //    return new Dictionary<string, string>
-            //    {
-            //        {".txt", "text/plain"},
-            //        {".pdf", "application/pdf"},
-            //        {".doc", "application/vnd.ms-word"},
-            //        {".docx", "application/vnd.ms-word"},
-            //        {".xls", "application/vnd.ms-excel"},
-            //        {".xlsx", "application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet"},
-            //        {".png", "image/png"},
-            //        {".jpg", "image/jpeg"},
-            //        {".jpeg", "image/jpeg"},
-            //        {".gif", "image/gif"},
-            //        {".csv", "text/csv"}
-            //    };
         }
         [HttpGet]
         public HttpResponseMessage Download(string fileName)

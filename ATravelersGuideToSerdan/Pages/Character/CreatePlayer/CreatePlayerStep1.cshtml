@@ -11,17 +11,17 @@
     <div class="container-fluid table-bordered">
         <div class="form-group row">
             <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="PlayingCharacter.CharacterName"></label>
-            <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2 form-control" asp-for="PlayingCharacter.CharacterName"  />
+            <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2 form-control" asp-for="PlayingCharacter.CharacterName" />
             <span asp-validation-for="@Model.PlayingCharacter.CharacterName"></span>
         </div>
         <div class="form-group row">
             <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.PlayingCharacter.PlayerName"></label>
-            <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.PlayingCharacter.PlayerName" />
+            <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2 form-control" asp-for="@Model.PlayingCharacter.PlayerName" />
             <span asp-validation-for="@Model.PlayingCharacter.PlayerName"></span>
         </div>
         <div class="form-group row">
             <label class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" asp-for="@Model.PlayingCharacter.CharacterDescription"></label>
-            <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2" asp-for="@Model.PlayingCharacter.CharacterDescription" />
+            <input class="col-md-10 col-10 col-xl-10 col-lg-10 col-sm-2 form-control" asp-for="@Model.PlayingCharacter.CharacterDescription" />
             <span asp-validation-for="@Model.PlayingCharacter.CharacterDescription"></span>
         </div>
     </div>
@@ -29,21 +29,26 @@
 
     <div class="container-fluid table-bordered">
         <div class="row">
-            <h2>Egenskaper</h2>
+            <h2>Egenskaper   </h2>
+            <span>Antal poäng kvar att sätta ut:</span>
+            <div id="CreationPoints">
+
+                <input type="text" class="form-control" id="remainingPoints" value="@Model.PlayingCharacter.RemainingPoints" />
+            </div>
         </div>
         <div class="row">
-            <div class="col-md-2">Egenskap</div>
-            <div class="col-md-1">Tot./Uts.</div>
-            <div class="col-md-1">@*knappar*@</div>
-            <div class="col-md-8">
+            <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">Egenskap</div>
+            <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">Tot./Uts.</div>
+            <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">@*knappar*@</div>
+            <div class="col-md-8 col-8 col-xl-8 col-lg-8 col-sm-8">
                 <div class="row">
-                    <div class="col-md-2">Förmåga</div>
-                    <div class="col-md-2">Värde</div>
-                    <div class="col-md-2">UtsättsPoäng</div>
-                    <div class="col-md-3">@*knappar*@</div>
-                    <div class="col-md-1">TP.</div>
-                    <div class="col-md-1">xTP.</div>
-                    <div class="col-md-1">TTP.</div>
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">Förmåga</div>
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">Värde</div>
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">UtsättsPoäng</div>
+                    <div class="col-md-3 col-3 col-xl-3 col-lg-3 col-sm-3">@*knappar*@</div>
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">TP.</div>
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">xTP.</div>
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">TTP.</div>
                 </div>
             </div>
             @*<div class="col-md-1">ExP</div>
@@ -55,81 +60,83 @@
         </div>
 
         <div class="row table-bordered">
-            <div class="col-md-2">
+            <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
                 <label asp-for="@Model.PlayingCharacter.KoordinationMotorikTot"></label>
             </div>
-            <div class="col-md-1"><span>@Model.PlayingCharacter.KoordinationMotorikTot</span>/<span>@Model.PlayingCharacter.KoordinationMotorikUts</span></div>
-            <div class="col-md-1">
-                <button type="submit" class="btn btn-success">Öka</button>
-                <button type="submit" class="btn btn-danger">Minska</button>
+            <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="KoordinationMotorik">
+                <input type="text" id="KoordinationMotorikTot" value=@Model.PlayingCharacter.KoordinationMotorikTot class="form-control" />/<input type="text" id="KoordinationMotorikUts" value=@Model.PlayingCharacter.KoordinationMotorikUts class="form-control" />
             </div>
-            <div class="col-md-8">
+            <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
+                <input type="button" onclick="IncreaseAttrib('KoordinationMotorikTot','KoordinationMotorikUts', 'KoordinationMotorik')" class="btn btn-success" value="Öka" />
+                <input type="button" onclick="DecreaseAttrib('KoordinationMotorikTot','KoordinationMotorikUts', 'KoordinationMotorik')" class="btn btn-danger" value="Minska" id="longerButtons" />
+            </div>
+            <div class="col-md-8 col-8 col-xl-8 col-lg-8 col-sm-8">
                 <div class="row table-bordered">
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
                         <label asp-for="@Model.PlayingCharacter.WeaponValue"></label>
                     </div>
-                    <div class="col-md-2">
-                        0
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
+                        <input type="text" id="WeaponValue" value="@Model.PlayingCharacter.WeaponValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
-                    <div class="col-md-3">
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" id="KoordinationMotorikPoanAttSattaUt">50</div>
+                    <div class="col-md-3 col-3 col-xl-3 col-lg-3 col-sm-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                         0
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                         0
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                         0
                     </div>
 
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
                         <label asp-for="@Model.PlayingCharacter.BalisticValue"></label>
 
                     </div>
-                    <div class="col-md-2">
-                        0
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
+                        <input type="text" id="BalisticValue" value="@Model.PlayingCharacter.BalisticValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
-                    <div class="col-md-3">
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"></div>
+                    <div class="col-md-3 col-3 col-xl-3 col-lg-3 col-sm-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                         0
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                         0
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                         0
                     </div>
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
                         <label asp-for="@Model.PlayingCharacter.FineMotorValue"></label>
 
                     </div>
-                    <div class="col-md-2">
-                        0
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
+                        <input type="text" id="FineMotorValue" value="@Model.PlayingCharacter.FineMotorValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
-                    <div class="col-md-3">
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"></div>
+                    <div class="col-md-3 col-3 col-xl-3 col-lg-3 col-sm-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                         0
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                         0
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                         0
                     </div>
                 </div>
@@ -138,23 +145,25 @@
 
 
         <div class="row table-bordered">
-            <div class="col-md-2">
+            <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
                 <label asp-for="@Model.PlayingCharacter.PhysiqueTot"></label>
             </div>
-            <div class="col-md-1">@Model.PlayingCharacter.PhysiqueTot/@Model.PlayingCharacter.PhysiqueUts</div>
-            <div class="col-md-1">
-                <button type="submit" class="btn btn-success">Öka</button>
-                <button type="submit" class="btn btn-danger">Minska</button>
+            <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="Fysik">
+                <input type="text" id="PhysiqueTot" value="@Model.PlayingCharacter.PhysiqueTot" class="form-control" />/<input type="text" id="PhysiqueUts" value="@Model.PlayingCharacter.PhysiqueUts" class="form-control" />
+            </div>
+            <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
+                <input type="button" onclick="IncreaseAttrib('PhysiqueTot','PhysiqueUts','Fysik')" class="btn btn-success" value="Öka" />
+                <input type="button" onclick="DecreaseAttrib('PhysiqueTot','PhysiqueUts','Fysik')" class="btn btn-danger" value="Minska" id="longerButtons" />
             </div>
             <div class="col-md-8">
                 <div class="row table-bordered">
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
                         <label asp-for="@Model.PlayingCharacter.PhysicsValue"></label>
                     </div>
-                    <div class="col-md-2">
-                        0
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
+                        <input type="text" id="PhysicsValue" value="@Model.PlayingCharacter.PhysicsValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">50</div>
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
@@ -176,9 +185,9 @@
 
                     </div>
                     <div class="col-md-2">
-                        0
+                        <input type="text" id="StrenghtValue" value="@Model.PlayingCharacter.StrenghtValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
+                    <div class="col-md-2"></div>
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
@@ -200,9 +209,9 @@
 
                     </div>
                     <div class="col-md-2">
-                        0
+                        <input type="text" id="MobilityValue" value="@Model.PlayingCharacter.MobilityValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
+                    <div class="col-md-2"></div>
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
@@ -221,23 +230,25 @@
         </div>
 
         <div class="row table-bordered">
-            <div class="col-md-2">
+            <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
                 <label asp-for="@Model.PlayingCharacter.PsykeTot"></label>
             </div>
-            <div class="col-md-1">@Model.PlayingCharacter.PsykeTot/@Model.PlayingCharacter.PsykeUts</div>
-            <div class="col-md-1">
-                <button type="submit" class="btn btn-success">Öka</button>
-                <button type="submit" class="btn btn-danger">Minska</button>
+            <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="Psyke">
+                <input type="text" id="PsykeTot" value="@Model.PlayingCharacter.PsykeTot" class="form-control" />/<input type="text" id="PsykeUts" value="@Model.PlayingCharacter.PsykeUts" class="form-control" />
+            </div>
+            <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
+                <input type="button" onclick="IncreaseAttrib('PsykeTot','PsykeUts','Psyke')" class="btn btn-success" value="Öka" />
+                <input type="button" onclick="DecreaseAttrib('PsykeTot','PsykeUts','Psyke')" class="btn btn-danger" value="Minska" id="longerButtons" />
             </div>
             <div class="col-md-8">
                 <div class="row table-bordered">
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
                         <label asp-for="@Model.PlayingCharacter.WillValue"></label>
                     </div>
-                    <div class="col-md-2">
-                        0
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
+                        <input type="text" id="WillValue" value="@Model.PlayingCharacter.WillValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">50</div>
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
@@ -254,14 +265,14 @@
 
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
                         <label asp-for="@Model.PlayingCharacter.CreativityValue"></label>
 
                     </div>
-                    <div class="col-md-2">
-                        0
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
+                        <input type="text" id="CreativityValue" value="@Model.PlayingCharacter.CreativityValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"></div>
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
@@ -277,14 +288,14 @@
                     </div>
                 </div>
                 <div class="row table-bordered">
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
                         <label asp-for="@Model.PlayingCharacter.EducationValue"></label>
 
                     </div>
-                    <div class="col-md-2">
-                        0
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2">
+                        <input type="text" id="EducationValue" value="@Model.PlayingCharacter.EducationValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
+                    <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"></div>
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
@@ -306,10 +317,12 @@
             <div class="col-md-2">
                 <label asp-for="@Model.PlayingCharacter.PerceptionTot"></label>
             </div>
-            <div class="col-md-1">@Model.PlayingCharacter.PerceptionTot/@Model.PlayingCharacter.PerceptionUts</div>
+            <div class="col-md-1" id="Perception">
+                <input type="text" id="PerceptionTot" value="@Model.PlayingCharacter.PerceptionTot" class="form-control" />/<input type="text" id="PerceptionUts" value="@Model.PlayingCharacter.PerceptionUts" class="form-control" />
+            </div>
             <div class="col-md-1">
-                <button type="submit" class="btn btn-success">Öka</button>
-                <button type="submit" class="btn btn-danger">Minska</button>
+                <input type="button" onclick="IncreaseAttrib('PerceptionTot','PerceptionUts','Perception')" class="btn btn-success" value="Öka" />
+                <input type="button" onclick="DecreaseAttrib('PerceptionTot','PerceptionUts','Perception')" class="btn btn-danger" value="Minska" id="longerButtons" />
             </div>
             <div class="col-md-8">
                 <div class="row table-bordered">
@@ -317,7 +330,7 @@
                         <label asp-for="@Model.PlayingCharacter.IntuitionValue"></label>
                     </div>
                     <div class="col-md-2">
-                        0
+                        <input type="text" id="IntuitionValue" value="@Model.PlayingCharacter.IntuitionValue" class="form-control" />
                     </div>
                     <div class="col-md-2">50</div>
                     <div class="col-md-3">
@@ -341,9 +354,9 @@
 
                     </div>
                     <div class="col-md-2">
-                        0
+                        <input type="text" id="MagicVisionValue" value="@Model.PlayingCharacter.MagicVisionValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
+                    <div class="col-md-2"></div>
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
@@ -364,9 +377,9 @@
 
                     </div>
                     <div class="col-md-2">
-                        0
+                        <input type="text" id="AttentionValue" value="@Model.PlayingCharacter.AttentionValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
+                    <div class="col-md-2"></div>
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
@@ -388,10 +401,12 @@
             <div class="col-md-2">
                 <label asp-for="@Model.PlayingCharacter.SocialTot"></label>
             </div>
-            <div class="col-md-1">@Model.PlayingCharacter.SocialTot/@Model.PlayingCharacter.SocialUts</div>
+            <div class="col-md-1" id="Sociala">
+                <input type="text" id="SocialTot" value="@Model.PlayingCharacter.SocialTot" class="form-control" />/<input type="text" id="SocialUts" value="@Model.PlayingCharacter.SocialUts" class="form-control" />
+            </div>
             <div class="col-md-1">
-                <button type="submit" class="btn btn-success">Öka</button>
-                <button type="submit" class="btn btn-danger">Minska</button>
+                <Input type="button" onclick="IncreaseAttrib('SocialTot','SocialUts','Sociala')" class="btn btn-success" value="Öka" />
+                <input type="button" onclick="DecreaseAttrib('SocialTot','SocialUts','Sociala')" class="btn btn-danger" value="Minska" id="longerButtons" />
             </div>
             <div class="col-md-8">
                 <div class="row table-bordered">
@@ -399,7 +414,7 @@
                         <label asp-for="@Model.PlayingCharacter.CharismaValue"></label>
                     </div>
                     <div class="col-md-2">
-                        0
+                        <input type="text" id="CharismaValue" value="@Model.PlayingCharacter.CharismaValue" class="form-control" />
                     </div>
                     <div class="col-md-2">50</div>
                     <div class="col-md-3">
@@ -423,9 +438,9 @@
 
                     </div>
                     <div class="col-md-2">
-                        0
+                        <input type="text" id="InsightValue" value="@Model.PlayingCharacter.InsightValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
+                    <div class="col-md-2"></div>
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>
@@ -446,9 +461,9 @@
 
                     </div>
                     <div class="col-md-2">
-                        0
+                        <input type="text" id="ResistanceValue" value="@Model.PlayingCharacter.ResistanceValue" class="form-control" />
                     </div>
-                    <div class="col-md-2">50</div>
+                    <div class="col-md-2"></div>
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-success">Öka</button>
                         <button type="submit" class="btn btn-danger">Minska</button>

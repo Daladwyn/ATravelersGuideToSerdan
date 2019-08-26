@@ -14,7 +14,7 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
         public void OnGet(string fileName)
         {
             FileName = "//localhost:44311/"+fileName;
-           // FileName = "//localhost:44311/morgan.docx";
+           
         }
     }
 }

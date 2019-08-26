@@ -61,3 +61,13 @@ body {
     padding-right: 15px;
     padding-left: 1px; 
 }
+
+input {
+    /*border: none;*/
+    background: transparent;
+    width: 50px;
+}
+
+#longerButtons{
+    width: 75px;
+}
