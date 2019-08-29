@@ -64,7 +64,7 @@
                 <label asp-for="@Model.PlayingCharacter.KoordinationMotorikTot"></label>
             </div>
             <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="KoordinationMotorik">
-                <input type="text" id="KoordinationMotorikTot" value=@Model.PlayingCharacter.KoordinationMotorikTot class="form-control" />/<input type="text" id="KoordinationMotorikUts" value=@Model.PlayingCharacter.KoordinationMotorikUts class="form-control" />
+                <input type="text" id="KoordinationMotorikTot" value=@Model.PlayingCharacter.KoordinationMotorikTot asp-for="@Model.PlayingCharacter.KoordinationMotorikTot" class="form-control" />/<input type="text" id="KoordinationMotorikUts" value=@Model.PlayingCharacter.KoordinationMotorikUts asp-for="@Model.PlayingCharacter.KoordinationMotorikUts" class="form-control" />
             </div>
             <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                 <input type="button" onclick="IncreaseAttrib('KoordinationMotorikTot','KoordinationMotorikUts', 'KoordinationMotorik','KoordinationMotorikPoangAttSattaUt')" class="btn btn-success" value="Öka" />
@@ -83,17 +83,17 @@
                     </div>
                     <div class="col-md-3 col-3 col-xl-3 col-lg-3 col-sm-3">
 
-                        <input type="button" onclick="IncreaseSubAttribute('WeaponValue','KoordinationMotorikPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('WeaponValue','KoordinationMotorikPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons"/>
+                        <input type="button" onclick="IncreaseSubAttribute('WeaponValue','KoordinationMotorikPoangAttSattaUt','WeaponTP','WeaponExP','WeaponTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('WeaponValue','KoordinationMotorikPoangAttSattaUt','WeaponTP','WeaponExP','WeaponTTP')" class="btn btn-danger" value="Minska" id="longerButtons"/>
                     </div>
-                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
-                        0
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentWeaponTP">
+                        <input type="text" id="WeaponTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
-                        0
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentWeaponExP">
+                        <input type="text" id="WeaponExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
-                        0
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentWeaponTTP">
+                        <input type="text" id="WeaponTTP" value="0" class="form-control" />
                     </div>
 
                 </div>
@@ -107,17 +107,17 @@
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"></div>
                     <div class="col-md-3 col-3 col-xl-3 col-lg-3 col-sm-3">
-                        <input type="button" onclick="IncreaseSubAttribute('BalisticValue','KoordinationMotorikPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('BalisticValue','KoordinationMotorikPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('BalisticValue','KoordinationMotorikPoangAttSattaUt','BalisticTP','BalisticExP','BalisticTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('BalisticValue','KoordinationMotorikPoangAttSattaUt','BalisticTP','BalisticExP','BalisticTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
-                        0
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentBalisticTP">
+                        <input type="text" id="BalisticTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
-                        0
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentBalisticExp">
+                        <input type="text" id="BalisticExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
-                        0
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentBalisticTTP">
+                        <input type="text" id="BalisticTTP" value="0" class="form-control" />
                     </div>
                 </div>
                 <div class="row table-bordered">
@@ -130,17 +130,17 @@
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"></div>
                     <div class="col-md-3 col-3 col-xl-3 col-lg-3 col-sm-3">
-                        <input type="button" onclick="IncreaseSubAttribute('FineMotorValue','KoordinationMotorikPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('FineMotorValue','KoordinationMotorikPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('FineMotorValue','KoordinationMotorikPoangAttSattaUt','FineMotorTP','FineMotorExP','FineMotorTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('FineMotorValue','KoordinationMotorikPoangAttSattaUt','FineMotorTP','FineMotorExP','FineMotorTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
-                        0
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentFineMotorTP">
+                        <input type="text" id="FineMotorTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
-                        0
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentFineMotorExP">
+                        <input type="text" id="FineMotorExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
-                        0
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentFineMotorTTP">
+                        <input type="text" id="FineMotorTTP" value="0" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -170,17 +170,17 @@
                         <input type="text" id="FysikPoangAttSattaUt" value="50" class="form-control" />
                     </div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('PhysicsValue','FysikPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('PhysicsValue','FysikPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('PhysicsValue','FysikPoangAttSattaUt','PhysicTP','PhysicExP','PhysicTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('PhysicsValue','FysikPoangAttSattaUt','PhysicTP','PhysicExP','PhysicTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentPhysicTP">
+                        <input type="text" id="PhysicTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentPhysicExP">
+                        <input type="text" id="PhysicExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentPhysicTTP">
+                        <input type="text" id="PhysicTTP" value="0" class="form-control" />
                     </div>
 
                 </div>
@@ -194,17 +194,17 @@
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('StrenghtValue','FysikPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('StrenghtValue','FysikPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('StrenghtValue','FysikPoangAttSattaUt','StrenghtTP','StrenghtExP','StrenghtTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('StrenghtValue','FysikPoangAttSattaUt','StrenghtTP','StrenghtExP','StrenghtTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentStrenghtTP">
+                        <input type="text" id="StrenghtTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentStrenghtExP">
+                        <input type="text" id="StrenghtExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentStrenghtTTP">
+                        <input type="text" id="StrenghtTTP" value="0" class="form-control" />
                     </div>
                 </div>
 
@@ -218,17 +218,17 @@
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('MobilityValue','FysikPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('MobilityValue','FysikPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('MobilityValue','FysikPoangAttSattaUt','MobilityTP','MobilityExP','MobilityTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('MobilityValue','FysikPoangAttSattaUt','MobilityTP','MobilityExP','MobilityTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentMobilityTP">
+                        <input type="text" id="MobilityTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentMobilityExP">
+                        <input type="text" id="MobilityExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentMobilityTTP">
+                        <input type="text" id="MobilityTTP" value="0" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -257,17 +257,17 @@
                     <input type="text" id="PsykePoangAttSattaUt" value="50" class="form-control" />
                     </div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('WillValue','PsykePoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('WillValue','PsykePoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('WillValue','PsykePoangAttSattaUt','WillTP','WillExP','WillTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('WillValue','PsykePoangAttSattaUt','WillTP','WillExP','WillTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentWillTP">
+                        <input type="text" id="WillTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentWillExP">
+                        <input type="text" id="WillExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentWillTTP">
+                        <input type="text" id="WillTTP" value="0" class="form-control" />
                     </div>
 
                 </div>
@@ -281,17 +281,17 @@
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"></div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('CreativityValue','PsykePoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('CreativityValue','PsykePoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('CreativityValue','PsykePoangAttSattaUt','CreativityTP','CreativityExP','CreativityTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('CreativityValue','PsykePoangAttSattaUt','CreativityTP','CreativityExP','CreativityTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentCreativityTP">
+                        <input type="text" id="CreativityTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentCreativityExP">
+                        <input type="text" id="CreativityExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentCreativityTTP">
+                        <input type="text" id="CreativityTTP" value="0" class="form-control" />
                     </div>
                 </div>
                 <div class="row table-bordered">
@@ -304,17 +304,17 @@
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"></div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('EducationValue','PsykePoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('EducationValue','PsykePoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('EducationValue','PsykePoangAttSattaUt','EducationTP','EducationExP','EducationTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('EducationValue','PsykePoangAttSattaUt','EducationTP','EducationExP','EducationTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentEducationTP">
+                        <input type="text" id="EducationTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentEducationExP">
+                        <input type="text" id="EducationExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentEducationTTP">
+                        <input type="text" id="EducationTTP" value="0" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -343,17 +343,17 @@
                     <input type="text" id="PerceptionPoangAttSattaUt" value="50" class="form-control" />
                     </div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('IntuitionValue','PerceptionPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('IntuitionValue','PerceptionPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('IntuitionValue','PerceptionPoangAttSattaUt','PerceptionTP','PerceptionExP','PerceptionTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('IntuitionValue','PerceptionPoangAttSattaUt','PerceptionTP','PerceptionExP','PerceptionTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentPerceptionTP">
+                        <input type="text" id="PerceptionTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentPerceptionExP">
+                        <input type="text" id="PerceptionExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentPerceptionTTP">
+                        <input type="text" id="PerceptionTTP" value="0" class="form-control" />
                     </div>
 
                 </div>
@@ -367,17 +367,17 @@
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('MagicVisionValue','PerceptionPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('MagicVisionValue','PerceptionPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('MagicVisionValue','PerceptionPoangAttSattaUt','MagicVisionTP','MagicVisionExP','MagicVisionTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('MagicVisionValue','PerceptionPoangAttSattaUt','MagicVisionTP','MagicVisionExP','MagicVisionTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentMagicVisionTP">
+                        <input type="text" id="MagicVisionTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentMagicVisionExP">
+                        <input type="text" id="MagicVisionTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentMagicVisionTTP">
+                        <input type="text" id="MagicVisionTTP" value="0" class="form-control" />
                     </div>
                 </div>
                 <div class="row table-bordered">
@@ -390,17 +390,17 @@
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('AttentionValue','PerceptionPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('AttentionValue','PerceptionPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('AttentionValue','PerceptionPoangAttSattaUt','AttentionTP','AttentionExP','AttentionTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('AttentionValue','PerceptionPoangAttSattaUt','AttentionTP','AttentionExP','AttentionTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentAttentionTP">
+                        <input type="text" id="AttentionTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentAttentionExP">
+                        <input type="text" id="AttentionExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentAttentionTTP">
+                        <input type="text" id="AttentionTTP" value="0" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -429,17 +429,17 @@
                     <input type="text" id="SocialaPoangAttSattaUt" value="50" class="form-control" />
                     </div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('CharismaValue','SocialaPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('CharismaValue','SocialaPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('CharismaValue','SocialaPoangAttSattaUt','CharismaTP','CharismaExP','CharismaTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('CharismaValue','SocialaPoangAttSattaUt','CharismaTP','CharismaExP','CharismaTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentCharismaTP">
+                        <input type="text" id="CharismaTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentCharismaExP">
+                        <input type="text" id="CharismaExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentCharismaTTP">
+                        <input type="text" id="CharismaTTP" value="0" class="form-control" />
                     </div>
 
                 </div>
@@ -453,17 +453,17 @@
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('InsightValue','SocialaPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('InsightValue','SocialaPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('InsightValue','SocialaPoangAttSattaUt','InsightTP','InsightExP','InsightTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('InsightValue','SocialaPoangAttSattaUt','InsightTP','InsightExP','InsightTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentInsightTP">
+                        <input type="text" id="InsightTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentInsightExP">
+                        <input type="text" id="InsightExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentInsightTTP">
+                        <input type="text" id="InsightTTP" value="0" class="form-control" />
                     </div>
                 </div>
                 <div class="row table-bordered">
@@ -476,17 +476,17 @@
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
-                        <input type="button" onclick="IncreaseSubAttribute('ResistanceValue','SocialaPoangAttSattaUt')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('ResistanceValue','SocialaPoangAttSattaUt')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="IncreaseSubAttribute('ResistanceValue','SocialaPoangAttSattaUt','ResistanceTP','ResistanceExP','ResistanceTTP')" class="btn btn-success" value="Öka" />
+                        <input type="button" onclick="DecreaseSubAttribute('ResistanceValue','SocialaPoangAttSattaUt','ResistanceTP','ResistanceExP','ResistanceTTP')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentResistanceTP">
+                        <input type="text" id="ResistanceTP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1"id="ParentResistanceExP">
+                        <input type="text" id="ResistanceExP" value="0" class="form-control" />
                     </div>
-                    <div class="col-md-1">
-                        0
+                    <div class="col-md-1" id="ParentResistanceTTP">
+                        <input type="text" id="ResistanceTTP" value="0" class="form-control" />
                     </div>
                 </div>
             </div>

@@ -10,11 +10,13 @@ function IncreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
 
     if (remainingPoints >= 1) {
 
+
         let newRemainingPoints = document.createElement("INPUT");
         newRemainingPoints.setAttribute("type", "number");
         newRemainingPoints.setAttribute("value", remainingPoints);
         newRemainingPoints.setAttribute("id", "remainingPoints");
-        newRemainingPoints.setAttribute("class", "form-control")
+        newRemainingPoints.setAttribute("class", "form-control");
+        
         let rPItemToBeRemoved = document.getElementById("remainingPoints");
         let rPparentItem = document.getElementById("CreationPoints");
         rPparentItem.replaceChild(newRemainingPoints, rPItemToBeRemoved);
@@ -26,7 +28,8 @@ function IncreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
         newTotAttribute.setAttribute("type", "text");
         newTotAttribute.setAttribute("value", TotValue);
         newTotAttribute.setAttribute("id", AttributeTotName);
-        newTotAttribute.setAttribute("class", "form-control")
+        newTotAttribute.setAttribute("class", "form-control");
+        newTotAttribute.setAttribute("asp-for", '@Model.PlayingCharacter.' + AttributeTotName);
         let totItemToBeRemoved = document.getElementById(AttributeTotName);
         let totParentItem = document.getElementById(ParentName);
         totParentItem.replaceChild(newTotAttribute, totItemToBeRemoved);
@@ -37,7 +40,8 @@ function IncreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
         newUtsAttribute.setAttribute("type", "text");
         newUtsAttribute.setAttribute("value", UtsValue);
         newUtsAttribute.setAttribute("id", AttributeUtsName);
-        newUtsAttribute.setAttribute("class", "form-control")
+        newUtsAttribute.setAttribute("class", "form-control");
+        newUtsAttribute.setAttribute("asp-for", "@Model.PlayingCharacter." + AttributeUtsName);
         let utsItemToBeRemoved = document.getElementById(AttributeUtsName);
         let utsParentItem = document.getElementById(ParentName);
         utsParentItem.replaceChild(newUtsAttribute, utsItemToBeRemoved);
@@ -45,15 +49,8 @@ function IncreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
         let PTAValue = document.getElementById(PointsToAssign).value;
         PTAValue++;
         PTAValue++;
-        let newPTAAttribute = document.createElement("INPUT");
-        newPTAAttribute.setAttribute("type", "text");
-        newPTAAttribute.setAttribute("value", PTAValue);
-        newPTAAttribute.setAttribute("id", PointsToAssign);
-        newPTAAttribute.setAttribute("class", "form-control");
-        let PTAItemToBeRemoved = document.getElementById(PointsToAssign);
-        let PTAParentId = "Parent" + document.getElementById(PointsToAssign).id;
-        let PTAParentItem = document.getElementById(PTAParentId);
-        PTAParentItem.replaceChild(newPTAAttribute, PTAItemToBeRemoved);
+        ReplaceId(PTAValue, PointsToAssign);
+
     } else {
         alert("Du har inga fler poäng att sätta ut");
     }
@@ -100,79 +97,75 @@ function DecreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
         let PTAValue = document.getElementById(PointsToAssign).value;
         PTAValue--;
         PTAValue--;
-        let newPTAAttribute = document.createElement("INPUT");
-        newPTAAttribute.setAttribute("type", "text");
-        newPTAAttribute.setAttribute("value", PTAValue);
-        newPTAAttribute.setAttribute("id", PointsToAssign);
-        newPTAAttribute.setAttribute("class", "form-control");
-        let PTAItemToBeRemoved = document.getElementById(PointsToAssign);
-        let PTAParentId = "Parent" + document.getElementById(PointsToAssign).id;
-        let PTAParentItem = document.getElementById(PTAParentId);
-        PTAParentItem.replaceChild(newPTAAttribute, PTAItemToBeRemoved);
+        ReplaceId(PTAValue, PointsToAssign)
+
     } else {
         alert("Du behöver minst 2 poäng i grundegenskapen.");
     }
 };
 
-function IncreaseSubAttribute(SubAttribute, PointsToAssign) {
+function IncreaseSubAttribute(SubAttribute, PointsToAssign, TPName, ExpName, TTPName) {
     let SubAttributeValue = document.getElementById(SubAttribute).value;
     let PointsToAssignValue = document.getElementById(PointsToAssign).value;
     if (PointsToAssignValue > 0) {
         PointsToAssignValue--;
         SubAttributeValue++;
 
-        let newPointsToAssign = document.createElement("INPUT");
-        newPointsToAssign.setAttribute("type", "text");
-        newPointsToAssign.setAttribute("value", PointsToAssignValue);
-        newPointsToAssign.setAttribute("id", PointsToAssign);
-        newPointsToAssign.setAttribute("class", "form-control");
-        let PTAItemToBeRemoved = document.getElementById(PointsToAssign);
-        let PTAParentId = "Parent" + document.getElementById(PointsToAssign).id;
-        let PTAParentItem = document.getElementById(PTAParentId);
-        PTAParentItem.replaceChild(newPointsToAssign, PTAItemToBeRemoved);
+        ReplaceId(PointsToAssignValue, PointsToAssign);
+        ReplaceId(SubAttributeValue, SubAttribute);
 
-        let newSubAttribute = document.createElement("INPUT");
-        newSubAttribute.setAttribute("type", "text");
-        newSubAttribute.setAttribute("value", SubAttributeValue);
-        newSubAttribute.setAttribute("id", SubAttribute);
-        newSubAttribute.setAttribute("class", "form-control");
-        let SubAttributeToBeRemoved = document.getElementById(SubAttribute);
-        let SubAttributeParentId = "Parent" + document.getElementById(SubAttribute).id;
-        let SubAttributeParentItem = document.getElementById(SubAttributeParentId);
-        SubAttributeParentItem.replaceChild(newSubAttribute, SubAttributeToBeRemoved);
+
+
+        let TP = document.getElementById(TPName).value;
+        if (SubAttributeValue == 5) {
+            TP = 1;
+            ReplaceId(TP, TPName);
+            ReplaceId(TP, TTPName);
+        } else if (SubAttributeValue % 10 == 0) {
+            let newTP = SubAttributeValue / 10;
+            newTP++;
+            ReplaceId(newTP, TPName);
+            ReplaceId(newTP, TTPName);
+        }
     } else {
         alert("Du har inga fler poäng att sätta ut!");
     }
 
 };
 
-function DecreaseSubAttribute(SubAttribute, PointsToAssign) {
+function DecreaseSubAttribute(SubAttribute, PointsToAssign, TPName, ExpName, TTPName) {
     let SubAttributeValue = document.getElementById(SubAttribute).value;
     let PointsToAssignValue = document.getElementById(PointsToAssign).value;
     if (SubAttributeValue > 1) {
         PointsToAssignValue++;
         SubAttributeValue--;
+        ReplaceId(PointsToAssignValue, PointsToAssign);
+        ReplaceId(SubAttributeValue, SubAttribute);
 
-        let newPointsToAssign = document.createElement("INPUT");
-        newPointsToAssign.setAttribute("type", "text");
-        newPointsToAssign.setAttribute("value", PointsToAssignValue);
-        newPointsToAssign.setAttribute("id", PointsToAssign);
-        newPointsToAssign.setAttribute("class", "form-control");
-        let PTAItemToBeRemoved = document.getElementById(PointsToAssign);
-        let PTAParentId = "Parent" + document.getElementById(PointsToAssign).id;
-        let PTAParentItem = document.getElementById(PTAParentId);
-        PTAParentItem.replaceChild(newPointsToAssign, PTAItemToBeRemoved);
-
-        let newSubAttribute = document.createElement("INPUT");
-        newSubAttribute.setAttribute("type", "text");
-        newSubAttribute.setAttribute("value", SubAttributeValue);
-        newSubAttribute.setAttribute("id", SubAttribute);
-        newSubAttribute.setAttribute("class", "form-control");
-        let SubAttributeToBeRemoved = document.getElementById(SubAttribute);
-        let SubAttributeParentId = "Parent" + document.getElementById(SubAttribute).id;
-        let SubAttributeParentItem = document.getElementById(SubAttributeParentId);
-        SubAttributeParentItem.replaceChild(newSubAttribute, SubAttributeToBeRemoved);
+        let TP = document.getElementById(TPName).value;
+        if (SubAttributeValue == 4) {
+            TP = 0;
+            ReplaceId(TP, TPName);
+            ReplaceId(TP, TTPName);
+        } else if (SubAttributeValue % 10 == 9) {
+            let newTP = SubAttributeValue / 10;
+            newTP = newTP + 0.1;
+            ReplaceId(newTP, TPName);
+            ReplaceId(newTP, TTPName);
+        }
     } else {
         alert("Du behöver ha minst 1 i din egenskap!");
     }
+}
+
+function ReplaceId(value, id) {
+    let newSubAttribute = document.createElement("INPUT");
+    newSubAttribute.setAttribute("type", "text");
+    newSubAttribute.setAttribute("value", value);
+    newSubAttribute.setAttribute("id", id);
+    newSubAttribute.setAttribute("class", "form-control");
+    let SubAttributeToBeRemoved = document.getElementById(id);
+    let SubAttributeParentId = "Parent" + document.getElementById(id).id;
+    let SubAttributeParentItem = document.getElementById(SubAttributeParentId);
+    SubAttributeParentItem.replaceChild(newSubAttribute, SubAttributeToBeRemoved);
 };
