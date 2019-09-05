@@ -29,7 +29,7 @@ function IncreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
         newTotAttribute.setAttribute("value", TotValue);
         newTotAttribute.setAttribute("id", AttributeTotName);
         newTotAttribute.setAttribute("class", "form-control");
-        newTotAttribute.setAttribute("asp-for", '@Model.PlayingCharacter.' + AttributeTotName);
+        newTotAttribute.setAttribute("name", 'PlayingCharacter.' + AttributeTotName);
         let totItemToBeRemoved = document.getElementById(AttributeTotName);
         let totParentItem = document.getElementById(ParentName);
         totParentItem.replaceChild(newTotAttribute, totItemToBeRemoved);
@@ -41,7 +41,7 @@ function IncreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
         newUtsAttribute.setAttribute("value", UtsValue);
         newUtsAttribute.setAttribute("id", AttributeUtsName);
         newUtsAttribute.setAttribute("class", "form-control");
-        newUtsAttribute.setAttribute("asp-for", "@Model.PlayingCharacter." + AttributeUtsName);
+        newUtsAttribute.setAttribute("name", "PlayingCharacter." + AttributeUtsName);
         let utsItemToBeRemoved = document.getElementById(AttributeUtsName);
         let utsParentItem = document.getElementById(ParentName);
         utsParentItem.replaceChild(newUtsAttribute, utsItemToBeRemoved);
@@ -66,7 +66,7 @@ function DecreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
         newRemainingPoints.setAttribute("type", "number");
         newRemainingPoints.setAttribute("value", remainingPoints);
         newRemainingPoints.setAttribute("id", "remainingPoints");
-        newRemainingPoints.setAttribute("class", "form-control")
+        newRemainingPoints.setAttribute("class", "form-control");
         let rPItemToBeRemoved = document.getElementById("remainingPoints");
         let rPparentItem = document.getElementById("CreationPoints");
         rPparentItem.replaceChild(newRemainingPoints, rPItemToBeRemoved);
@@ -78,7 +78,8 @@ function DecreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
         newTotAttribute.setAttribute("type", "number");
         newTotAttribute.setAttribute("value", TotValue);
         newTotAttribute.setAttribute("id", AttributeTotName);
-        newTotAttribute.setAttribute("class", "form-control")
+        newTotAttribute.setAttribute("class", "form-control");
+        newTotAttribute.setAttribute("name", 'PlayingCharacter.' + AttributeTotName);
         let totItemToBeRemoved = document.getElementById(AttributeTotName);
         let totParentItem = document.getElementById(ParentName);
         totParentItem.replaceChild(newTotAttribute, totItemToBeRemoved);
@@ -89,7 +90,8 @@ function DecreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
         newUtsAttribute.setAttribute("type", "number");
         newUtsAttribute.setAttribute("value", UtsValue);
         newUtsAttribute.setAttribute("id", AttributeUtsName);
-        newUtsAttribute.setAttribute("class", "form-control")
+        newUtsAttribute.setAttribute("class", "form-control");
+        newUtsAttribute.setAttribute("name", "PlayingCharacter." + AttributeUtsName);
         let utsItemToBeRemoved = document.getElementById(AttributeUtsName);
         let utsParentItem = document.getElementById(ParentName);
         utsParentItem.replaceChild(newUtsAttribute, utsItemToBeRemoved);
@@ -164,6 +166,7 @@ function ReplaceId(value, id) {
     newSubAttribute.setAttribute("value", value);
     newSubAttribute.setAttribute("id", id);
     newSubAttribute.setAttribute("class", "form-control");
+    newSubAttribute.setAttribute("name", "PlayingCharacter." + id);
     let SubAttributeToBeRemoved = document.getElementById(id);
     let SubAttributeParentId = "Parent" + document.getElementById(id).id;
     let SubAttributeParentItem = document.getElementById(SubAttributeParentId);
