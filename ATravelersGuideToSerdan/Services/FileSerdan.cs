@@ -11,19 +11,20 @@ using Table = DocumentFormat.OpenXml.Wordprocessing.Table;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Linq;
+using System;
 
 namespace ATravelersGuideToSerdan.Services
 {
     public class FileSerdan : IFileSerdan
     {
         public string CreateCharacterSheet(CreatePlayer1ViewModel CharacterToPrint)
-        //public HttpResponseMessage CreateCharacterSheet(CreatePlayer1ViewModel CharacterToPrint)
         {
-            //FileStream wordFinalDocument;
             var filename = CharacterToPrint.CharacterName + ".docx";
             var path = Path.Combine(
                           Directory.GetCurrentDirectory(),
                           "wwwroot", filename);
+            PageOrientationValues newOrientation = PageOrientationValues.Landscape;
 
             using (var wordDocument = WordprocessingDocument.Create(path, WordprocessingDocumentType.Document))
             {
@@ -32,10 +33,17 @@ namespace ATravelersGuideToSerdan.Services
 
 
                 mainPart.Document = new Document();
+
+
                 Body body = mainPart.Document.AppendChild(new Body());
-                //Paragraph para = body.AppendChild(new Paragraph());
-                //Run run = para.AppendChild(new Run());
-                //run.AppendChild(new Text("Serdan"));
+
+                SectionProperties sectProps = new SectionProperties();
+                PageSize pageSize = new PageSize() { Width = 16838U, Height = 11906U, Orient = PageOrientationValues.Landscape };
+                PageMargin pageMargin = new PageMargin() { Top = 720, Right = 720U, Bottom = 720, Left = 720U };
+
+                sectProps.Append(pageSize);
+                sectProps.Append(pageMargin);
+                body.Append(sectProps);
 
                 // Create an empty table.
                 Table table = new Table();
@@ -98,7 +106,7 @@ namespace ATravelersGuideToSerdan.Services
 
                 // Append the table cell to the table row.
                 tr1.Append(tr1tc3);
-                
+
                 table.Append(tr1);
                 ////Create a new row in tablecell tc2
                 TableRow tr2 = new TableRow();
@@ -287,7 +295,7 @@ namespace ATravelersGuideToSerdan.Services
                 tr9.Append(tr9tc8);
                 tr9.Append(tr9tc9);
                 table.Append(tr9);
-                
+
                 TableRow tr10 = new TableRow();
                 TableCell tr10tc1 = new TableCell(new Paragraph(new Run(new Text(""))));
                 TableCell tr10tc2 = new TableCell(new Paragraph(new Run(new Text("/"))));
@@ -459,9 +467,9 @@ namespace ATravelersGuideToSerdan.Services
                 tr17.Append(tr17tc8);
                 tr17.Append(tr17tc9);
                 table.Append(tr17);
-               
-                // Append the table row to the table.
-                
+
+                //para.Append(table);
+
 
                 // Append the table to the document.
                 wordDocument.MainDocumentPart.Document.Body.Append(table);
@@ -469,6 +477,66 @@ namespace ATravelersGuideToSerdan.Services
                 // Save changes to the MainDocumentPart.
                 wordDocument.MainDocumentPart.Document.Save();
 
+                bool documentChanged = false;
+
+                var docPart = wordDocument.MainDocumentPart;
+                var sections = docPart.Document.Descendants<SectionProperties>();
+
+                foreach (SectionProperties sectPr in sections)
+                {
+                    bool pageOrientationChanged = false;
+
+                    PageSize pgSz = sectPr.Descendants<PageSize>().FirstOrDefault();
+                    if (pgSz != null)
+                    {
+                        if (pgSz.Orient == null)
+                        {
+                            if (newOrientation != PageOrientationValues.Portrait)
+                            {
+                                pageOrientationChanged = true;
+                                documentChanged = true;
+                                pgSz.Orient =
+                                    new EnumValue<PageOrientationValues>(newOrientation);
+                            }
+                        }
+                        else
+                        {
+                            if (pgSz.Orient.Value != newOrientation)
+                            {
+                                pgSz.Orient.Value = newOrientation;
+                                pageOrientationChanged = true;
+                                documentChanged = true;
+                            }
+                        }
+                    }
+                    if (pageOrientationChanged)
+                    {
+                        // Changing the orientation is not enough. You must also 
+                        // change the page size.
+                        var width = pgSz.Width;
+                        var height = pgSz.Height;
+                        pgSz.Width = height;
+                        pgSz.Height = width;
+
+                        PageMargin pgMar = sectPr.Descendants<PageMargin>().FirstOrDefault();
+                        if (pgMar != null)
+                        {
+                            var top = pgMar.Top.Value;
+                            var bottom = pgMar.Bottom.Value;
+                            var left = pgMar.Left.Value;
+                            var right = pgMar.Right.Value;
+
+                            pgMar.Top = new Int32Value((int)left);
+                            pgMar.Bottom = new Int32Value((int)right);
+                            pgMar.Left = new UInt32Value((uint)System.Math.Max(0, bottom));
+                            pgMar.Right = new UInt32Value((uint)System.Math.Max(0, top));
+                        }
+                    }
+                    if (documentChanged)
+                    {
+                        wordDocument.MainDocumentPart.Document.Save();
+                    }
+                }
 
                 return filename;
                 //    var path = Path.Combine(
