@@ -68,13 +68,11 @@ namespace ATravelersGuideToSerdan.Services
                 // Create a cell.
                 TableCell tr1tc1 = new TableCell();
 
-                //TableCellProperties tc1TCP = new TableCellProperties(new TableCellBorders(
-                //    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
-                //    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }
-                //    )
-                //    );
+                TableCellProperties tr1tc1TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
 
-                //tc1.AppendChild<TableCellProperties>(tc1TCP);
+                tr1tc1.AppendChild<TableCellProperties>(tr1tc1TCP);
 
                 // Specify the width property of the table cell.
                 tr1tc1.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
@@ -86,32 +84,123 @@ namespace ATravelersGuideToSerdan.Services
                 tr1.Append(tr1tc1);
 
                 // Create a second table cell by copying the OuterXml value of the first table cell.
-                //TableCell tc2 = new TableCell(tc1.OuterXml);
                 TableCell tr1tc2 = new TableCell();
 
-                tr1tc2.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
-
-                // Specify the table cell content.
-                tr1tc2.Append(new Paragraph(new Run(new Text(CharacterToPrint.PlayerName))));
-
-                // Append the table cell to the table row.
+                TableCellProperties tr1tc2TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr1tc2.AppendChild<TableCellProperties>(tr1tc2TCP);
+                tr1tc2.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "1200" }));
+                tr1tc2.Append(new Paragraph(new Run(new Text("Namn:"))));
                 tr1.Append(tr1tc2);
 
                 TableCell tr1tc3 = new TableCell();
-
-                tr1tc3.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
-
+                TableCellProperties tr1tc3TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr1tc3.AppendChild<TableCellProperties>(tr1tc3TCP);
+                tr1tc3.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "4800" }));
                 // Specify the table cell content.
-                tr1tc3.Append(new Paragraph(new Run(new Text(CharacterToPrint.CharacterName))));
-
+                tr1tc3.Append(new Paragraph(new Run(new Text(CharacterToPrint.PlayerName))));
                 // Append the table cell to the table row.
                 tr1.Append(tr1tc3);
 
-                table.Append(tr1);
-                ////Create a new row in tablecell tc2
-                TableRow tr2 = new TableRow();
+                TableCell tr1tc4 = new TableCell();
+                TableCellProperties tr1tc4TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr1tc4.AppendChild<TableCellProperties>(tr1tc4TCP);
+                tr1tc4.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "1200" }));
+                tr1tc4.Append(new Paragraph(new Run(new Text("Spelare:"))));
+                tr1.Append(tr1tc4);
 
-                ////Create a new cell with the text "Namn:"
+                TableCell tr1tc5 = new TableCell();
+                TableCellProperties tr1tc5TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr1tc5.AppendChild<TableCellProperties>(tr1tc5TCP);
+                tr1tc5.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
+                // Specify the table cell content.
+                tr1tc5.Append(new Paragraph(new Run(new Text(CharacterToPrint.CharacterName))));
+                // Append the table cell to the table row.
+                tr1.Append(tr1tc5);
+
+                table.Append(tr1);
+
+                TableRow tr101 = new TableRow();
+                // Create a cell.
+                TableCell tr101tc1 = new TableCell();
+                TableCellProperties tr101tc1TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr101tc1.AppendChild<TableCellProperties>(tr101tc1TCP);
+                // Specify the width property of the table cell.
+                tr101tc1.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
+                // Specify the table cell content.
+                tr101tc1.Append(new Paragraph(new Run(new Text(""))));
+                // Append the table cell to the table row.
+                tr101.Append(tr101tc1);
+
+
+                TableCell tr101tc2 = new TableCell();
+                TableCellProperties tr101tc2TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr101tc2.AppendChild<TableCellProperties>(tr101tc2TCP);
+                // Specify the width property of the table cell.
+                tr101tc2.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "1200" }));
+                // Specify the table cell content.
+                tr101tc2.Append(new Paragraph(new Run(new Text("Beskrivning:"))));
+                // Append the table cell to the table row.
+                tr101.Append(tr101tc2);
+
+
+                TableCell tr101tc3 = new TableCell();
+                TableCellProperties tr101tc3TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr101tc3.AppendChild<TableCellProperties>(tr101tc3TCP);
+                // Specify the width property of the table cell.
+                tr101tc3.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "8400" }));
+                // Specify the table cell content.
+                tr101tc3.Append(new Paragraph(new Run(new Text(""))));
+                // Append the table cell to the table row.
+                tr101.Append(tr101tc3);
+
+
+                table.Append(tr101);
+
+                TableRow tr102 = new TableRow();
+
+                TableCell tr102tc1 = new TableCell();
+                TableCellProperties tr102tc1TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr102tc1.AppendChild<TableCellProperties>(tr102tc1TCP);
+                // Specify the width property of the table cell.
+                tr102tc1.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
+                // Specify the table cell content.
+                tr102tc1.Append(new Paragraph(new Run(new Text(""))));
+                // Append the table cell to the table row.
+                tr102.Append(tr102tc1);
+
+                TableCell tr102tc2 = new TableCell();
+                TableCellProperties tr102tc2TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr102tc2.AppendChild<TableCellProperties>(tr102tc2TCP);
+                // Specify the width property of the table cell.
+                tr102tc2.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "9600" }));
+                // Specify the table cell content.
+                tr102tc2.Append(new Paragraph(new Run(new Text(""))));
+                // Append the table cell to the table row.
+                tr102.Append(tr102tc2);
+
+                table.Append(tr102);
+
+                //create a new row
+                TableRow tr2 = new TableRow();
+                //Create new cells
                 TableCell tr2tc1 = new TableCell();
                 TableCell tr2tc2 = new TableCell();
                 TableCell tr2tc3 = new TableCell();
