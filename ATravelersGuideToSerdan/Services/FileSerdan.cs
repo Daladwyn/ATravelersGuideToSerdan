@@ -88,10 +88,10 @@ namespace ATravelersGuideToSerdan.Services
 
                 TableCellProperties tr1tc2TCP = new TableCellProperties(new TableCellBorders(
                     new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
-                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), }));
                 tr1tc2.AppendChild<TableCellProperties>(tr1tc2TCP);
-                tr1tc2.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "1200" }));
-                tr1tc2.Append(new Paragraph(new Run(new Text("Namn:"))));
+                tr1tc2.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "1238" }));
+                tr1tc2.Append(new Paragraph(new Run(new Text("Namn: " + CharacterToPrint.CharacterName))));
                 tr1.Append(tr1tc2);
 
                 TableCell tr1tc3 = new TableCell();
@@ -101,17 +101,17 @@ namespace ATravelersGuideToSerdan.Services
                 tr1tc3.AppendChild<TableCellProperties>(tr1tc3TCP);
                 tr1tc3.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "4800" }));
                 // Specify the table cell content.
-                tr1tc3.Append(new Paragraph(new Run(new Text(CharacterToPrint.PlayerName))));
+                tr1tc3.Append(new Paragraph(new Run(new Text("Spelare: " + CharacterToPrint.PlayerName))));
                 // Append the table cell to the table row.
                 tr1.Append(tr1tc3);
 
                 TableCell tr1tc4 = new TableCell();
                 TableCellProperties tr1tc4TCP = new TableCellProperties(new TableCellBorders(
                     new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
-                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), }));
                 tr1tc4.AppendChild<TableCellProperties>(tr1tc4TCP);
                 tr1tc4.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "1200" }));
-                tr1tc4.Append(new Paragraph(new Run(new Text("Spelare:"))));
+                tr1tc4.Append(new Paragraph(new Run(new Text())));
                 tr1.Append(tr1tc4);
 
                 TableCell tr1tc5 = new TableCell();
@@ -121,9 +121,31 @@ namespace ATravelersGuideToSerdan.Services
                 tr1tc5.AppendChild<TableCellProperties>(tr1tc5TCP);
                 tr1tc5.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
                 // Specify the table cell content.
-                tr1tc5.Append(new Paragraph(new Run(new Text(CharacterToPrint.CharacterName))));
+                tr1tc5.Append(new Paragraph(new Run(new Text())));
                 // Append the table cell to the table row.
                 tr1.Append(tr1tc5);
+
+                TableCell tr1tc6 = new TableCell();
+                TableCellProperties tr1tc6TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr1tc6.AppendChild<TableCellProperties>(tr1tc6TCP);
+                tr1tc6.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "3000" }));
+                // Specify the table cell content.
+                tr1tc6.Append(new Paragraph(new Run(new Text("Fysisk Skada"))));
+                // Append the table cell to the table row.
+                tr1.Append(tr1tc6);
+
+                TableCell tr1tc7 = new TableCell();
+                TableCellProperties tr1tc7TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr1tc7.AppendChild<TableCellProperties>(tr1tc7TCP);
+                tr1tc7.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "3000" }));
+                // Specify the table cell content.
+                tr1tc7.Append(new Paragraph(new Run(new Text("Själ Skada"))));
+                // Append the table cell to the table row.
+                tr1.Append(tr1tc7);
 
                 table.Append(tr1);
 

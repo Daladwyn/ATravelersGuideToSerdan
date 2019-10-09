@@ -14,6 +14,8 @@ namespace ATravelersGuideToSerdan
     {
         public static void Main(string[] args)
         {
+            CurrentDirectoryHelpers.SetCurrentDirectory(); // call it here
+            
             CreateWebHostBuilder(args).Build().Run();
         }
 
