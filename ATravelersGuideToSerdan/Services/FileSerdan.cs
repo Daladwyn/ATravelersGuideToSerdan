@@ -46,21 +46,21 @@ namespace ATravelersGuideToSerdan.Services
                 body.Append(sectProps);
 
                 // Create an empty table.
-                Table table = new Table();
+                Table table0 = new Table();
 
                 // Create a TableProperties object and specify its border information.
-                TableProperties tblProp = new TableProperties(
+                TableProperties tbl0Prop = new TableProperties(
                     new TableBorders(
-                        new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
-                        new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
-                        new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
-                        new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }
+                        new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 },
+                        new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 },
+                        new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 },
+                        new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 }
                     // new InsideHorizontalBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
                     // new InsideVerticalBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }
                     )
                 );
                 // Append the TableProperties object to the empty table.
-                table.AppendChild<TableProperties>(tblProp);
+                table0.AppendChild<TableProperties>(tbl0Prop);
 
                 // Create a row.
                 TableRow tr1 = new TableRow();
@@ -70,7 +70,7 @@ namespace ATravelersGuideToSerdan.Services
 
                 TableCellProperties tr1tc1TCP = new TableCellProperties(new TableCellBorders(
                     new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
-                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 }));
 
                 tr1tc1.AppendChild<TableCellProperties>(tr1tc1TCP);
 
@@ -117,7 +117,7 @@ namespace ATravelersGuideToSerdan.Services
                 TableCell tr1tc5 = new TableCell();
                 TableCellProperties tr1tc5TCP = new TableCellProperties(new TableCellBorders(
                     new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
-                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), }));
                 tr1tc5.AppendChild<TableCellProperties>(tr1tc5TCP);
                 tr1tc5.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
                 // Specify the table cell content.
@@ -139,7 +139,7 @@ namespace ATravelersGuideToSerdan.Services
                 TableCell tr1tc7 = new TableCell();
                 TableCellProperties tr1tc7TCP = new TableCellProperties(new TableCellBorders(
                     new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
-                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 }));
                 tr1tc7.AppendChild<TableCellProperties>(tr1tc7TCP);
                 tr1tc7.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "3000" }));
                 // Specify the table cell content.
@@ -147,14 +147,14 @@ namespace ATravelersGuideToSerdan.Services
                 // Append the table cell to the table row.
                 tr1.Append(tr1tc7);
 
-                table.Append(tr1);
+                table0.Append(tr1);
 
                 TableRow tr101 = new TableRow();
                 // Create a cell.
                 TableCell tr101tc1 = new TableCell();
                 TableCellProperties tr101tc1TCP = new TableCellProperties(new TableCellBorders(
                     new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
-                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 }));
                 tr101tc1.AppendChild<TableCellProperties>(tr101tc1TCP);
                 // Specify the width property of the table cell.
                 tr101tc1.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
@@ -180,7 +180,7 @@ namespace ATravelersGuideToSerdan.Services
                 TableCell tr101tc3 = new TableCell();
                 TableCellProperties tr101tc3TCP = new TableCellProperties(new TableCellBorders(
                     new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
-                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 }));
                 tr101tc3.AppendChild<TableCellProperties>(tr101tc3TCP);
                 // Specify the width property of the table cell.
                 tr101tc3.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "8400" }));
@@ -188,16 +188,38 @@ namespace ATravelersGuideToSerdan.Services
                 tr101tc3.Append(new Paragraph(new Run(new Text(""))));
                 // Append the table cell to the table row.
                 tr101.Append(tr101tc3);
+                
+                TableCell tr101tc4 = new TableCell();
+                TableCellProperties tr101tc4TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                tr101tc4.AppendChild<TableCellProperties>(tr101tc4TCP);
+                tr101tc4.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "3000" }));
+                // Specify the table cell content.
+                tr101tc4.Append(new Paragraph(new Run(new Text(""))));
+                // Append the table cell to the table row.
+                tr101.Append(tr101tc4);
+
+                TableCell tr101tc5 = new TableCell();
+                TableCellProperties tr101tc5TCP = new TableCellProperties(new TableCellBorders(
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 }));
+                tr101tc5.AppendChild<TableCellProperties>(tr101tc5TCP);
+                tr101tc5.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "3000" }));
+                // Specify the table cell content.
+                tr101tc5.Append(new Paragraph(new Run(new Text(""))));
+                // Append the table cell to the table row.
+                tr101.Append(tr101tc5);
 
 
-                table.Append(tr101);
+                table0.Append(tr101);
 
                 TableRow tr102 = new TableRow();
 
                 TableCell tr102tc1 = new TableCell();
                 TableCellProperties tr102tc1TCP = new TableCellProperties(new TableCellBorders(
-                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
-                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 }));
                 tr102tc1.AppendChild<TableCellProperties>(tr102tc1TCP);
                 // Specify the width property of the table cell.
                 tr102tc1.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
@@ -208,8 +230,8 @@ namespace ATravelersGuideToSerdan.Services
 
                 TableCell tr102tc2 = new TableCell();
                 TableCellProperties tr102tc2TCP = new TableCellProperties(new TableCellBorders(
-                    new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.None), },
-                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }));
+                   new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 },
+                    new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 20 }));
                 tr102tc2.AppendChild<TableCellProperties>(tr102tc2TCP);
                 // Specify the width property of the table cell.
                 tr102tc2.Append(new TableCellProperties(new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "9600" }));
@@ -218,7 +240,25 @@ namespace ATravelersGuideToSerdan.Services
                 // Append the table cell to the table row.
                 tr102.Append(tr102tc2);
 
-                table.Append(tr102);
+                table0.Append(tr102);
+                wordDocument.MainDocumentPart.Document.Body.Append(table0);
+
+                Table table = new Table();
+
+                // Create a TableProperties object and specify its border information.
+                TableProperties tblProp = new TableProperties(
+                    new TableBorders(
+                        new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
+                        new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
+                        new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
+                        new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }
+                    // new InsideHorizontalBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 },
+                    // new InsideVerticalBorder() { Val = new EnumValue<BorderValues>(BorderValues.BasicThinLines), Size = 10 }
+                    )
+                );
+                // Append the TableProperties object to the empty table.
+                table.AppendChild<TableProperties>(tblProp);
+
 
                 //create a new row
                 TableRow tr2 = new TableRow();
