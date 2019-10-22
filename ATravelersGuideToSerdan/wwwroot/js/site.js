@@ -8,7 +8,7 @@ function IncreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
     let remainingPoints = document.getElementById("remainingPoints").value;
     remainingPoints--;
 
-    if (remainingPoints >= 1) {
+    if (remainingPoints >= 0) {
 
 
         let newRemainingPoints = document.createElement("INPUT");

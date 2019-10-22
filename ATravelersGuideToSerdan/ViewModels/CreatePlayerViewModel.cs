@@ -15,7 +15,7 @@ namespace ATravelersGuideToSerdan.ViewModels
         public string PlayerName { get; set; }
 
         [Required]
-        [MaxLength(40)]
+        [MaxLength(120)]
         [Display(Name = "Beskrivning")]
         public string CharacterDescription { get; set; }
     }
