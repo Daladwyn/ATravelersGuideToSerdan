@@ -1,0 +1,31 @@
+﻿namespace ATravelersGuideToSerdan.Core
+{
+    public enum FamilyForce
+    {
+        Ingen,
+        Draken,
+        Enhörningen,
+        Läkaren,
+        Gripen,
+        Mantikoran,
+        Kroppen,
+        Symbolen,
+        Dörren,
+        Tiden,
+        Magin,
+        Masken,
+        Elementa,
+        Sinnet,
+        Vattnet,
+        Jorden,
+        Ljuset,
+        Elektricitet,
+        Elden,
+        Vinden,
+        Mörkret,
+        Svärdet,
+        Materian,
+        Naturen,
+        Djuret
+    }
+}

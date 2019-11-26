@@ -1,9 +1,11 @@
-﻿using ATravelersGuideToSerdan.Services;
+﻿using ATravelersGuideToSerdan.Core;
+using ATravelersGuideToSerdan.Services;
 using ATravelersGuideToSerdan.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 
 namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
 {
@@ -13,24 +15,21 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
     {
         private _DB _Db;
         private IFileSerdan _FilAccess;
-        public CreatePlayerStep1Model(_DB Db, IFileSerdan filAccess)
+        private readonly IHtmlHelper htmlHelper;
+        public CreatePlayerStep1Model(_DB Db, IFileSerdan filAccess, IHtmlHelper htmlHelper)
         {
             _Db = Db;
             _FilAccess = filAccess;
+            this.htmlHelper = htmlHelper;
         }
 
         [BindProperty]
         public CreatePlayer1ViewModel PlayingCharacter { get; set; }
 
+        public IEnumerable<SelectListItem> FamilyForces { get; set; }
+        public IEnumerable<SelectListItem> FamilyForceLevels { get; set; }
 
 
-        //public CreatePlayerStep1Model(IMapper mapper, _DB Db, IFileSerdan filAccess)
-        //public CreatePlayerStep1Model(_DB Db, IFileSerdan filAccess)
-        //{
-        //    // _mapper = mapper;
-        //    _Db = Db;
-        //    _filAccess = filAccess;
-        //}
         [TempData]
         public string Headline { get; set; }
         [TempData]
@@ -42,6 +41,8 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
         public IActionResult OnGet()
         {
             PlayingCharacter = new CreatePlayer1ViewModel("ny");
+            FamilyForces = htmlHelper.GetEnumSelectList<FamilyForce>();
+            FamilyForceLevels = htmlHelper.GetEnumSelectList<FamilyForceLevel>();
             Headline = "Karaktärsskapandets första steg.";
             Message = "Du behöver ange namn, beskrivning och ditt namn. Sedan har du 100 poäng att sätta ut på bl.a. grundegenskaper och krafter. ";
             return Page();
@@ -57,7 +58,7 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
                 {
                     FileName = _FilAccess.CreateCharacterSheet(newplayer),
                 };
-                return RedirectToPage("CharacterSaved",savedCharacter);
+                return RedirectToPage("CharacterSaved", savedCharacter);
 
             }
             else

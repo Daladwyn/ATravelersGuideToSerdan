@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATravelersGuideToSerdan.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -354,6 +355,9 @@ namespace ATravelersGuideToSerdan.ViewModels
         [Display(Name = "Poäng utsatta på krafter totalt:")]
         public int PowerAllocatedPoints { get; set; }
 
+        public FamilyForce FamilyForce { get; set; }
+
+        public FamilyForceLevel FamilyForceLevels { get; set; }
         //************************************************************
         [Display(Name = "Visuelt 10p")]
         public bool MagiVisuellt { get; set; }

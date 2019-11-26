@@ -1,61 +1,37 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-using ATravelersGuideToSerdan.ViewModels;
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Wordprocessing;
-using System.Net;
-using Microsoft.AspNetCore.Mvc;
-using Table = DocumentFormat.OpenXml.Wordprocessing.Table;
-using Microsoft.AspNetCore.Http;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Linq;
-using System;
+﻿using DocumentFormat.OpenXml.Packaging;
 using Ap = DocumentFormat.OpenXml.ExtendedProperties;
 using Vt = DocumentFormat.OpenXml.VariantTypes;
-using Wp = DocumentFormat.OpenXml.Drawing.Wordprocessing;
-using A = DocumentFormat.OpenXml.Drawing;
-using Pic = DocumentFormat.OpenXml.Drawing.Pictures;
-using M = DocumentFormat.OpenXml.Math;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Ovml = DocumentFormat.OpenXml.Vml.Office;
 using V = DocumentFormat.OpenXml.Vml;
+using M = DocumentFormat.OpenXml.Math;
 using W14 = DocumentFormat.OpenXml.Office2010.Word;
 using W15 = DocumentFormat.OpenXml.Office2013.Word;
 using Ds = DocumentFormat.OpenXml.CustomXmlDataProperties;
-using Thm15 = DocumentFormat.OpenXml.Office2013.Theme;
+using A = DocumentFormat.OpenXml.Drawing;
 
-
-namespace ATravelersGuideToSerdan.Services
+namespace GeneratedCode
 {
-    public class FileSerdan : IFileSerdan
+    public class GeneratedClass
     {
-
-
-        public string CreateCharacterSheet(CreatePlayer1ViewModel CharacterToPrint)
+        // Creates a WordprocessingDocument.
+        public void CreatePackage(string filePath)
         {
-            var filename = CharacterToPrint.CharacterName + ".docx";
-            var path = Path.Combine(
-                          Directory.GetCurrentDirectory(),
-                          "wwwroot", filename);
-            //PageOrientationValues newOrientation = PageOrientationValues.Landscape;
-
-            using (WordprocessingDocument package = WordprocessingDocument.Create(path, WordprocessingDocumentType.Document))
+            using (WordprocessingDocument package = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document))
             {
-                CreateParts(package, CharacterToPrint);
-
-                return filename;
+                CreateParts(package);
             }
         }
 
-        private void CreateParts(WordprocessingDocument document, CreatePlayer1ViewModel CharacterToPrint)
+        // Adds child parts and generates content of the specified part.
+        private void CreateParts(WordprocessingDocument document)
         {
             ExtendedFilePropertiesPart extendedFilePropertiesPart1 = document.AddNewPart<ExtendedFilePropertiesPart>("rId3");
             GenerateExtendedFilePropertiesPart1Content(extendedFilePropertiesPart1);
 
             MainDocumentPart mainDocumentPart1 = document.AddMainDocumentPart();
-            GenerateMainDocumentPart1Content(mainDocumentPart1, CharacterToPrint);
+            GenerateMainDocumentPart1Content(mainDocumentPart1);
 
             FooterPart footerPart1 = mainDocumentPart1.AddNewPart<FooterPart>("rId8");
             GenerateFooterPart1Content(footerPart1);
@@ -202,7 +178,6 @@ namespace ATravelersGuideToSerdan.Services
         }
 
         // Generates content of mainDocumentPart1.
-        
         private void GenerateMainDocumentPart1Content(MainDocumentPart mainDocumentPart1, CreatePlayer1ViewModel CharacterToPrint)
         {
             Document document1 = new Document() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15 w16se w16cid wp14" } };
@@ -1379,8 +1354,8 @@ namespace ATravelersGuideToSerdan.Services
             paragraphProperties17.Append(paragraphMarkRunProperties17);
             Run valueRun1 = new Run() { RsidRunProperties = "00401BBE" };
             RunProperties valueRun1Properties = new RunProperties();
-            //valueRun1Properties.Append(fontSizeSize24);
-            //valueRun1Properties.Append(fontSizeComplexScriptSize24);
+            valueRun1Properties.Append(fontSizeSize24);
+            valueRun1Properties.Append(fontSizeComplexScriptSize24);
             Text strenghtValue = new Text();
             strenghtValue.Text = Convert.ToString(CharacterToPrint.StrenghtValue);
             valueRun1.Append(valueRun1Properties);
@@ -21734,6 +21709,6 @@ namespace ATravelersGuideToSerdan.Services
             document.PackageProperties.LastPrinted = System.Xml.XmlConvert.ToDateTime("2016-10-05T19:31:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
         }
 
-    }
 
+    }
 }

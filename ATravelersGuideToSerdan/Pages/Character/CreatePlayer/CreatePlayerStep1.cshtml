@@ -84,16 +84,16 @@
                     <div class="col-md-3 col-3 col-xl-3 col-lg-3 col-sm-3">
 
                         <input type="button" onclick="IncreaseSubAttribute('WeaponValue','KoordinationMotorikPoangAttSattaUt','WeaponTp','WeaponExp','WeaponTTp')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('WeaponValue','KoordinationMotorikPoangAttSattaUt','WeaponTp','WeaponExp','WeaponTTp')" class="btn btn-danger" value="Minska" id="longerButtons"/>
+                        <input type="button" onclick="DecreaseSubAttribute('WeaponValue','KoordinationMotorikPoangAttSattaUt','WeaponTp','WeaponExp','WeaponTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentWeaponTp">
-                        <input type="text" id="WeaponTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WeaponTp"/>
+                        <input type="text" id="WeaponTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WeaponTp" />
                     </div>
-                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentWeaponExp" >
-                        <input type="text" id="WeaponExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WeaponExp"/>
+                    <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentWeaponExp">
+                        <input type="text" id="WeaponExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WeaponExp" />
                     </div>
                     <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentWeaponTTp">
-                        <input type="text" id="WeaponTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WeaponTTp"/>
+                        <input type="text" id="WeaponTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WeaponTTp" />
                     </div>
 
                 </div>
@@ -111,13 +111,13 @@
                         <input type="button" onclick="DecreaseSubAttribute('BalisticValue','KoordinationMotorikPoangAttSattaUt','BalisticTp','BalisticExp','BalisticTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentBalisticTp">
-                        <input type="text" id="BalisticTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.BalisticTp"/>
+                        <input type="text" id="BalisticTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.BalisticTp" />
                     </div>
                     <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentBalisticExp">
-                        <input type="text" id="BalisticExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.BalisticExp"/>
+                        <input type="text" id="BalisticExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.BalisticExp" />
                     </div>
                     <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentBalisticTTp">
-                        <input type="text" id="BalisticTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.BalisticTTp"/>
+                        <input type="text" id="BalisticTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.BalisticTTp" />
                     </div>
                 </div>
                 <div class="row table-bordered">
@@ -126,7 +126,7 @@
 
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" id="ParentFineMotorValue">
-                        <input type="text" id="FineMotorValue" value="@Model.PlayingCharacter.FineMotorValue" class="form-control" asp-for="@Model.PlayingCharacter.FineMotorValue"/>
+                        <input type="text" id="FineMotorValue" value="@Model.PlayingCharacter.FineMotorValue" class="form-control" asp-for="@Model.PlayingCharacter.FineMotorValue" />
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"></div>
                     <div class="col-md-3 col-3 col-xl-3 col-lg-3 col-sm-3">
@@ -134,13 +134,13 @@
                         <input type="button" onclick="DecreaseSubAttribute('FineMotorValue','KoordinationMotorikPoangAttSattaUt','FineMotorTp','FineMotorExp','FineMotorTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentFineMotorTp">
-                        <input type="text" id="FineMotorTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.FineMotorTp"/>
+                        <input type="text" id="FineMotorTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.FineMotorTp" />
                     </div>
                     <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentFineMotorExp">
-                        <input type="text" id="FineMotorExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.FineMotorExp"/>
+                        <input type="text" id="FineMotorExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.FineMotorExp" />
                     </div>
                     <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="ParentFineMotorTTp">
-                        <input type="text" id="FineMotorTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.FineMotorTTp"/>
+                        <input type="text" id="FineMotorTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.FineMotorTTp" />
                     </div>
                 </div>
             </div>
@@ -152,9 +152,9 @@
                 <label asp-for="@Model.PlayingCharacter.PhysiqueTot"></label>
             </div>
             <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="Fysik">
-                <input type="text" id="PhysiqueTot" value="@Model.PlayingCharacter.PhysiqueTot" class="form-control" asp-for="@Model.PlayingCharacter.PhysiqueTot"/>
+                <input type="text" id="PhysiqueTot" value="@Model.PlayingCharacter.PhysiqueTot" class="form-control" asp-for="@Model.PlayingCharacter.PhysiqueTot" />
                 /
-                <input type="text" id="PhysiqueUts" value="@Model.PlayingCharacter.PhysiqueUts" class="form-control" asp-for="@Model.PlayingCharacter.PhysiqueUts"/>
+                <input type="text" id="PhysiqueUts" value="@Model.PlayingCharacter.PhysiqueUts" class="form-control" asp-for="@Model.PlayingCharacter.PhysiqueUts" />
             </div>
             <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                 <input type="button" onclick="IncreaseAttrib('PhysiqueTot','PhysiqueUts','Fysik','FysikPoangAttSattaUt')" class="btn btn-success" value="Öka" />
@@ -166,7 +166,7 @@
                         <label asp-for="@Model.PlayingCharacter.PhysicsValue"></label>
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" id="ParentPhysicsValue">
-                        <input type="text" id="PhysicsValue" value="@Model.PlayingCharacter.PhysicsValue" class="form-control" asp-for="@Model.PlayingCharacter.PhysicsValue"/>
+                        <input type="text" id="PhysicsValue" value="@Model.PlayingCharacter.PhysicsValue" class="form-control" asp-for="@Model.PlayingCharacter.PhysicsValue" />
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" id="ParentFysikPoangAttSattaUt">
                         <input type="text" id="FysikPoangAttSattaUt" value="50" class="form-control" />
@@ -176,13 +176,13 @@
                         <input type="button" onclick="DecreaseSubAttribute('PhysicsValue','FysikPoangAttSattaUt','PhysicTp','PhysicExp','PhysicTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentPhysicTp">
-                        <input type="text" id="PhysicTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.PhysicsTp"/>
+                        <input type="text" id="PhysicTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.PhysicsTp" />
                     </div>
                     <div class="col-md-1" id="ParentPhysicExp">
-                        <input type="text" id="PhysicExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.PhysicsExp"/>
+                        <input type="text" id="PhysicExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.PhysicsExp" />
                     </div>
                     <div class="col-md-1" id="ParentPhysicTTp">
-                        <input type="text" id="PhysicTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.PhysicsTTp"/>
+                        <input type="text" id="PhysicTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.PhysicsTTp" />
                     </div>
 
                 </div>
@@ -192,7 +192,7 @@
 
                     </div>
                     <div class="col-md-2" id="ParentStrenghtValue">
-                        <input type="text" id="StrenghtValue" value="@Model.PlayingCharacter.StrenghtValue" class="form-control" asp-for="@Model.PlayingCharacter.StrenghtValue"/>
+                        <input type="text" id="StrenghtValue" value="@Model.PlayingCharacter.StrenghtValue" class="form-control" asp-for="@Model.PlayingCharacter.StrenghtValue" />
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
@@ -200,13 +200,13 @@
                         <input type="button" onclick="DecreaseSubAttribute('StrenghtValue','FysikPoangAttSattaUt','StrenghtTp','StrenghtExp','StrenghtTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentStrenghtTp">
-                        <input type="text" id="StrenghtTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.StrenghtValue"/>
+                        <input type="text" id="StrenghtTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.StrenghtValue" />
                     </div>
                     <div class="col-md-1" id="ParentStrenghtExp">
-                        <input type="text" id="StrenghtExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.StrenghtExp"/>
+                        <input type="text" id="StrenghtExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.StrenghtExp" />
                     </div>
                     <div class="col-md-1" id="ParentStrenghtTTp">
-                        <input type="text" id="StrenghtTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.StrenghtTTp"/>
+                        <input type="text" id="StrenghtTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.StrenghtTTp" />
                     </div>
                 </div>
 
@@ -216,7 +216,7 @@
 
                     </div>
                     <div class="col-md-2" id="ParentMobilityValue">
-                        <input type="text" id="MobilityValue" value="@Model.PlayingCharacter.MobilityValue" class="form-control" asp-for="@Model.PlayingCharacter.MobilityValue"/>
+                        <input type="text" id="MobilityValue" value="@Model.PlayingCharacter.MobilityValue" class="form-control" asp-for="@Model.PlayingCharacter.MobilityValue" />
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
@@ -224,13 +224,13 @@
                         <input type="button" onclick="DecreaseSubAttribute('MobilityValue','FysikPoangAttSattaUt','MobilityTp','MobilityExp','MobilityTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentMobilityTp">
-                        <input type="text" id="MobilityTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MobilityTp"/>
+                        <input type="text" id="MobilityTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MobilityTp" />
                     </div>
                     <div class="col-md-1" id="ParentMobilityExp">
-                        <input type="text" id="MobilityExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MobilityExp"/>
+                        <input type="text" id="MobilityExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MobilityExp" />
                     </div>
                     <div class="col-md-1" id="ParentMobilityTTp">
-                        <input type="text" id="MobilityTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MobilityTTp"/>
+                        <input type="text" id="MobilityTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MobilityTTp" />
                     </div>
                 </div>
             </div>
@@ -241,9 +241,9 @@
                 <label asp-for="@Model.PlayingCharacter.PsykeTot"></label>
             </div>
             <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1" id="Psyke">
-                <input type="text" id="PsykeTot" value="@Model.PlayingCharacter.PsykeTot" class="form-control" asp-for="@Model.PlayingCharacter.PsykeTot"/>
+                <input type="text" id="PsykeTot" value="@Model.PlayingCharacter.PsykeTot" class="form-control" asp-for="@Model.PlayingCharacter.PsykeTot" />
                 /
-                <input type="text" id="PsykeUts" value="@Model.PlayingCharacter.PsykeUts" class="form-control" asp-for="@Model.PlayingCharacter.PsykeUts"/>
+                <input type="text" id="PsykeUts" value="@Model.PlayingCharacter.PsykeUts" class="form-control" asp-for="@Model.PlayingCharacter.PsykeUts" />
             </div>
             <div class="col-md-1 col-1 col-xl-1 col-lg-1 col-sm-1">
                 <input type="button" onclick="IncreaseAttrib('PsykeTot','PsykeUts','Psyke','PsykePoangAttSattaUt')" class="btn btn-success" value="Öka" />
@@ -255,23 +255,23 @@
                         <label asp-for="@Model.PlayingCharacter.WillValue"></label>
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" id="ParentWillValue">
-                        <input type="text" id="WillValue" value="@Model.PlayingCharacter.WillValue" class="form-control" asp-for="@Model.PlayingCharacter.WillValue"/>
+                        <input type="text" id="WillValue" value="@Model.PlayingCharacter.WillValue" class="form-control" asp-for="@Model.PlayingCharacter.WillValue" />
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" id="ParentPsykePoangAttSattaUt">
-                    <input type="text" id="PsykePoangAttSattaUt" value="50" class="form-control" />
+                        <input type="text" id="PsykePoangAttSattaUt" value="50" class="form-control" />
                     </div>
                     <div class="col-md-3">
                         <input type="button" onclick="IncreaseSubAttribute('WillValue','PsykePoangAttSattaUt','WillTp','WillExp','WillTTp')" class="btn btn-success" value="Öka" />
                         <input type="button" onclick="DecreaseSubAttribute('WillValue','PsykePoangAttSattaUt','WillTp','WillExp','WillTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentWillTp">
-                        <input type="text" id="WillTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WillTp"/>
+                        <input type="text" id="WillTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WillTp" />
                     </div>
                     <div class="col-md-1" id="ParentWillExp">
-                        <input type="text" id="WillExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WillExp"/>
+                        <input type="text" id="WillExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WillExp" />
                     </div>
                     <div class="col-md-1" id="ParentWillTTp">
-                        <input type="text" id="WillTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WillTTp"/>
+                        <input type="text" id="WillTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.WillTTp" />
                     </div>
 
                 </div>
@@ -281,7 +281,7 @@
 
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" id="ParentCreativityValue">
-                        <input type="text" id="CreativityValue" value="@Model.PlayingCharacter.CreativityValue" class="form-control" asp-for="@Model.PlayingCharacter.CreativityValue"/>
+                        <input type="text" id="CreativityValue" value="@Model.PlayingCharacter.CreativityValue" class="form-control" asp-for="@Model.PlayingCharacter.CreativityValue" />
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"></div>
                     <div class="col-md-3">
@@ -289,13 +289,13 @@
                         <input type="button" onclick="DecreaseSubAttribute('CreativityValue','PsykePoangAttSattaUt','CreativityTp','CreativityExp','CreativityTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentCreativityTp">
-                        <input type="text" id="CreativityTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CreativityTp"/>
+                        <input type="text" id="CreativityTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CreativityTp" />
                     </div>
                     <div class="col-md-1" id="ParentCreativityExp">
-                        <input type="text" id="CreativityExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CreativityExp"/>
+                        <input type="text" id="CreativityExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CreativityExp" />
                     </div>
                     <div class="col-md-1" id="ParentCreativityTTp">
-                        <input type="text" id="CreativityTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CreativityTTp"/>
+                        <input type="text" id="CreativityTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CreativityTTp" />
                     </div>
                 </div>
                 <div class="row table-bordered">
@@ -304,7 +304,7 @@
 
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2" id="ParentEducationValue">
-                        <input type="text" id="EducationValue" value="@Model.PlayingCharacter.EducationValue" class="form-control" asp-for="@Model.PlayingCharacter.EducationValue"/>
+                        <input type="text" id="EducationValue" value="@Model.PlayingCharacter.EducationValue" class="form-control" asp-for="@Model.PlayingCharacter.EducationValue" />
                     </div>
                     <div class="col-md-2 col-2 col-xl-2 col-lg-2 col-sm-2"></div>
                     <div class="col-md-3">
@@ -312,13 +312,13 @@
                         <input type="button" onclick="DecreaseSubAttribute('EducationValue','PsykePoangAttSattaUt','EducationTp','EducationExp','EducationTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentEducationTp">
-                        <input type="text" id="EducationTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.EducationTp"/>
+                        <input type="text" id="EducationTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.EducationTp" />
                     </div>
                     <div class="col-md-1" id="ParentEducationExp">
-                        <input type="text" id="EducationExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.EducationExp"/>
+                        <input type="text" id="EducationExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.EducationExp" />
                     </div>
                     <div class="col-md-1" id="ParentEducationTTp">
-                        <input type="text" id="EducationTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.EducationTTp"/>
+                        <input type="text" id="EducationTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.EducationTTp" />
                     </div>
                 </div>
             </div>
@@ -329,9 +329,9 @@
                 <label asp-for="@Model.PlayingCharacter.PerceptionTot"></label>
             </div>
             <div class="col-md-1" id="Perception">
-                <input type="text" id="PerceptionTot" value="@Model.PlayingCharacter.PerceptionTot" class="form-control" asp-for="@Model.PlayingCharacter.PerceptionTot"/>
+                <input type="text" id="PerceptionTot" value="@Model.PlayingCharacter.PerceptionTot" class="form-control" asp-for="@Model.PlayingCharacter.PerceptionTot" />
                 /
-                <input type="text" id="PerceptionUts" value="@Model.PlayingCharacter.PerceptionUts" class="form-control" asp-for="@Model.PlayingCharacter.PerceptionUts"/>
+                <input type="text" id="PerceptionUts" value="@Model.PlayingCharacter.PerceptionUts" class="form-control" asp-for="@Model.PlayingCharacter.PerceptionUts" />
             </div>
             <div class="col-md-1">
                 <input type="button" onclick="IncreaseAttrib('PerceptionTot','PerceptionUts','Perception','PerceptionPoangAttSattaUt')" class="btn btn-success" value="Öka" />
@@ -343,23 +343,23 @@
                         <label asp-for="@Model.PlayingCharacter.IntuitionValue"></label>
                     </div>
                     <div class="col-md-2" id="ParentIntuitionValue">
-                        <input type="text" id="IntuitionValue" value="@Model.PlayingCharacter.IntuitionValue" class="form-control" asp-for="@Model.PlayingCharacter.IntuitionValue"/>
+                        <input type="text" id="IntuitionValue" value="@Model.PlayingCharacter.IntuitionValue" class="form-control" asp-for="@Model.PlayingCharacter.IntuitionValue" />
                     </div>
                     <div class="col-md-2" id="ParentPerceptionPoangAttSattaUt">
-                    <input type="text" id="PerceptionPoangAttSattaUt" value="50" class="form-control" />
+                        <input type="text" id="PerceptionPoangAttSattaUt" value="50" class="form-control" />
                     </div>
                     <div class="col-md-3">
                         <input type="button" onclick="IncreaseSubAttribute('IntuitionValue','PerceptionPoangAttSattaUt','IntuitionTp','IntuitionExp','IntuitionTTp')" class="btn btn-success" value="Öka" />
                         <input type="button" onclick="DecreaseSubAttribute('IntuitionValue','PerceptionPoangAttSattaUt','IntuitionTp','IntuitionExp','IntuitionTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentIntuitionTp">
-                        <input type="text" id="IntuitionTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.IntuitionTp"/>
+                        <input type="text" id="IntuitionTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.IntuitionTp" />
                     </div>
                     <div class="col-md-1" id="ParentIntuitionExp">
-                        <input type="text" id="IntuitionExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.IntuitionExp"/>
+                        <input type="text" id="IntuitionExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.IntuitionExp" />
                     </div>
                     <div class="col-md-1" id="ParentIntuitionTTp">
-                        <input type="text" id="IntuitionTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.IntuitionTTp"/>
+                        <input type="text" id="IntuitionTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.IntuitionTTp" />
                     </div>
 
                 </div>
@@ -369,7 +369,7 @@
 
                     </div>
                     <div class="col-md-2" id="ParentMagicVisionValue">
-                        <input type="text" id="MagicVisionValue" value="@Model.PlayingCharacter.MagicVisionValue" class="form-control" asp-for="@Model.PlayingCharacter.MagicVisionValue"/>
+                        <input type="text" id="MagicVisionValue" value="@Model.PlayingCharacter.MagicVisionValue" class="form-control" asp-for="@Model.PlayingCharacter.MagicVisionValue" />
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
@@ -377,13 +377,13 @@
                         <input type="button" onclick="DecreaseSubAttribute('MagicVisionValue','PerceptionPoangAttSattaUt','MagicVisionTp','MagicVisionExp','MagicVisionTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentMagicVisionTp">
-                        <input type="text" id="MagicVisionTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MagicVisionTp"/>
+                        <input type="text" id="MagicVisionTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MagicVisionTp" />
                     </div>
                     <div class="col-md-1" id="ParentMagicVisionExp">
-                        <input type="text" id="MagicVisionExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MagicVisionExp"/>
+                        <input type="text" id="MagicVisionExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MagicVisionExp" />
                     </div>
                     <div class="col-md-1" id="ParentMagicVisionTTp">
-                        <input type="text" id="MagicVisionTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MagicVisionTTp"/>
+                        <input type="text" id="MagicVisionTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.MagicVisionTTp" />
                     </div>
                 </div>
                 <div class="row table-bordered">
@@ -392,7 +392,7 @@
 
                     </div>
                     <div class="col-md-2" id="ParentAttentionValue">
-                        <input type="text" id="AttentionValue" value="@Model.PlayingCharacter.AttentionValue" class="form-control" asp-for="@Model.PlayingCharacter.AttentionValue"§/>
+                        <input type="text" id="AttentionValue" value="@Model.PlayingCharacter.AttentionValue" class="form-control" asp-for="@Model.PlayingCharacter.AttentionValue" § />
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
@@ -400,13 +400,13 @@
                         <input type="button" onclick="DecreaseSubAttribute('AttentionValue','PerceptionPoangAttSattaUt','AttentionTp','AttentionExp','AtwtentionTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentAttentionTp">
-                        <input type="text" id="AttentionTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.AttentionTp"/>
+                        <input type="text" id="AttentionTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.AttentionTp" />
                     </div>
                     <div class="col-md-1" id="ParentAttentionExp">
-                        <input type="text" id="AttentionExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.AttentionExp"/>
+                        <input type="text" id="AttentionExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.AttentionExp" />
                     </div>
                     <div class="col-md-1" id="ParentAttentionTTp">
-                        <input type="text" id="AttentionTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.AttentionTTp"/>
+                        <input type="text" id="AttentionTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.AttentionTTp" />
                     </div>
                 </div>
             </div>
@@ -417,9 +417,9 @@
                 <label asp-for="@Model.PlayingCharacter.SocialTot"></label>
             </div>
             <div class="col-md-1" id="Sociala">
-                <input type="text" id="SocialTot" value="@Model.PlayingCharacter.SocialTot" class="form-control" asp-for="@Model.PlayingCharacter.SocialTot"/>
+                <input type="text" id="SocialTot" value="@Model.PlayingCharacter.SocialTot" class="form-control" asp-for="@Model.PlayingCharacter.SocialTot" />
                 /
-                <input type="text" id="SocialUts" value="@Model.PlayingCharacter.SocialUts" class="form-control" asp-for="@Model.PlayingCharacter.SocialUts"/>
+                <input type="text" id="SocialUts" value="@Model.PlayingCharacter.SocialUts" class="form-control" asp-for="@Model.PlayingCharacter.SocialUts" />
             </div>
             <div class="col-md-1">
                 <Input type="button" onclick="IncreaseAttrib('SocialTot','SocialUts','Sociala','SocialaPoangAttSattaUt')" class="btn btn-success" value="Öka" />
@@ -431,23 +431,23 @@
                         <label asp-for="@Model.PlayingCharacter.CharismaValue"></label>
                     </div>
                     <div class="col-md-2" id="ParentCharismaValue">
-                        <input type="text" id="CharismaValue" value="@Model.PlayingCharacter.CharismaValue" class="form-control" asp-for="@Model.PlayingCharacter.CharismaValue"/>
+                        <input type="text" id="CharismaValue" value="@Model.PlayingCharacter.CharismaValue" class="form-control" asp-for="@Model.PlayingCharacter.CharismaValue" />
                     </div>
                     <div class="col-md-2" id="ParentSocialaPoangAttSattaUt">
-                    <input type="text" id="SocialaPoangAttSattaUt" value="50" class="form-control" />
+                        <input type="text" id="SocialaPoangAttSattaUt" value="50" class="form-control" />
                     </div>
                     <div class="col-md-3">
                         <input type="button" onclick="IncreaseSubAttribute('CharismaValue','SocialaPoangAttSattaUt','CharismaTp','CharismaExp','CharismaTTp')" class="btn btn-success" value="Öka" />
                         <input type="button" onclick="DecreaseSubAttribute('CharismaValue','SocialaPoangAttSattaUt','CharismaTp','CharismaExp','CharismaTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentCharismaTp">
-                        <input type="text" id="CharismaTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CharismaTp"/>
+                        <input type="text" id="CharismaTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CharismaTp" />
                     </div>
                     <div class="col-md-1" id="ParentCharismaExp">
-                        <input type="text" id="CharismaExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CharismaExp"/>
+                        <input type="text" id="CharismaExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CharismaExp" />
                     </div>
                     <div class="col-md-1" id="ParentCharismaTTP">
-                        <input type="text" id="CharismaTTP" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CharismaTTp"/>
+                        <input type="text" id="CharismaTTP" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CharismaTTp" />
                     </div>
 
                 </div>
@@ -457,7 +457,7 @@
 
                     </div>
                     <div class="col-md-2" id="ParentInsightValue">
-                        <input type="text" id="InsightValue" value="@Model.PlayingCharacter.InsightValue" class="form-control" asp-for="@Model.PlayingCharacter.InsightValue"/>
+                        <input type="text" id="InsightValue" value="@Model.PlayingCharacter.InsightValue" class="form-control" asp-for="@Model.PlayingCharacter.InsightValue" />
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
@@ -465,13 +465,13 @@
                         <input type="button" onclick="DecreaseSubAttribute('InsightValue','SocialaPoangAttSattaUt','InsightTp','InsightExp','InsightTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentInsightTp">
-                        <input type="text" id="InsightTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.InsightTp"/>
+                        <input type="text" id="InsightTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.InsightTp" />
                     </div>
                     <div class="col-md-1" id="ParentInsightExp">
-                        <input type="text" id="InsightExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.InsightExp"/>
+                        <input type="text" id="InsightExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.InsightExp" />
                     </div>
                     <div class="col-md-1" id="ParentInsightTTp">
-                        <input type="text" id="InsightTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.InsightTTp"/>
+                        <input type="text" id="InsightTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.InsightTTp" />
                     </div>
                 </div>
                 <div class="row table-bordered">
@@ -480,7 +480,7 @@
 
                     </div>
                     <div class="col-md-2" id="ParentResistanceValue">
-                        <input type="text" id="ResistanceValue" value="@Model.PlayingCharacter.ResistanceValue" class="form-control" asp-for="@Model.PlayingCharacter.ResistanceValue"/>
+                        <input type="text" id="ResistanceValue" value="@Model.PlayingCharacter.ResistanceValue" class="form-control" asp-for="@Model.PlayingCharacter.ResistanceValue" />
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
@@ -488,13 +488,13 @@
                         <input type="button" onclick="DecreaseSubAttribute('ResistanceValue','SocialaPoangAttSattaUt','ResistanceTp','ResistanceExp','ResistanceTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentResistanceTp">
-                        <input type="text" id="ResistanceTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.ResistanceTp"/>
+                        <input type="text" id="ResistanceTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.ResistanceTp" />
                     </div>
-                    <div class="col-md-1"id="ParentResistanceExp">
-                        <input type="text" id="ResistanceExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.ResistanceExp"/>
+                    <div class="col-md-1" id="ParentResistanceExp">
+                        <input type="text" id="ResistanceExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.ResistanceExp" />
                     </div>
                     <div class="col-md-1" id="ParentResistanceTTp">
-                        <input type="text" id="ResistanceTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.ResistanceTTp"/>
+                        <input type="text" id="ResistanceTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.ResistanceTTp" />
                     </div>
                 </div>
             </div>
@@ -768,22 +768,14 @@
             Här kan du välja krafter till din karaktär.
         </div>
         <div class="row">
-            <select>
-                <option id="1">Drakens</option>
-                <option id="2">Enhörningen</option>
-                <option id="3">Läkaren</option>
-                <option id="4">Gripen</option>
-                <option id="5">Mantikoran</option>
-                <option id="6">Kroppen</option>
-                <option id="7">Symbolen</option>
+            <select class="form-control" asp-for="FamilyForces" asp-items="Model.FamilyForces">
+                {
+                @*<option value="">Välj en Kraft</option>*@
+                }
             </select>
-            <select>
-                <option>Novis</option>
-                <option>Elev</option>
-                <option>Lärare</option>
-                <option>Mästare</option>
-                <option>Exalterad</option>
-                <option>Extrem</option>
+            <select class="form-control" asp-for="FamilyForceLevels" asp-items="Model.FamilyForceLevels">
+                @*<option value="">Välj en Nivå</option>*@
+                
             </select>
             <button class="btn btn-info">Lägg till en kraft till.</button>
         </div>
