@@ -16,7 +16,7 @@ function IncreaseAttrib(AttributeTotName, AttributeUtsName, ParentName, PointsTo
         newRemainingPoints.setAttribute("value", remainingPoints);
         newRemainingPoints.setAttribute("id", "remainingPoints");
         newRemainingPoints.setAttribute("class", "form-control");
-        
+
         let rPItemToBeRemoved = document.getElementById("remainingPoints");
         let rPparentItem = document.getElementById("CreationPoints");
         rPparentItem.replaceChild(newRemainingPoints, rPItemToBeRemoved);
@@ -172,3 +172,80 @@ function ReplaceId(value, id) {
     let SubAttributeParentItem = document.getElementById(SubAttributeParentId);
     SubAttributeParentItem.replaceChild(newSubAttribute, SubAttributeToBeRemoved);
 };
+
+function SelectPower(PowerId, PowerValue, CostLvl) {
+    let remainingPoints = document.getElementById("remainingPoints").value;
+    let PriorValue = document.getElementById(PowerId).value;
+    if ((PowerValue - PriorValue) <= remainingPoints) {
+        let newRemainingPointsValue = remainingPoints - (PowerValue - PriorValue);
+        let newRemainingPoints = document.createElement("INPUT");
+        newRemainingPoints.setAttribute("type", "number");
+        newRemainingPoints.setAttribute("value", newRemainingPointsValue);
+        newRemainingPoints.setAttribute("id", "remainingPoints");
+        newRemainingPoints.setAttribute("class", "form-control");
+
+        let rPItemToBeRemoved = document.getElementById("remainingPoints");
+        let rPparentItem = document.getElementById("CreationPoints");
+        rPparentItem.replaceChild(newRemainingPoints, rPItemToBeRemoved);
+
+        let priorCostLvl = determineCostlvl(PriorValue);
+        let newPriorValue = document.createElement("INPUT");
+        newPriorValue.setAttribute("type", "Radio");
+        newPriorValue.setAttribute("value", PriorValue);
+        newPriorValue.setAttribute("name", PowerId);
+        newPriorValue.setAttribute("class", priorCostLvl);
+        newPriorValue.setAttribute("onclick", "SelectPower(" + PowerId + "," + PriorValue + ",'" + priorCostLvl + "')");
+
+        let PriorItemToBeRemoved = document.getElementById(PowerId);
+        let var1 = PowerId.toString();
+        let var2 = PriorValue.toString();
+        let ParentId = var1.concat(var2);
+        let Parent = document.getElementById(ParentId);
+        Parent.replaceChild(newPriorValue, PriorItemToBeRemoved);
+
+        let newInputElement = document.createElement("INPUT");
+        newInputElement.setAttribute("type", "Radio");
+        newInputElement.setAttribute("value", PowerValue);
+        newInputElement.setAttribute("name", PowerId);
+        newInputElement.setAttribute("onclick", "SelectPower(" + PowerId + "," + PowerValue + ",'" + CostLvl + "') ");
+        newInputElement.setAttribute("id", PowerId);
+        newInputElement.setAttribute("class", CostLvl);
+        newInputElement.setAttribute("checked", "checked");
+
+        let PriorInputElement = document.getElementsByClassName(CostLvl);
+        let var3 = PowerValue.toString();
+        let ParentInputElementId = var1.concat(var3);
+        let ParentInputElement = document.getElementById(ParentInputElementId);
+        ParentInputElement.replaceChild(newInputElement, PriorInputElement.item(PowerId));
+
+    } else {
+        alert("Du har inte tillräkligt med poäng för att köpa denna nivå av kraften!");
+        let priorCostLvl = determineCostlvl(PriorValue);
+        let newPriorValue = document.createElement("INPUT");
+        newPriorValue.setAttribute("type", "Radio");
+        newPriorValue.setAttribute("value", PriorValue);
+        newPriorValue.setAttribute("name", PowerId);
+        newPriorValue.setAttribute("class", priorCostLvl);
+        newPriorValue.setAttribute("onclick", "SelectPower(" + PowerId + "," + PriorValue + ",'" + priorCostLvl + "')");
+        newPriorValue.setAttribute("checked", "checked");
+        newPriorValue.setAttribute("id", PowerId);
+
+        let PriorItemToBeRemoved = document.getElementById(PowerId);
+        let var1 = PowerId.toString();
+        let var2 = PriorValue.toString();
+        let ParentId = var1.concat(var2);
+        let Parent = document.getElementById(ParentId);
+        Parent.replaceChild(newPriorValue, PriorItemToBeRemoved);
+    }
+    function determineCostlvl(PriorValue) {
+        if (PriorValue == 0) { return "CostLvl1"; }
+        if (PriorValue == 25) { return "CostLvl2"; }
+        if (PriorValue == 50) { return "CostLvl3"; }
+        if (PriorValue == 60) { return "CostLvl3"; }
+        if (PriorValue == 100) { return "CostLvl4"; }
+        if (PriorValue == 150) { return "CostLvl5"; }
+        if (PriorValue == 175) { return "CostLvl5"; }
+        if (PriorValue == 200) { return "CostLvl6"; }
+        if (PriorValue == 250) { return "CostLvl7"; }
+    }
+}

@@ -355,9 +355,11 @@ namespace ATravelersGuideToSerdan.ViewModels
         [Display(Name = "Poäng utsatta på krafter totalt:")]
         public int PowerAllocatedPoints { get; set; }
 
-        public FamilyForce FamilyForce { get; set; }
+        public List<FamilyPower> PowerData { get; set; }
 
-        public FamilyForceLevel FamilyForceLevels { get; set; }
+        //public FamilyForce FamilyForce { get; set; }
+
+        //public FamilyForceLevel FamilyForceLevels { get; set; }
         //************************************************************
         [Display(Name = "Visuelt 10p")]
         public bool MagiVisuellt { get; set; }
@@ -512,6 +514,34 @@ namespace ATravelersGuideToSerdan.ViewModels
             SocialTot = 25;
             SocialUts = 0;
             RemainingPoints = 100;
+            PowerData = new List<FamilyPower>
+            {
+               new FamilyPower() {Id=0,NameOfPower="Draken",NumberOfLevels=7,FamilySpecificPower="S",CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=250 },
+               new FamilyPower() {Id=1,NameOfPower="Enhörningen",NumberOfLevels=7,FamilySpecificPower="S" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=250},
+               new FamilyPower() {Id=2,NameOfPower="Läkaren",NumberOfLevels=6,FamilySpecificPower="S" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0},
+               new FamilyPower() {Id=3,NameOfPower="Gripen",NumberOfLevels=7,FamilySpecificPower="E",CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=250 },
+               new FamilyPower() {Id=4,NameOfPower="Mantikoran",NumberOfLevels=7,FamilySpecificPower="E" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=250},
+               new FamilyPower() {Id=5,NameOfPower="Kroppen",NumberOfLevels=6,FamilySpecificPower="E" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0},
+               new FamilyPower() {Id=6,NameOfPower="Symbolen",NumberOfLevels=6,FamilySpecificPower="",CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=250 },
+               new FamilyPower() {Id=7,NameOfPower="Dörren",NumberOfLevels=3,FamilySpecificPower="",CostLvl1=0,CostLvl2=0,CostLvl3=60,CostLvl4=0,CostLvl5=175,CostLvl6=0,CostLvl7=0 },
+               new FamilyPower() {Id=8,NameOfPower="Tiden",NumberOfLevels=3,FamilySpecificPower="" ,CostLvl1=0,CostLvl2=0,CostLvl3=60,CostLvl4=0,CostLvl5=175,CostLvl6=0,CostLvl7=0},
+               new FamilyPower() {Id=9,NameOfPower="Magin",NumberOfLevels=3,FamilySpecificPower="",CostLvl1=0,CostLvl2=0,CostLvl3=60,CostLvl4=0,CostLvl5=175,CostLvl6=0,CostLvl7=0 },
+               new FamilyPower() {Id=10,NameOfPower="Masken",NumberOfLevels=2,FamilySpecificPower="",CostLvl1=0,CostLvl2=0,CostLvl3=50,CostLvl4=0,CostLvl5=0,CostLvl6=0,CostLvl7=0 },
+               new FamilyPower() {Id=11,NameOfPower="Elementa",NumberOfLevels=3,FamilySpecificPower="" ,CostLvl1=0,CostLvl2=25,CostLvl3=0,CostLvl4=100,CostLvl5=0,CostLvl6=0,CostLvl7=0},
+               new FamilyPower() {Id=12,NameOfPower="Sinnet",NumberOfLevels=7,FamilySpecificPower="",CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=250 },
+               new FamilyPower() {Id=13,NameOfPower="Vattnet",NumberOfLevels=6,FamilySpecificPower="",CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0 },
+               new FamilyPower() {Id=14,NameOfPower="Jorden",NumberOfLevels=6,FamilySpecificPower="",CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0 },
+               new FamilyPower() {Id=15,NameOfPower="Ljuset",NumberOfLevels=6,FamilySpecificPower="S" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0},
+               new FamilyPower() {Id=16,NameOfPower="Elektricitet",NumberOfLevels=6,FamilySpecificPower="" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0},
+               new FamilyPower() {Id=17,NameOfPower="Elden",NumberOfLevels=6,FamilySpecificPower="" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0},
+               new FamilyPower() {Id=18,NameOfPower="Vinden",NumberOfLevels=6,FamilySpecificPower="" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0},
+               new FamilyPower() {Id=19,NameOfPower="Mörkret",NumberOfLevels=6,FamilySpecificPower="E" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0},
+               new FamilyPower() {Id=20,NameOfPower="Svärdet",NumberOfLevels=6,FamilySpecificPower="" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0},
+               new FamilyPower() {Id=21,NameOfPower="Materian",NumberOfLevels=6,FamilySpecificPower="" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0},
+               new FamilyPower() {Id=22,NameOfPower="Naturen",NumberOfLevels=6,FamilySpecificPower="" ,CostLvl1=0,CostLvl2=25,CostLvl3=60,CostLvl4=100,CostLvl5=150,CostLvl6=200,CostLvl7=0},
+               new FamilyPower() {Id=23,NameOfPower="Djuret",NumberOfLevels=3,FamilySpecificPower="" ,CostLvl1=0,CostLvl2=25,CostLvl3=50,CostLvl4=0,CostLvl5=0,CostLvl6=0,CostLvl7=0},
+
+            };
         }
     }
 

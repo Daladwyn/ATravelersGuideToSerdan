@@ -41,8 +41,8 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
         public IActionResult OnGet()
         {
             PlayingCharacter = new CreatePlayer1ViewModel("ny");
-            FamilyForces = htmlHelper.GetEnumSelectList<FamilyForce>();
-            FamilyForceLevels = htmlHelper.GetEnumSelectList<FamilyForceLevel>();
+            //FamilyForces = htmlHelper.GetEnumSelectList<FamilyForce>();
+            //FamilyForceLevels = htmlHelper.GetEnumSelectList<FamilyForceLevel>();
             Headline = "Karaktärsskapandets första steg.";
             Message = "Du behöver ange namn, beskrivning och ditt namn. Sedan har du 100 poäng att sätta ut på bl.a. grundegenskaper och krafter. ";
             return Page();

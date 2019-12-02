@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATravelersGuideToSerdan", "ATravelersGuideToSerdan\ATravelersGuideToSerdan.csproj", "{266D936E-2FD9-4B4D-85FA-EAAED12618B3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FEC29D2C-758B-49F4-9C15-EA104B7FAB94} = {FEC29D2C-758B-49F4-9C15-EA104B7FAB94}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATravelersGuideToSerdan.Core", "..\ATravelersGuideToSerdan.Core\ATravelersGuideToSerdan.Core\ATravelersGuideToSerdan.Core.csproj", "{FEC29D2C-758B-49F4-9C15-EA104B7FAB94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATravelersGuideToSerdan.Core", "..\ATravelersGuideToSerdan.Core\ATravelersGuideToSerdan.Core\ATravelersGuideToSerdan.Core.csproj", "{FEC29D2C-758B-49F4-9C15-EA104B7FAB94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

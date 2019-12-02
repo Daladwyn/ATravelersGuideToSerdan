@@ -767,24 +767,140 @@
         <div class="row">
             Här kan du välja krafter till din karaktär.
         </div>
-        <div class="row">
-            <select class="form-control" asp-for="FamilyForces" asp-items="Model.FamilyForces">
-                {
-                @*<option value="">Välj en Kraft</option>*@
-                }
-            </select>
-            <select class="form-control" asp-for="FamilyForceLevels" asp-items="Model.FamilyForceLevels">
-                @*<option value="">Välj en Nivå</option>*@
-                
-            </select>
-            <button class="btn btn-info">Lägg till en kraft till.</button>
-        </div>
-        <div class="row">
-
-
-        </div>
+        @*<div class="row">
+                <div class="col-md-2"><span class="font-weight-bold">Krafter</span></div>
+                <div class="col-md-1"><span class="font-weight-bold">Inga</span></div>
+                <div class="col-md-1"><span class="font-weight-bold">Novis</span></div>
+                <div class="col-md-1"><span class="font-weight-bold">Elev</span></div>
+                <div class="col-md-1"><span class="font-weight-bold">Lärare</span></div>
+                <div class="col-md-1"><span class="font-weight-bold">Mästare</span></div>
+                <div class="col-md-1"><span class="font-weight-bold">Extrem</span></div>
+                <div class="col-md-1"><span class="font-weight-bold">Exalterad</span></div>
+                <div class="col-md-1"><span class="font-weight-bold">S/E</span></div>
+            </div>*@
+        <table>
+            <tr>
+                <td><span class="font-weight-bold">Krafter</span></td>
+                <td><span class="font-weight-bold">Inga</span></td>
+                <td><span class="font-weight-bold">Novis</span></td>
+                <td><span class="font-weight-bold">Elev</span></td>
+                <td><span class="font-weight-bold">Lärare</span></td>
+                <td><span class="font-weight-bold">Mästare</span></td>
+                <td><span class="font-weight-bold">Extrem</span></td>
+                <td><span class="font-weight-bold">Exalterad</span></td>
+                <td><span class="font-weight-bold">S/E</span></td>
+            </tr>
+            @foreach (var kraft in Model.PlayingCharacter.PowerData)
+            {
+                <tr>
+                    <td> <label class="font-weight-bold">@kraft.NameOfPower</label></td>
+                    <td id="@kraft.Id@kraft.CostLvl1">
+                        @if (kraft.CostLvl1 == 0)
+                        {
+                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl1" checked="checked" onclick="SelectPower(@kraft.Id,@kraft.CostLvl1,'CostLvl1')" id="@kraft.Id" class="CostLvl1"/><span>@kraft.CostLvl1 p</span>
+                        }
+                    </td>
+                    <td id="@kraft.Id@kraft.CostLvl2">
+                        @if (kraft.CostLvl2 != 0)
+                        {
+                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl2" onclick="SelectPower(@kraft.Id,@kraft.CostLvl2,'CostLvl2')" class="CostLvl2" /> <span>@kraft.CostLvl2 p</span>
+                        }
+                    </td>
+                    <td id="@kraft.Id@kraft.CostLvl3">
+                        @if (kraft.CostLvl3 != 0)
+                        {
+                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl3" onclick="SelectPower(@kraft.Id,@kraft.CostLvl3,'CostLvl3')" class="CostLvl3"/><span>@kraft.CostLvl3 p</span>
+                        }
+                    </td>
+                    <td id="@kraft.Id@kraft.CostLvl4">
+                        @if (kraft.CostLvl4 != 0)
+                        {
+                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl4" onclick="SelectPower(@kraft.Id,@kraft.CostLvl4,'CostLvl4')" class="CostLvl4" /><span>@kraft.CostLvl4 p</span>
+                        }
+                    </td>
+                    <td id="@kraft.Id@kraft.CostLvl5">
+                        @if (kraft.CostLvl5 != 0)
+                        {
+                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl5" onclick="SelectPower(@kraft.Id,@kraft.CostLvl5,'CostLvl5')" class="CostLvl5"/><span>@kraft.CostLvl5 p</span>
+                        }
+                    </td>
+                    <td id="@kraft.Id@kraft.CostLvl6">
+                        @if (kraft.CostLvl6 != 0)
+                        {
+                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl6" onclick="SelectPower(@kraft.Id,@kraft.CostLvl6,'CostLvl6')" class="CostLvl6"/><span>@kraft.CostLvl6 p</span>
+                        }
+                    </td>
+                    <td id="@kraft.Id@kraft.CostLvl7">
+                        @if (kraft.CostLvl7 != 0)
+                        {
+                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl7" onclick="SelectPower(@kraft.Id,@kraft.CostLvl7,'CostLvl7')" class="CostLvl7"/><span>@kraft.CostLvl7 p</span>
+                        }
+                    </td>
+                    <td><span>@kraft.FamilySpecificPower</span></td>
+                </tr>
+            }
+        </table>
+        @*@foreach (var kraft in Model.PlayingCharacter.PowerData)
+            {*@
+        @*<div class="row">
+                <div class="col-md-2">
+                    <label>@kraft.NameOfPower</label>
+                </div>
+                <div class="col-md-1">
+                    @if (kraft.CostLvl1 == 0)
+                    {
+                        <input type="radio" name="@kraft.Id" value="@kraft.CostLvl1" checked="checked" /><span>@kraft.CostLvl1 p</span>
+                    }
+                </div>
+                <div class="col-md-1">
+                    @if (kraft.CostLvl2 != 0)
+                    {
+                        <input type="radio" name="@kraft.Id" value="@kraft.CostLvl2" /> <span>@kraft.CostLvl2 p</span>
+                    }
+                </div>
+                <div class="col-md-1">
+                    @if (kraft.CostLvl3 != 0)
+                    {
+                        <input type="radio" name="@kraft.Id" value="@kraft.CostLvl3" /><span>@kraft.CostLvl3 p</span>
+                    }
+                </div>
+                <div class="col-md-1">
+                    @if (kraft.CostLvl4 != 0)
+                    {
+                        <input type="radio" name="@kraft.Id" value="@kraft.CostLvl4" /><span>@kraft.CostLvl4 p</span>
+                    }
+                </div>
+                <div class="col-md-1">
+                    @if (kraft.CostLvl5 != 0)
+                    {
+                        <input type="radio" name="@kraft.Id" value="@kraft.CostLvl5" /><span>@kraft.CostLvl5 p</span>
+                    }
+                </div>
+                <div class="col-md-1">
+                    @if (kraft.CostLvl6 != 0)
+                    {
+                        <input type="radio" name="@kraft.Id" value="@kraft.CostLvl6" /><span>@kraft.CostLvl6 p</span>
+                    }
+                </div>
+                <div class="col-md-1">
+                    @if (kraft.CostLvl7 != 0)
+                    {
+                        <input type="radio" name="@kraft.Id" value="@kraft.CostLvl7" /><span>@kraft.CostLvl7 p</span>
+                    }
+                </div>
+                <div class="col-md-1">
+                    <span>@kraft.FamilySpecificPower</span>
+                </div>
+            </div>
+        }*@
 
     </div>
+    <div class="row">
+
+
+    </div>
+
+
 
     <div class="container-fluid table-bordered">
         <div class="row">
