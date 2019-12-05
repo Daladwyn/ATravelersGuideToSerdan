@@ -397,7 +397,7 @@
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
                         <input type="button" onclick="IncreaseSubAttribute('AttentionValue','PerceptionPoangAttSattaUt','AttentionTp','AttentionExp','AttentionTTp')" class="btn btn-success" value="Öka" />
-                        <input type="button" onclick="DecreaseSubAttribute('AttentionValue','PerceptionPoangAttSattaUt','AttentionTp','AttentionExp','AtwtentionTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
+                        <input type="button" onclick="DecreaseSubAttribute('AttentionValue','PerceptionPoangAttSattaUt','AttentionTp','AttentionExp','AttentionTTp')" class="btn btn-danger" value="Minska" id="longerButtons" />
                     </div>
                     <div class="col-md-1" id="ParentAttentionTp">
                         <input type="text" id="AttentionTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.AttentionTp" />
@@ -446,8 +446,8 @@
                     <div class="col-md-1" id="ParentCharismaExp">
                         <input type="text" id="CharismaExp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CharismaExp" />
                     </div>
-                    <div class="col-md-1" id="ParentCharismaTTP">
-                        <input type="text" id="CharismaTTP" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CharismaTTp" />
+                    <div class="col-md-1" id="ParentCharismaTTp">
+                        <input type="text" id="CharismaTTp" value="0" class="form-control" asp-for="@Model.PlayingCharacter.CharismaTTp" />
                     </div>
 
                 </div>
@@ -523,8 +523,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.WeaponValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="WeaponTTpSkillParent">
+                <span id="WeaponTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -536,11 +536,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-1" >
                 <label asp-for="@Model.PlayingCharacter.BalisticValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="BalisticTTpSkillParent">
+               <span id="BalisticTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -552,11 +552,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-1" >
                 <label asp-for="@Model.PlayingCharacter.FineMotorValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="FineMotorTTpSkillParent">
+                <span id="FineMotorTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -571,8 +571,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.PhysicsValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="PhysicTTpSkillParent">
+                <span id="PhysicTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -587,8 +587,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.StrenghtValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="StrenghtTTpSkillParent">
+                <span id="StrenghtTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -603,8 +603,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.MobilityValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="MobilityTTpSkillParent">
+                <span id="MobilityTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -619,8 +619,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.WillValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="WillTTpSkillParent">
+                <span id="WillTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -635,8 +635,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.CreativityValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="CreativityTTpSkillParent">
+                <span id="CreativityTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -651,8 +651,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.EducationValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="EducationTTpSkillParent">
+                <span id="EducationTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -667,8 +667,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.IntuitionValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="IntuitionTTpSkillParent">
+                <span id="IntuitionTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -683,8 +683,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.MagicVisionValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="MagicVisionTTpSkillParent">
+                <span id="MagicVisionTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -699,8 +699,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.AttentionValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="AttentionTTpSkillParent">
+                <span id="AttentionTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -715,8 +715,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.CharismaValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="CharismaTTpSkillParent">
+                <span id="CharismaTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -731,8 +731,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.InsightValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="InsightTTpSkillParent">
+                <span id="InsightTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
@@ -747,8 +747,8 @@
             <div class="col-md-1">
                 <label asp-for="@Model.PlayingCharacter.ResistanceValue"></label>
             </div>
-            <div class="col-md-1">
-                0
+            <div class="col-md-1" id="ResistanceTTpSkillParent">
+                <span id="ResistanceTTpSkill">0</span>
             </div>
             <div class="col-md-5 table-bordered">
                 <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>

@@ -123,11 +123,13 @@ function IncreaseSubAttribute(SubAttribute, PointsToAssign, TPName, ExpName, TTP
             TP = 1;
             ReplaceId(TP, TPName);
             ReplaceId(TP, TTPName);
+            ReplaceSkillSpan(TP, TTPName);
         } else if (SubAttributeValue % 10 == 0) {
             let newTP = SubAttributeValue / 10;
             newTP++;
             ReplaceId(newTP, TPName);
             ReplaceId(newTP, TTPName);
+            ReplaceSkillSpan(newTP, TTPName);
         }
     } else {
         alert("Du har inga fler poäng att sätta ut!");
@@ -149,11 +151,13 @@ function DecreaseSubAttribute(SubAttribute, PointsToAssign, TPName, ExpName, TTP
             TP = 0;
             ReplaceId(TP, TPName);
             ReplaceId(TP, TTPName);
+            ReplaceSkillSpan(TP, TTPName);
         } else if (SubAttributeValue % 10 == 9) {
             let newTP = SubAttributeValue / 10;
             newTP = newTP + 0.1;
             ReplaceId(newTP, TPName);
             ReplaceId(newTP, TTPName);
+            ReplaceSkillSpan(newTP, TTPName);
         }
     } else {
         alert("Du behöver ha minst 1 i din egenskap!");
@@ -172,6 +176,19 @@ function ReplaceId(value, id) {
     let SubAttributeParentItem = document.getElementById(SubAttributeParentId);
     SubAttributeParentItem.replaceChild(newSubAttribute, SubAttributeToBeRemoved);
 };
+
+function ReplaceSkillSpan(value, id) {
+    let spanId = id.concat("Skill");
+    let newSpan = document.createElement("span");
+    newSpan.setAttribute("id", spanId);
+    let spantext = document.createTextNode(value);
+    newSpan.appendChild(spantext);
+
+    let spanToBeRemoved = document.getElementById(spanId);
+    let ParentSkillId = spanId.concat("Parent");
+    let ParentSkill = document.getElementById(ParentSkillId);
+    ParentSkill.replaceChild(newSpan, spanToBeRemoved);
+}
 
 function SelectPower(PowerId, PowerValue, CostLvl) {
     let remainingPoints = document.getElementById("remainingPoints").value;
