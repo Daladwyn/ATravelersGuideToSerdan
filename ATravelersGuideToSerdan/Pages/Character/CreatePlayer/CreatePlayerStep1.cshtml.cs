@@ -26,9 +26,11 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
         [BindProperty]
         public CreatePlayer1ViewModel PlayingCharacter { get; set; }
 
-        public IEnumerable<SelectListItem> FamilyForces { get; set; }
-        public IEnumerable<SelectListItem> FamilyForceLevels { get; set; }
+        [BindProperty]
+        public int Draken { get; set; }
 
+        [BindProperty]
+        public int Enhörningen { get; set; }
 
         [TempData]
         public string Headline { get; set; }
@@ -66,7 +68,7 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
                 return RedirectToPage("CreatePlayerStep1", newplayer);
             }
 
-            return RedirectToPage("CharacterSaved");
+            //return RedirectToPage("CharacterSaved");
         }
     }
 }

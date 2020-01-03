@@ -190,9 +190,10 @@ function ReplaceSkillSpan(value, id) {
     ParentSkill.replaceChild(newSpan, spanToBeRemoved);
 }
 
-function SelectPower(PowerId, PowerValue, CostLvl) {
+function SelectPower(PowerId, PowerValue, CostLvl, NameOfPower) {
     let remainingPoints = document.getElementById("remainingPoints").value;
     let PriorValue = document.getElementById(PowerId).value;
+    let nop = NameOfPower[0].name;
     if ((PowerValue - PriorValue) <= remainingPoints) {
         let newRemainingPointsValue = remainingPoints - (PowerValue - PriorValue);
         let newRemainingPoints = document.createElement("INPUT");
@@ -209,9 +210,9 @@ function SelectPower(PowerId, PowerValue, CostLvl) {
         let newPriorValue = document.createElement("INPUT");
         newPriorValue.setAttribute("type", "Radio");
         newPriorValue.setAttribute("value", PriorValue);
-        newPriorValue.setAttribute("name", PowerId);
+        newPriorValue.setAttribute("name", nop);
         newPriorValue.setAttribute("class", priorCostLvl);
-        newPriorValue.setAttribute("onclick", "SelectPower(" + PowerId + "," + PriorValue + ",'" + priorCostLvl + "')");
+        newPriorValue.setAttribute("onclick", "SelectPower(" + PowerId + "," + PriorValue + ",'" + priorCostLvl + "'," + nop + ")");
 
         let PriorItemToBeRemoved = document.getElementById(PowerId);
         let var1 = PowerId.toString();
@@ -223,8 +224,8 @@ function SelectPower(PowerId, PowerValue, CostLvl) {
         let newInputElement = document.createElement("INPUT");
         newInputElement.setAttribute("type", "Radio");
         newInputElement.setAttribute("value", PowerValue);
-        newInputElement.setAttribute("name", PowerId);
-        newInputElement.setAttribute("onclick", "SelectPower(" + PowerId + "," + PowerValue + ",'" + CostLvl + "') ");
+        newInputElement.setAttribute("name", nop);
+        newInputElement.setAttribute("onclick", "SelectPower(" + PowerId + "," + PowerValue + ",'" + CostLvl + "'," + nop + ")");
         newInputElement.setAttribute("id", PowerId);
         newInputElement.setAttribute("class", CostLvl);
         newInputElement.setAttribute("checked", "checked");
@@ -241,9 +242,9 @@ function SelectPower(PowerId, PowerValue, CostLvl) {
         let newPriorValue = document.createElement("INPUT");
         newPriorValue.setAttribute("type", "Radio");
         newPriorValue.setAttribute("value", PriorValue);
-        newPriorValue.setAttribute("name", PowerId);
+        newPriorValue.setAttribute("name", nop);
         newPriorValue.setAttribute("class", priorCostLvl);
-        newPriorValue.setAttribute("onclick", "SelectPower(" + PowerId + "," + PriorValue + ",'" + priorCostLvl + "')");
+        newPriorValue.setAttribute("onclick", "SelectPower(" + PowerId + "," + PriorValue + ",'" + priorCostLvl + "'," + nop + ")");
         newPriorValue.setAttribute("checked", "checked");
         newPriorValue.setAttribute("id", PowerId);
 

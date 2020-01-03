@@ -797,43 +797,44 @@
                     <td id="@kraft.Id@kraft.CostLvl1">
                         @if (kraft.CostLvl1 == 0)
                         {
-                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl1" checked="checked" onclick="SelectPower(@kraft.Id,@kraft.CostLvl1,'CostLvl1')" id="@kraft.Id" class="CostLvl1"/><span>@kraft.CostLvl1 p</span>
+                            <input type="radio" name="@kraft.NameOfPower" value="@kraft.CostLvl1"  onclick="SelectPower(@kraft.Id,@kraft.CostLvl1,'CostLvl1',@kraft.NameOfPower)" class="CostLvl1" id="@kraft.Id" checked="checked"/><span>@kraft.CostLvl1 p</span>
                         }
                     </td>
                     <td id="@kraft.Id@kraft.CostLvl2">
                         @if (kraft.CostLvl2 != 0)
                         {
-                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl2" onclick="SelectPower(@kraft.Id,@kraft.CostLvl2,'CostLvl2')" class="CostLvl2" /> <span>@kraft.CostLvl2 p</span>
+                            <input type="radio" name="@kraft.NameOfPower" value="@kraft.CostLvl2" onclick="SelectPower(@kraft.Id,@kraft.CostLvl2,'CostLvl2',@kraft.NameOfPower)" class="CostLvl2" /> <span>@kraft.CostLvl2 p</span>
+                            
                         }
                     </td>
                     <td id="@kraft.Id@kraft.CostLvl3">
                         @if (kraft.CostLvl3 != 0)
                         {
-                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl3" onclick="SelectPower(@kraft.Id,@kraft.CostLvl3,'CostLvl3')" class="CostLvl3"/><span>@kraft.CostLvl3 p</span>
+                            <input type="radio" name="@kraft.NameOfPower" value="@kraft.CostLvl3" onclick="SelectPower(@kraft.Id,@kraft.CostLvl3,'CostLvl3',@kraft.NameOfPower)" class="CostLvl3"/><span>@kraft.CostLvl3 p</span>
                         }
                     </td>
                     <td id="@kraft.Id@kraft.CostLvl4">
                         @if (kraft.CostLvl4 != 0)
                         {
-                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl4" onclick="SelectPower(@kraft.Id,@kraft.CostLvl4,'CostLvl4')" class="CostLvl4" /><span>@kraft.CostLvl4 p</span>
+                            <input type="radio" name="@kraft.NameOfPower" value="@kraft.CostLvl4" onclick="SelectPower(@kraft.Id,@kraft.CostLvl4,'CostLvl4',@kraft.NameOfPower)" class="CostLvl4" /><span>@kraft.CostLvl4 p</span>
                         }
                     </td>
                     <td id="@kraft.Id@kraft.CostLvl5">
                         @if (kraft.CostLvl5 != 0)
                         {
-                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl5" onclick="SelectPower(@kraft.Id,@kraft.CostLvl5,'CostLvl5')" class="CostLvl5"/><span>@kraft.CostLvl5 p</span>
+                            <input type="radio" name="@kraft.NameOfPower" value="@kraft.CostLvl5" onclick="SelectPower(@kraft.Id,@kraft.CostLvl5,'CostLvl5',@kraft.NameOfPower)" class="CostLvl5"/><span>@kraft.CostLvl5 p</span>
                         }
                     </td>
                     <td id="@kraft.Id@kraft.CostLvl6">
                         @if (kraft.CostLvl6 != 0)
                         {
-                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl6" onclick="SelectPower(@kraft.Id,@kraft.CostLvl6,'CostLvl6')" class="CostLvl6"/><span>@kraft.CostLvl6 p</span>
+                            <input type="radio" name="@kraft.NameOfPower" value="@kraft.CostLvl6" onclick="SelectPower(@kraft.Id,@kraft.CostLvl6,'CostLvl6',@kraft.NameOfPower)" class="CostLvl6"/><span>@kraft.CostLvl6 p</span>
                         }
                     </td>
                     <td id="@kraft.Id@kraft.CostLvl7">
                         @if (kraft.CostLvl7 != 0)
                         {
-                            <input type="radio" name="@kraft.Id" value="@kraft.CostLvl7" onclick="SelectPower(@kraft.Id,@kraft.CostLvl7,'CostLvl7')" class="CostLvl7"/><span>@kraft.CostLvl7 p</span>
+                            <input type="radio" name="@kraft.NameOfPower" value="@kraft.CostLvl7" onclick="SelectPower(@kraft.Id,@kraft.CostLvl7,'CostLvl7',@kraft.NameOfPower)" class="CostLvl7"/><span>@kraft.CostLvl7 p</span>
                         }
                     </td>
                     <td><span>@kraft.FamilySpecificPower</span></td>
