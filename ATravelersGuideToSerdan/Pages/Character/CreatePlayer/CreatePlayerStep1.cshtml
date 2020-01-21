@@ -793,7 +793,7 @@
             @foreach (var kraft in Model.PlayingCharacter.PowerData)
             {
                 <tr>
-                    <td> <label class="font-weight-bold">@kraft.NameOfPower</label></td>
+                    <td> <label class="font-weight-bold">@kraft.DisplayName</label></td>
                     <td id="@kraft.Id@kraft.CostLvl1">
                         @if (kraft.CostLvl1 == 0)
                         {

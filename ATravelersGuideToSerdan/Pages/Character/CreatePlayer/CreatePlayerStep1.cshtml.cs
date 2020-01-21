@@ -27,10 +27,76 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
         public CreatePlayer1ViewModel PlayingCharacter { get; set; }
 
         [BindProperty]
-        public int Draken { get; set; }
+        public int PowerDragon { get; set; }
 
         [BindProperty]
-        public int Enhörningen { get; set; }
+        public int PowerUnicorn { get; set; }
+
+        [BindProperty]
+        public int PowerHealer { get; set; }
+
+        [BindProperty]
+        public int PowerGriffon { get; set; }
+
+        [BindProperty]
+        public int PowerManticore { get; set; }
+
+        [BindProperty]
+        public int PowerBody { get; set; }
+
+        [BindProperty]
+        public int PowerSymbol { get; set; }
+
+        [BindProperty]
+        public int PowerDoor { get; set; }
+
+        [BindProperty]
+        public int PowerTime { get; set; }
+
+        [BindProperty]
+        public int PowerMagic { get; set; }
+
+        [BindProperty]
+        public int PowerElementa { get; set; }
+
+        [BindProperty]
+        public int PowerMind { get; set; }
+
+        [BindProperty]
+        public int PowerNature { get; set; }
+
+        [BindProperty]
+        public int PowerAnimal { get; set; }
+
+        [BindProperty]
+        public int PowerWater { get; set; }
+
+        [BindProperty]
+        public int PowerEarth { get; set; }
+
+        [BindProperty]
+        public int PowerLight { get; set; }
+
+        [BindProperty]
+        public int PowerElectricity { get; set; }
+
+        [BindProperty]
+        public int PowerFire { get; set; }
+
+        [BindProperty]
+        public int PowerWind { get; set; }
+
+        [BindProperty]
+        public int PowerDarkness { get; set; }
+
+        [BindProperty]
+        public int PowerSword { get; set; }
+
+        [BindProperty]
+        public int PowerMateria { get; set; }
+
+        [BindProperty]
+        public int PowerWorm { get; set; }
 
         [TempData]
         public string Headline { get; set; }
@@ -51,21 +117,46 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
         }
         public IActionResult OnPost()
         {
-            var newplayer = PlayingCharacter;
+            var newPlayer = PlayingCharacter;
+            newPlayer.PowerAnimal = PowerAnimal;
+            newPlayer.PowerBody = PowerBody;
+            newPlayer.PowerDarkness = PowerDarkness;
+            newPlayer.PowerDoor = PowerDoor;
+            newPlayer.PowerDragon = PowerDragon;
+            newPlayer.PowerEarth = PowerEarth;
+            newPlayer.PowerElectricity = PowerElectricity;
+            newPlayer.PowerElementa = PowerElementa;
+            newPlayer.PowerFire = PowerFire;
+            newPlayer.PowerGriffon = PowerGriffon;
+            newPlayer.PowerHealer = PowerHealer;
+            newPlayer.PowerLight = PowerLight;
+            newPlayer.PowerMagic = PowerMagic;
+            newPlayer.PowerManticore = PowerManticore;
+            newPlayer.PowerMateria = PowerMateria;
+            newPlayer.PowerMind = PowerMind;
+            newPlayer.PowerNature = PowerNature;
+            newPlayer.PowerSword = PowerSword;
+            newPlayer.PowerSymbol = PowerSymbol;
+            newPlayer.PowerTime = PowerTime;
+            newPlayer.PowerUnicorn = PowerUnicorn;
+            newPlayer.PowerWater = PowerWater;
+            newPlayer.PowerWind = PowerWind;
+            newPlayer.PowerWorm = PowerWorm;
+            
             if (ModelState.IsValid)
             {
                 //create a page to download the stream 
 
                 CharacterSavedModel savedCharacter = new CharacterSavedModel
                 {
-                    FileName = _FilAccess.CreateCharacterSheet(newplayer),
+                    FileName = _FilAccess.CreateCharacterSheet(newPlayer),
                 };
                 return RedirectToPage("CharacterSaved", savedCharacter);
 
             }
             else
             {
-                return RedirectToPage("CreatePlayerStep1", newplayer);
+                return RedirectToPage("CreatePlayerStep1", newPlayer);
             }
 
             //return RedirectToPage("CharacterSaved");

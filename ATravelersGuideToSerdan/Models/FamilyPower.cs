@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public string NameOfPower { get; set; }
+        public string DisplayName { get; set; }
         public int NumberOfLevels { get; set; }
         public string FamilySpecificPower { get; set; }
         public int CostLvl1 { get; set; }
