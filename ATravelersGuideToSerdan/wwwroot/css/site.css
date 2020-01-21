@@ -71,3 +71,7 @@ input {
 #longerButtons{
     width: 75px;
 }
+
+#ExtremLongButtons{
+    width: 200px;
+}
