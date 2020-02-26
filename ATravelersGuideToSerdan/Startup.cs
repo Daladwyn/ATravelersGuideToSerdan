@@ -8,6 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ATravelersGuideToSerdan.Services;
 using Microsoft.AspNetCore.Routing;
+using React.AspNet;
+using Microsoft.AspNetCore.Http;
+using System;
 
 namespace ATravelersGuideToSerdan
 {
@@ -21,7 +24,7 @@ namespace ATravelersGuideToSerdan
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             //services.Configure<CookiePolicyOptions>(options =>
             //{
@@ -37,6 +40,8 @@ namespace ATravelersGuideToSerdan
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
             //services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddReact();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             
@@ -48,6 +53,8 @@ namespace ATravelersGuideToSerdan
             //services.AddAutoMapper(NPC, NpcMagic, NpcPower, NpcStat, 
             //    CreateNPCstep1Model, CreateNPCstep2Model, 
             //    CreateNPCstep3Model, CreateNPCstep4Model);
+
+            return services.BuildServiceProvider();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +73,9 @@ namespace ATravelersGuideToSerdan
             }
 
             app.UseStatusCodePages();
+
+            app.UseReact(config => { });
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             //app.UseCookiePolicy();
