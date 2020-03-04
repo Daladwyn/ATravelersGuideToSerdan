@@ -33,4 +33,11 @@
    
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\" />
+    <Folder Include="ClientApp\scss\" />
+    <Folder Include="ClientApp\public\" />
+  </ItemGroup>
+
 </Project>
