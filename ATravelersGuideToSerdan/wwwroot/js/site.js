@@ -177,6 +177,7 @@ function ReplaceId(value, id) {
     SubAttributeParentItem.replaceChild(newSubAttribute, SubAttributeToBeRemoved);
 };
 
+//This is a subfunction to replace the skillspan.
 function ReplaceSkillSpan(value, id) {
     let spanId = id.concat("Skill");
     let newSpan = document.createElement("span");
@@ -190,6 +191,7 @@ function ReplaceSkillSpan(value, id) {
     ParentSkill.replaceChild(newSpan, spanToBeRemoved);
 }
 
+//This function is modifying the powers a character can buy.
 function SelectPower(PowerId, PowerValue, CostLvl, NameOfPower) {
     let remainingPoints = document.getElementById("remainingPoints").value;
     let PriorValue = document.getElementById(PowerId).value;
@@ -266,4 +268,42 @@ function SelectPower(PowerId, PowerValue, CostLvl, NameOfPower) {
         if (PriorValue == 200) { return "CostLvl6"; }
         if (PriorValue == 250) { return "CostLvl7"; }
     }
+}
+
+//this Function lets a list of talents to be displayed.
+function DisplayTalents(parentDiv,divToReplace) {
+    let talangStructure = document.createElement("div");
+
+    let headerempty = document.createElement("div");
+    headerempty.setAttribute("class", "col-1");
+    let headerName = document.createElement("div");
+    headerName.setAttribute("id", "headerName");
+    headerName.setAttribute("class", "col-2 border");
+    let headerCost = document.createElement("div");
+    headerCost.setAttribute("id", "headerCost");
+    headerCost.setAttribute("class", "col-2");
+    let headerRequirement = document.createElement("div");
+    headerRequirement.setAttribute("id", "headerRequirement");
+    headerRequirement.setAttribute("class", "col-2");
+    let headerDescription = document.createElement("div");
+    headerDescription.setAttribute("id", "headerDescription");
+    headerDescription.setAttribute("class", "col-5");
+    let headerStructure = document.createElement("div");
+    headerStructure.setAttribute("class", "row");
+    // headerStructure.setAttribute("class", "Border");
+    headerStructure.appendChild(headerempty);
+    headerStructure.appendChild(headerName);
+    headerStructure.appendChild(headerCost);
+    headerStructure.appendChild(headerRequirement);
+    headerStructure.appendChild(headerDescription);
+
+    talangStructure.appendChild(headerStructure);
+    let ParentPlace = document.getElementById(parentDiv);
+    let childPlace = document.getElementById(divToReplace);
+    ParentPlace.replaceChild(talangStructure, childPlace);
+    
+    document.getElementById("headerName").innerHTML = "Talang";
+    document.getElementById("headerCost").innerHTML = "Kostnad";
+    document.getElementById("headerRequirement").innerHTML = "Krav";
+    document.getElementById("headerDescription").innerHTML = "Beskrivning";
 }

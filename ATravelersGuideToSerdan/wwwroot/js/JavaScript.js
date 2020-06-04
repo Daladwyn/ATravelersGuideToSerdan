@@ -1,24 +1,48 @@
-﻿'use strict';
+﻿//'use strict';
 
-const e = React.createElement;
+//const e = React.createElement;
 
-class LikeButton extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { liked: false };
-    }
+//class DisplayTalang extends React.Component {
+//    constructor(props) {
+//        super(props);
+//        this.state = {};
+//    }
 
-    render() {
-        if (this.state.liked) {
-            return 'You liked this.';
-        }
+//    //render() {
+//    //    return {
+//    //        < div >
+//    //        <input type="checkbox" name="Talang1"></input>
+//    //        <label>talang for weapons</label>
+//    //        <div>Description of this talang</div>
+//    //    </div >
+//    //    }
+//}
 
-        return e(
-            'button',
-            { onClick: () => this.setState({ liked: true }) },
-            'Like'
-        );
-    }
-}
-let domContainer = document.querySelector('#TalentWeapon');
-ReactDOM.render(e(LikeButton), domContainer);
+
+
+//class LikeButton extends React.Component {
+//    constructor(props) {
+//        super(props);
+//        this.state = { liked: false };
+//    }
+
+//    render() {
+//        if (this.state.liked) {
+//            return 'You liked this.';
+//        }
+
+//        //return (
+//        //    <button onClick={() => this.setState({ liked: true })}>
+//        //        Like
+//        //    </button>
+//        //);
+
+//        return e(
+//            'button',
+//            { onClick: () => this.setState({ liked: true }) },
+//            'Like'
+//        );
+//    }
+//}
+//let domContainer = document.querySelector('#TalentWeapon');
+//ReactDOM.render(e(LikeButton), domContainer);
