@@ -20,27 +20,27 @@
 //    <Talent />,
 //    Document.getElementById("TalentWeapon")
 //);
-'use strict';
+//'use strict';
 
-const e = React.createElement;
+//const e = React.createElement;
 
-class LikeButton extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { liked: false };
-    }
+//class LikeButton extends React.Component {
+//    constructor(props) {
+//        super(props);
+//        this.state = { liked: false };
+//    }
 
-    render() {
-        if (this.state.liked) {
-            return 'You liked this.';
-        }
+//    render() {
+//        if (this.state.liked) {
+//            return 'You liked this.';
+//        }
 
-        return e(
-            'button',
-            { onClick: () => this.setState({ liked: true }) },
-            'Like'
-        );
-    }
-    const domContainer = document.querySelector('#TalentWeapon');
-    ReactDOM.render(e(LikeButton), domContainer);
-}
+//        return e(
+//            'button',
+//            { onClick: () => this.setState({ liked: true }) },
+//            'Like'
+//        );
+//    const domContainer = document.querySelector('#TalentWeapon');
+//    ReactDOM.render(e(LikeButton), domContainer);
+//    }
+//}
