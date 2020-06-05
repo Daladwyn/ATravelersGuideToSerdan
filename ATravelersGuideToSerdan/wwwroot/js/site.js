@@ -267,3 +267,10 @@ function SelectPower(PowerId, PowerValue, CostLvl, NameOfPower) {
         if (PriorValue == 250) { return "CostLvl7"; }
     }
 }
+
+//talanger
+function ChooseTalent('Weapon','WeaponTTpSkill','','')
+{
+    let newDiv = document.createElement('div');
+
+}
