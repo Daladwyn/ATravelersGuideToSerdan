@@ -13,10 +13,10 @@ namespace ATravelersGuideToSerdan.Models
         public int TalentCost1 { get; set; }
         public bool TalentCostFysical { get; set; }
         public int NumberOfRequirements { get; set; }
-        public int TalenReqAttribute1 { get; set; }
-        public string TalentReqAttributeValue1 { get; set; }
-        public int TalenReqAttribute2 { get; set; }
-        public string TalentReqAttributeValue2 { get; set; }
+        public string TalenReqAttribute1 { get; set; }
+        public int TalentReqAttributeValue1 { get; set; }
+        public string TalenReqAttribute2 { get; set; }
+        public int TalentReqAttributeValue2 { get; set; }
         public string TalentReqTalentSkill1 { get; set; }
         public string TalentReqTalentSkill2 { get; set; }
         public string TalentDescription { get; set; }

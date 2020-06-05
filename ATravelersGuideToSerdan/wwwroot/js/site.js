@@ -271,7 +271,9 @@ function SelectPower(PowerId, PowerValue, CostLvl, NameOfPower) {
 }
 
 //this Function lets a list of talents to be displayed.
-function DisplayTalents(parentDiv,divToReplace) {
+function DisplayTalents(parentDiv,divToReplace, PlayerTalents) {
+    let Talents = PlayerTalents;
+
     let talangStructure = document.createElement("div");
 
     let headerempty = document.createElement("div");
