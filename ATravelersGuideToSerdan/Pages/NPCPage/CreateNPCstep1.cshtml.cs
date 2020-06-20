@@ -14,9 +14,9 @@ namespace ATravelersGuideToSerdan.Pages.NPCPage
     public class CreateNPCstep1Model : PageModel
     {
         private IMapper _mapper;
-        private _DB _Db;
+        private ISerdan _Db;
 
-        public CreateNPCstep1Model(IMapper mapper, _DB Db)
+        public CreateNPCstep1Model(IMapper mapper, ISerdan Db)
         {
             _mapper = mapper;
             _Db = Db;

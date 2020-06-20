@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ATravelersGuideToSerdan.Services
 {
-    public interface _DB
+    public interface ISerdan
     {
         NPC GetNPC(int id);
         NPC AddNPC(NPC NonPlayerCharacter);

@@ -10,9 +10,9 @@ namespace ATravelersGuideToSerdan.Pages.Character
 {
     public class NPCIndexModel : PageModel
     {
-        private _DB _Db;
+        private ISerdan _Db;
 
-        public NPCIndexModel(_DB Db)
+        public NPCIndexModel(ISerdan Db)
         {
             _Db = Db;
         }

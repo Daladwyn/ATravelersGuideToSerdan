@@ -13,9 +13,9 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
     public class Step1Model : PageModel
     {
         private IMapper _mapper;
-        private _DB _Db;
+        private ISerdan _Db;
 
-        public Step1Model(IMapper mapper, _DB Db)
+        public Step1Model(IMapper mapper, ISerdan Db)
         {
             _mapper = mapper;
             _Db = Db;

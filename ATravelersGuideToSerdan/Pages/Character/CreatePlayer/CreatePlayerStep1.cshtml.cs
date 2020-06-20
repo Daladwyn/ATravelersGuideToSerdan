@@ -13,10 +13,10 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
     [BindProperties]
     public class CreatePlayerStep1Model : PageModel
     {
-        private _DB _Db;
+        private ISerdan _Db;
         private IFileSerdan _FilAccess;
         private readonly IHtmlHelper htmlHelper;
-        public CreatePlayerStep1Model(_DB Db, IFileSerdan filAccess, IHtmlHelper htmlHelper)
+        public CreatePlayerStep1Model(ISerdan Db, IFileSerdan filAccess, IHtmlHelper htmlHelper)
         {
             _Db = Db;
             _FilAccess = filAccess;

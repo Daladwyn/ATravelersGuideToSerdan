@@ -13,10 +13,10 @@ namespace ATravelersGuideToSerdan.Pages.Character.Create
     public class Step3Model : PageModel
     {
         private IMapper _mapper;
-        private _DB _Db;
+        private ISerdan _Db;
         public CreateNpc3ViewModel Npc { get; set; }
 
-        public Step3Model(IMapper mapper, _DB Db)
+        public Step3Model(IMapper mapper, ISerdan Db)
         {
             _mapper = mapper;
             _Db = Db;

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using ATravelersGuideToSerdan.Data;
 using ATravelersGuideToSerdan.Models;
+using ATravelersGuideToSerdan.ViewModels;
 
 namespace ATravelersGuideToSerdan.Services
 {
-    public class SqlSerdan : _DB
+    public class SqlSerdan : ISerdan
     {
         private ApplicationDbContext _context;
 
@@ -148,6 +149,16 @@ namespace ATravelersGuideToSerdan.Services
             _context.NpcStats.Attach(npcStat);
             _context.SaveChanges();
             return npcStat;
+        }
+        public List<Talent> GetTalentsBasedOnAttributeName(string attribute)
+        {
+            //Uncomment line below when talents are located in DB
+            //List<Talent> TalentsBasedOnAttribute = _context.Talents.Where(t => t.TalentIsBasedOn == attribute).ToList();
+            var TalentsBasedOnAttribute = new TalentViewModel();
+            List<Talent> TalentsData = TalentsBasedOnAttribute.TalentData;
+            List<Talent> AttributeTalentsData = TalentsData.Where(t => t.TalentIsBasedOn == attribute).ToList();
+            //Manage ArgumentNullExceptions
+            return TalentsData;
         }
     }
 }

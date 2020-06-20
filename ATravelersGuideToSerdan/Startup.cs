@@ -46,7 +46,7 @@ namespace ATravelersGuideToSerdan
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             
 
-            services.AddTransient<_DB, SqlSerdan>();
+            services.AddTransient<ISerdan, SqlSerdan>();
             services.AddTransient<IFileSerdan, FileSerdan>();
 
             //services.AddAutoMapper();
