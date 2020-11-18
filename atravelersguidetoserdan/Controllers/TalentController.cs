@@ -17,7 +17,7 @@ namespace ATravelersGuideToSerdan.Controllers
         }
 
         // GET: api/Talent
-        [HttpGet("attribute")]
+        [HttpGet]
         public List<Talent> GetTalentList(string attribute)
         {
             var talentListToSend = _Db.GetTalentsBasedOnAttributeName(attribute);

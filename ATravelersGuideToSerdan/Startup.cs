@@ -8,9 +8,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ATravelersGuideToSerdan.Services;
 using Microsoft.AspNetCore.Routing;
-using React.AspNet;
 using Microsoft.AspNetCore.Http;
 using System;
+using DocumentFormat.OpenXml.Office2010.Excel;
+using Microsoft.Extensions.Hosting;
 
 namespace ATravelersGuideToSerdan
 {
@@ -41,10 +42,10 @@ namespace ATravelersGuideToSerdan
 
             //services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddReact();
+            //services.AddReact();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddControllersWithViews();
 
             services.AddTransient<ISerdan, SqlSerdan>();
             services.AddTransient<IFileSerdan, FileSerdan>();
@@ -58,12 +59,12 @@ namespace ATravelersGuideToSerdan
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.ApplicationName==Environments.Development)
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
+                //app.UseDatabaseErrorPage();
             }
             else
             {
@@ -74,20 +75,24 @@ namespace ATravelersGuideToSerdan
 
             app.UseStatusCodePages();
 
-            app.UseReact(config => { });
+            //app.UseReact(config => { });
 
-            app.UseHttpsRedirection();
+           // app.UseHttpsRedirection();
             app.UseStaticFiles();
             //app.UseCookiePolicy();
             
             app.UseAuthentication();
+            app.UseAuthorization();
 
             //app.UseMvc();
-            app.UseMvc(RouteOptions);
+            //app.UseMvc(RouteOptions);
+            //app.UseMvc();
+
         }
 
         private void RouteOptions(IRouteBuilder routes)
         {
+            routes.MapRoute("Talang", "api/{controller=Talent}/{id}");
             routes.MapRoute("Default", "{controller=Home}/{action=Index}");
         }
     }
