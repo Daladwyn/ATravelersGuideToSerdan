@@ -27,13 +27,6 @@ namespace ATravelersGuideToSerdan
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            //services.Configure<CookiePolicyOptions>(options =>
-            //{
-            //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-            //    options.CheckConsentNeeded = context => true;
-            //    options.MinimumSameSitePolicy = SameSiteMode.None;
-            //});
-
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -42,18 +35,14 @@ namespace ATravelersGuideToSerdan
 
             //services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            //services.AddReact();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddControllersWithViews();
+
+            services.AddRazorPages();
 
             services.AddTransient<ISerdan, SqlSerdan>();
             services.AddTransient<IFileSerdan, FileSerdan>();
-
-            //services.AddAutoMapper();
-            //services.AddAutoMapper(NPC, NpcMagic, NpcPower, NpcStat, 
-            //    CreateNPCstep1Model, CreateNPCstep2Model, 
-            //    CreateNPCstep3Model, CreateNPCstep4Model);
 
             return services.BuildServiceProvider();
         }
@@ -61,39 +50,38 @@ namespace ATravelersGuideToSerdan
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.ApplicationName==Environments.Development)
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                //app.UseDatabaseErrorPage();
             }
             else
             {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseExceptionHandler("/Home/Error");
             }
-
             app.UseStatusCodePages();
 
-            //app.UseReact(config => { });
-
-           // app.UseHttpsRedirection();
             app.UseStaticFiles();
-            //app.UseCookiePolicy();
-            
+
+            app.UseRouting();
+
             app.UseAuthentication();
+
             app.UseAuthorization();
 
-            //app.UseMvc();
-            //app.UseMvc(RouteOptions);
-            //app.UseMvc();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+                //endpoints.MapControllerRoute(
+                //    name: "default",
+                //    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
 
         }
 
-        private void RouteOptions(IRouteBuilder routes)
-        {
-            routes.MapRoute("Talang", "api/{controller=Talent}/{id}");
-            routes.MapRoute("Default", "{controller=Home}/{action=Index}");
-        }
+        //private void RouteOptions(IRouteBuilder routes)
+        //{
+        //    routes.MapRoute("Talang", "api/{controller=Talent}/{id}");
+        //    routes.MapRoute("Default", "{controller=Home}/{action=Index}");
+        //}
     }
 }
