@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATravelersGuideToSerdan.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -256,97 +257,101 @@ namespace ATravelersGuideToSerdan.Models
 
         public int SoulDamage { get; set; }
         //************************************************************
-        [Range(0, 6)]
+        [Range(0, 250)]
         [Display(Name = "Draken")]
-        public byte PowerDragon { get; set; }
+        public int PowerDragon { get; set; }
 
-        [Range(0, 6)]
+        [Range(0, 250)]
         [Display(Name = "Enhörningen")]
-        public byte PowerUnicorn { get; set; }
+        public int PowerUnicorn { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Läkaren")]
-        public byte PowerHealer { get; set; }
+        public int PowerHealer { get; set; }
 
-        [Range(0, 6)]
+        [Range(0, 250)]
         [Display(Name = "Gripen")]
-        public byte PowerGriffon { get; set; }
+        public int PowerGriffon { get; set; }
 
-        [Range(0, 6)]
+        [Range(0, 250)]
         [Display(Name = "Manikoran")]
-        public byte PowerManticore { get; set; }
+        public int PowerManticore { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Kroppen")]
-        public byte PowerBody { get; set; }
+        public int PowerBody { get; set; }
 
-        [Range(0, 6)]
+        [Range(0, 250)]
         [Display(Name = "Symbolen")]
-        public byte PowerSymbol { get; set; }
+        public int PowerSymbol { get; set; }
 
-        [Range(0, 2)]
+        [Range(0, 175)]
         [Display(Name = "Dörren")]
-        public byte PowerDoor { get; set; }
+        public int PowerDoor { get; set; }
 
-        [Range(0, 2)]
+        [Range(0, 175)]
         [Display(Name = "Tidens")]
-        public byte PowerTime { get; set; }
+        public int PowerTime { get; set; }
 
-        [Range(0, 2)]
+        [Range(0, 175)]
         [Display(Name = "Magins")]
-        public byte PowerMagic { get; set; }
+        public int PowerMagic { get; set; }
 
-        [Range(0, 1)]
+        [Range(0, 100)]
         [Display(Name = "Elementa")]
-        public byte PowerElementa { get; set; }
+        public int PowerElementa { get; set; }
 
-        [Range(0, 6)]
+        [Range(0, 250)]
         [Display(Name = "Sinnets")]
-        public byte PowerMind { get; set; }
+        public int PowerMind { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Naturen")]
-        public byte PowerNature { get; set; }
+        public int PowerNature { get; set; }
 
-        [Range(0, 2)]
+        [Range(0, 50)]
         [Display(Name = "Djuret")]
-        public byte PowerAnimal { get; set; }
+        public int PowerAnimal { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Vattnet")]
-        public byte PowerWater { get; set; }
+        public int PowerWater { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Jorden")]
-        public byte PowerEarth { get; set; }
+        public int PowerEarth { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Ljuset")]
-        public byte PowerLight { get; set; }
+        public int PowerLight { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Elektricitet")]
-        public byte PowerElectricity { get; set; }
+        public int PowerElectricity { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Elden")]
-        public byte PowerFire { get; set; }
+        public int PowerFire { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Vinden")]
-        public byte PowerWind { get; set; }
+        public int PowerWind { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Mörkret")]
-        public byte PowerDarkness { get; set; }
+        public int PowerDarkness { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Svärdet")]
-        public byte PowerSword { get; set; }
+        public int PowerSword { get; set; }
 
-        [Range(0, 5)]
+        [Range(0, 200)]
         [Display(Name = "Materian")]
-        public byte PowerMateria { get; set; }
+        public int PowerMateria { get; set; }
+
+        [Range(0, 50)]
+        [Display(Name = "Masken")]
+        public int PowerWorm { get; set; }
 
         [Display(Name = "Poäng utsatta på krafter totalt:")]
         public int PowerAllocatedPoints { get; set; }
@@ -486,5 +491,15 @@ namespace ATravelersGuideToSerdan.Models
 
         [Display(Name ="Släkt:")]
         public string Relatives { get; set; }
+
+        public PlayingCharacter TransferStats(CreatePlayer1ViewModel stats)
+        {
+            var newCharStats = new PlayingCharacter();
+            newCharStats.PlayerName = stats.PlayerName;
+            newCharStats.CharacterName = stats.CharacterName;
+            newCharStats.CharacterDescription = stats.CharacterDescription;
+
+            return newCharStats;
+        }
     }
 }

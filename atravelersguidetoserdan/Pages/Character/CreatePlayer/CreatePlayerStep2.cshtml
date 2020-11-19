@@ -1,0 +1,287 @@
+﻿@page
+@model ATravelersGuideToSerdan.Pages.Character.CreatePlayer.CreatePlayerStep2Model
+@{
+}
+<h1>@Model.Headline</h1>
+<p>@Model.Message</p>
+<p>@Model.ErrorMessage</p>
+<hr />
+<div class="container-fluid table-bordered">
+    <div class="row">
+        <h2>Färdigheter och Talanger</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            Förmåga
+        </div>
+        <div class="col-md-1">
+            TTP.
+        </div>
+        <div class="col-md-5">
+            Talanger
+        </div>
+        <div class="col-md-5">
+            Färdigheter
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.WeaponValue"></label>
+        </div>
+        <div class="col-md-1" id="WeaponTTpSkillParent">
+            <span id="WeaponTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><input type="button" class="btn btn-dark" onclick="DisplayTalents('ParentTalentWeapon','TalentWeapon',@Model.PlayingCharacter.Talents)" value="Välj Vapen Talanger"></div>
+            <div class="col-md-10" id="ParentTalentWeapon">
+                <div id="TalentWeapon"></div>
+            </div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.BalisticValue"></label>
+        </div>
+        <div class="col-md-1" id="BalisticTTpSkillParent">
+            <span id="BalisticTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.FineMotorValue"></label>
+        </div>
+        <div class="col-md-1" id="FineMotorTTpSkillParent">
+            <span id="FineMotorTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.PhysicsValue"></label>
+        </div>
+        <div class="col-md-1" id="PhysicTTpSkillParent">
+            <span id="PhysicTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.StrenghtValue"></label>
+        </div>
+        <div class="col-md-1" id="StrenghtTTpSkillParent">
+            <span id="StrenghtTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.MobilityValue"></label>
+        </div>
+        <div class="col-md-1" id="MobilityTTpSkillParent">
+            <span id="MobilityTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.WillValue"></label>
+        </div>
+        <div class="col-md-1" id="WillTTpSkillParent">
+            <span id="WillTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.CreativityValue"></label>
+        </div>
+        <div class="col-md-1" id="CreativityTTpSkillParent">
+            <span id="CreativityTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.EducationValue"></label>
+        </div>
+        <div class="col-md-1" id="EducationTTpSkillParent">
+            <span id="EducationTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.IntuitionValue"></label>
+        </div>
+        <div class="col-md-1" id="IntuitionTTpSkillParent">
+            <span id="IntuitionTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.MagicVisionValue"></label>
+        </div>
+        <div class="col-md-1" id="MagicVisionTTpSkillParent">
+            <span id="MagicVisionTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.AttentionValue"></label>
+        </div>
+        <div class="col-md-1" id="AttentionTTpSkillParent">
+            <span id="AttentionTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.CharismaValue"></label>
+        </div>
+        <div class="col-md-1" id="CharismaTTpSkillParent">
+            <span id="CharismaTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.InsightValue"></label>
+        </div>
+        <div class="col-md-1" id="InsightTTpSkillParent">
+            <span id="InsightTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <label asp-for="@Model.PlayingCharacter.ResistanceValue"></label>
+        </div>
+        <div class="col-md-1" id="ResistanceTTpSkillParent">
+            <span id="ResistanceTTpSkill">0</span>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Talang</button></div>
+            <div class="col-md-10"></div>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <div class="col-md-2"><button class="btn btn-dark">Välj Färdighet</button></div>
+            <div class="col-md-10"></div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid table-bordered">
+    <div class="row">
+        <h2>Magi</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="container-fluid table-bordered">
+        <div class="row">
+            <h2>Kontakter</h2>
+        </div>
+        <div class="row">
+            <select>
+                <option label="drakekontakt"></option>
+                @*<option label="@Model.PlayingCharacter.ContactDragon"></option>*@
+            </select>
+        </div>
+    </div>
+</div>

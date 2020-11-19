@@ -1,11 +1,9 @@
-﻿using ATravelersGuideToSerdan.Core;
+﻿using ATravelersGuideToSerdan.Models;
 using ATravelersGuideToSerdan.Services;
 using ATravelersGuideToSerdan.ViewModels;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Collections.Generic;
 
 namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
 {
@@ -24,7 +22,7 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
         }
 
         [BindProperty]
-        public CreatePlayer1ViewModel PlayingCharacter { get; set; }
+        public CreatePlayer1ViewModel PlayingCharacterStep1 { get; set; }
 
         [BindProperty]
         public int PowerDragon { get; set; }
@@ -108,16 +106,15 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
 
         public IActionResult OnGet()
         {
-            PlayingCharacter = new CreatePlayer1ViewModel("ny");
-            //FamilyForces = htmlHelper.GetEnumSelectList<FamilyForce>();
-            //FamilyForceLevels = htmlHelper.GetEnumSelectList<FamilyForceLevel>();
+            PlayingCharacterStep1 = new CreatePlayer1ViewModel("ny");
             Headline = "Karaktärsskapandets första steg.";
-            Message = "Du behöver ange namn, beskrivning och ditt namn. Sedan har du 100 poäng att sätta ut på bl.a. grundegenskaper och krafter. ";
+            Message = "Du behöver ange namn, beskrivning och ditt namn. Sedan har du 100 poäng att sätta ut på grundegenskaper och krafter. ";
             return Page();
         }
         public IActionResult OnPost()
         {
-            var newPlayer = PlayingCharacter;
+            var newPlayer = new PlayingCharacter();
+            newPlayer
             newPlayer.PowerAnimal = PowerAnimal;
             newPlayer.PowerBody = PowerBody;
             newPlayer.PowerDarkness = PowerDarkness;
@@ -142,17 +139,19 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
             newPlayer.PowerWater = PowerWater;
             newPlayer.PowerWind = PowerWind;
             newPlayer.PowerWorm = PowerWorm;
-            
+
             if (ModelState.IsValid)
             {
-                //create a page to download the stream 
+                //Make Gamerules checks that character statline is ok such as Total points dont exceed 225 
+                //and that total of substats is no more that double och base stat
+                //check number of talentpoints
 
-                CharacterSavedModel savedCharacter = new CharacterSavedModel
-                {
-                    FileName = _FilAccess.CreateCharacterSheet(newPlayer),
-                };
-                return RedirectToPage("CharacterSaved", savedCharacter);
+                //Save character to DB and return characterID
 
+
+               
+                var savedCharacter = _Db.AddPlayingCharacter(newPlayer);
+                return RedirectToPage("CreatePlayerStep2", savedCharacter.PlayingCharacterId);
             }
             else
             {
