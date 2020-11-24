@@ -492,14 +492,6 @@ namespace ATravelersGuideToSerdan.Models
         [Display(Name ="Släkt:")]
         public string Relatives { get; set; }
 
-        public PlayingCharacter TransferStats(CreatePlayer1ViewModel stats)
-        {
-            var newCharStats = new PlayingCharacter();
-            newCharStats.PlayerName = stats.PlayerName;
-            newCharStats.CharacterName = stats.CharacterName;
-            newCharStats.CharacterDescription = stats.CharacterDescription;
-
-            return newCharStats;
-        }
+        
     }
 }

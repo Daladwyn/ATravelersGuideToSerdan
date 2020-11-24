@@ -12,6 +12,9 @@ using Microsoft.AspNetCore.Http;
 using System;
 using DocumentFormat.OpenXml.Office2010.Excel;
 using Microsoft.Extensions.Hosting;
+using ATravelersGuideToSerdan.ViewModels;
+using ATravelersGuideToSerdan.Models;
+using AutoMapper;
 
 namespace ATravelersGuideToSerdan
 {
@@ -44,6 +47,13 @@ namespace ATravelersGuideToSerdan
             services.AddTransient<ISerdan, SqlSerdan>();
             services.AddTransient<IFileSerdan, FileSerdan>();
 
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
             return services.BuildServiceProvider();
         }
 

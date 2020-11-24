@@ -1,6 +1,7 @@
 ﻿using ATravelersGuideToSerdan.Models;
 using ATravelersGuideToSerdan.Services;
 using ATravelersGuideToSerdan.ViewModels;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,11 +15,13 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
         private ISerdan _Db;
         private IFileSerdan _FilAccess;
         private readonly IHtmlHelper htmlHelper;
-        public CreatePlayerStep1Model(ISerdan Db, IFileSerdan filAccess, IHtmlHelper htmlHelper)
+        private readonly IMapper _mapper;
+        public CreatePlayerStep1Model(ISerdan Db, IFileSerdan filAccess, IHtmlHelper htmlHelper, IMapper mapper)
         {
             _Db = Db;
             _FilAccess = filAccess;
             this.htmlHelper = htmlHelper;
+            _mapper = mapper;
         }
 
         [BindProperty]
@@ -114,7 +117,7 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
         public IActionResult OnPost()
         {
             var newPlayer = new PlayingCharacter();
-            newPlayer
+            newPlayer = _mapper.Map(PlayingCharacterStep1,newPlayer);
             newPlayer.PowerAnimal = PowerAnimal;
             newPlayer.PowerBody = PowerBody;
             newPlayer.PowerDarkness = PowerDarkness;
@@ -149,7 +152,7 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
                 //Save character to DB and return characterID
 
 
-               
+
                 var savedCharacter = _Db.AddPlayingCharacter(newPlayer);
                 return RedirectToPage("CreatePlayerStep2", savedCharacter.PlayingCharacterId);
             }

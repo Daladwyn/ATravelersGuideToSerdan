@@ -24,9 +24,18 @@ namespace ATravelersGuideToSerdan.Pages.Character.CreatePlayer
 
         [BindProperty]
         public CreatePlayer2ViewModel PlayingCharacterStep2 { get; set; }
+        [TempData]
+        public string Headline { get; set; }
+        [TempData]
+        public string Message { get; set; }
+        [TempData]
+        public string ErrorMessage { get; set; }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            Headline = "Karaktärsskapandets första steg.";
+            Message = "Du behöver ange namn, beskrivning och ditt namn. Sedan har du 100 poäng att sätta ut på grundegenskaper och krafter. ";
+            return Page();
         }
     }
 }
