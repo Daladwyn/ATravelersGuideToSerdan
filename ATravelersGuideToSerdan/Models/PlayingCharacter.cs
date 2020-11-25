@@ -467,7 +467,7 @@ namespace ATravelersGuideToSerdan.Models
 
         public string ContactWatchmanWho { get; set; }
 
-        [Display(Name ="Bra/Dåligt blod")]
+        [Display(Name = "Bra/Dåligt blod")]
         public int ContactBlod { get; set; }
 
         [Display(Name = "-10, -5, 0, +5, +10")]
@@ -492,6 +492,32 @@ namespace ATravelersGuideToSerdan.Models
         [Display(Name ="Släkt:")]
         public string Relatives { get; set; }
 
-        
+        public bool CheckAllocatedCreationPoints(PlayingCharacter characterToCheck)
+        {
+            var attributePoints = characterToCheck.KoordinationMotorikTot + characterToCheck.PhysiqueTot + characterToCheck.PsykeTot + 
+                characterToCheck.PerceptionTot + characterToCheck.SocialTot;
+            var powersPoints = characterToCheck.PowerAnimal + characterToCheck.PowerBody + characterToCheck.PowerDarkness + characterToCheck.PowerDoor +
+                characterToCheck.PowerDragon + characterToCheck.PowerEarth + characterToCheck.PowerElectricity + characterToCheck.PowerElementa +
+                characterToCheck.PowerFire + characterToCheck.PowerGriffon + characterToCheck.PowerHealer + characterToCheck.PowerLight +
+                characterToCheck.PowerMagic + characterToCheck.PowerManticore + characterToCheck.PowerMateria + characterToCheck.PowerMind +
+                characterToCheck.PowerNature + characterToCheck.PowerSword + characterToCheck.PowerSymbol + characterToCheck.PowerTime +
+                characterToCheck.PowerUnicorn + characterToCheck.PowerWater + characterToCheck.PowerWind + characterToCheck.PowerWorm;
+            //Point put on magics are comented out due to the properties being boolean. Have to modify properties to int.
+            //var magicUttryckPoints = characterToCheck.MagiVisuellt + characterToCheck.MagiSymbol + characterToCheck.MagiAlkemi + characterToCheck.MagiBlod + characterToCheck.MagiKraft;
+            //var magicDimensionPoints = characterToCheck.MagiVerkligheten + characterToCheck.MagiDraperiet + characterToCheck.MagiDraperiet + characterToCheck.MagiDysterheten +
+            //characterToCheck.MagiEtnor + characterToCheck.MagiDrommen + characterToCheck.MagiSlojan + characterToCheck.MagiParallellium + characterToCheck.MagiElementa;
+            //var magicNivaPoints = characterToCheck.MagiSe + characterToCheck.MagiOkaMinska + characterToCheck.MagiOmvandling + characterToCheck.MagiTransformering + characterToCheck.MagiSkapa;
+            //var magicAspektPoints = characterToCheck.MagiEnergi + characterToCheck.MagiRum + characterToCheck.MagiMateria + characterToCheck.MagiSinne +
+            //characterToCheck.MagiLiv + characterToCheck.MagiSjal + characterToCheck.MagiTid;
+            if (attributePoints+powersPoints == 225)
+            {
+            return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
